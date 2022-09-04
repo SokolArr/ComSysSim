@@ -1,7 +1,8 @@
 # 📡 ComSysSim
 
 ## О программе
-+ 
+
++
 
 +
 ---
@@ -14,12 +15,11 @@
 ---
 ## Установка
 ### Python 3.10
-
-[🔗 Ссылка](https://www.python.org/downloads/release/python-3106/ " ")
+[🔗 Ссылка на официальный сайт ](https://www.python.org/downloads/release/python-3106/ " ")
 
 ### PyQt6
 
-```python
+```
 pip install PyQt6
 ```
 
@@ -29,14 +29,14 @@ pip install PyQt6
 ---
 ## Зависимости
 ### Pyqtgraph
-
-```python
+Для графиков
+```
 pip install pyqtgraph
 ```
 
 ### Pyinstaller
-
-```python
+Для сборки
+```
 pip install pyinstaller
 ```
 
@@ -48,7 +48,7 @@ pip install pyinstaller
 ## Сборка проекта
 ### Pyinstaller
 
-```python
-pyinstaller <name.py --onefile -windowed>
+```
+pyinstaller name.py --onefile -windowed
 ```
 
