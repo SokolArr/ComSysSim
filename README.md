@@ -19,21 +19,36 @@
 
 ### PyQt6
 
-`pip install PyQt6`
+```python
+pip install PyQt6
+```
+
+
+
 
 ---
 ## Зависимости
 ### Pyqtgraph
 
-`pip install pyqtgraph`
+```python
+pip install pyqtgraph
+```
 
 ### Pyinstaller
 
-`pip install pyinstaller`
+```python
+pip install pyinstaller
+```
+
+
+
+
 
 ---
 ## Сборка проекта
 ### Pyinstaller
 
-`pyinstaller <name.py --onefile -windowed>`
+```python
+pyinstaller <name.py --onefile -windowed>
+```
 
