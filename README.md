@@ -14,7 +14,11 @@
 ---
 ## Установка
 ### Python
-[🔗 Ссылка на официальный сайт ](https://www.python.org/downloads/ "Python")
+>[🔗 Ссылка на официальный сайт ](https://www.python.org/downloads/ "Python")
+
+### Qt Designer
+>[🔗 Ссылка на официальный сайт ](https://build-system.fman.io/qt-designer-download "Qt Designer")
+
 
 ### PyQt5
 
@@ -50,6 +54,6 @@ pyuic5 test_gui.ui > test_gui.py
 ```
 #### Для сборки exe
 ```
-pyinstaller name.py --onefile -windowed
+pyinstaller main.py --onefile -windowed
 ```
 
