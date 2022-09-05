@@ -8,7 +8,7 @@
 ---
 
 ## Планы
-> + ПО будет основываться на популярной библиотеке PyQt5
+> + ПО будет основываться на популярной библиотеке PyQt
 > + Будет реализован режим симуляции и изменяемыми параметрами у блоков
 
 ---
@@ -20,10 +20,10 @@
 >[🔗 Ссылка на официальный сайт ](https://build-system.fman.io/qt-designer-download "Qt Designer")
 
 
-### PyQt5
+### PyQt6
 
 ```console
-pip install PyQt5
+pip install PyQt6
 ```
 
 ---
@@ -34,10 +34,10 @@ pip install PyQt5
 pip install pyqtgraph
 ```
 
-### pyqt5-tools
+### pyqt6-tools
 Для сборки UI
 ```
-pip install pyqt5-tools
+pip install pyqt6-tools
 ```
 
 ### Pyinstaller
@@ -50,7 +50,7 @@ pip install pyinstaller
 ### Сборка проекта
 #### Для сборки UI
 ```
-pyuic5 test_gui.ui > test_gui.py
+pyuic6 test_gui.ui > test_gui.py
 ```
 #### Для сборки exe
 ```

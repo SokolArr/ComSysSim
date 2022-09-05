@@ -27,7 +27,7 @@
 from test_gui import Ui_MainWindow
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
 
@@ -41,4 +41,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = MyMainWindow()
     myWin.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
