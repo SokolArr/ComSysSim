@@ -1,4 +1,7 @@
 /__pycache__
 /dist
 /build
-main.spec
+*.spec
+*.exe
+*.rar
+*.tar

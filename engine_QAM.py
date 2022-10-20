@@ -2,15 +2,15 @@ import os
 import random
 
 import numpy as np
-from ModulationPy import PSKModem
+from ModulationPy import QAMModem
 
 import matplotlib.pyplot as plt
 
 
-modem = PSKModem(4, np.pi/4, 
-                 bin_input=True,
+modem = QAMModem(8, 
+                 bin_input=False,
                  soft_decision=False,
-                 bin_output=True)
+                 bin_output=False)
 
 msg = np.array([0, 0, 0, 1, 1, 0, 1, 1]) # input message
 
