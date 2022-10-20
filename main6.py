@@ -15,7 +15,8 @@ class MainFunc(QMainWindow):
         QMainWindow.__init__(self)
         loadUi("run2.ui",self)
         
-        # self.apply_PSK_but.stateChanged.connect(self.check_apply_but_PSK)
+        self.apply_PSK_but.stateChanged.connect(self.apply_PSK_but_handler)
+        self.apply_QAM_but.stateChanged.connect(self.apply_QAM_but_handler)
         
         self.plot_QAM.clicked.connect(self.check_but_QAM) #Buttons
         self.plot_PSK.clicked.connect(self.check_but_PSK) #Buttons
@@ -28,13 +29,26 @@ class MainFunc(QMainWindow):
         
         self.combobox_decision_QAM.setEnabled(False)
         self.combobox_decision_PSK.setEnabled(False)
+        self.plot_QAM.setEnabled(False)
+        self.plot_PSK.setEnabled(False)
         
         # self.addToolBar(NavigationToolbar(self.plot_constel_psk.canvas, self))
         self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
         
         
     
-
+    def apply_PSK_but_handler(self):
+        if self.apply_QAM_but.isChecked() == True:
+            self.plot_PSK.setEnabled(True)
+        else:
+            self.plot_PSK.setEnabled(False)
+            
+    def apply_QAM_but_handler(self):
+        if self.apply_QAM_but.isChecked() == True:
+            self.plot_QAM.setEnabled(True)
+        else:
+            self.plot_QAM.setEnabled(False)
+        
     def check_but_QAM(self):
         if self.apply_QAM_but.isChecked() == True:
             if self.combobox_signal_type_QAM.currentText() == 'Binary':

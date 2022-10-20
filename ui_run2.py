@@ -44,6 +44,9 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setMaximumSize(QSize(600, 16777215))
         self.instruct_tab = QWidget()
         self.instruct_tab.setObjectName(u"instruct_tab")
+        self.label = QLabel(self.instruct_tab)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(496, 920, 91, 20))
         self.left_tab_wid.addTab(self.instruct_tab, "")
         self.PSK_tab = QWidget()
         self.PSK_tab.setObjectName(u"PSK_tab")
@@ -289,18 +292,38 @@ class Ui_MainWindow(object):
 
         self.plot_PSK = QPushButton(self.main_PSK_wid)
         self.plot_PSK.setObjectName(u"plot_PSK")
+        self.plot_PSK.setMinimumSize(QSize(0, 40))
+        font = QFont()
+        font.setPointSize(12)
+        self.plot_PSK.setFont(font)
 
         self.verticalLayout_34.addWidget(self.plot_PSK)
 
-        self.apply_PSK_but = QCheckBox(self.main_PSK_wid)
-        self.apply_PSK_but.setObjectName(u"apply_PSK_but")
-        font = QFont()
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setUnderline(False)
-        self.apply_PSK_but.setFont(font)
+        self.widget_2 = QWidget(self.main_PSK_wid)
+        self.widget_2.setObjectName(u"widget_2")
+        self.widget_2.setMinimumSize(QSize(0, 50))
+        self.horizontalLayout_3 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_34.addWidget(self.apply_PSK_but)
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
+
+        self.apply_PSK_but = QCheckBox(self.widget_2)
+        self.apply_PSK_but.setObjectName(u"apply_PSK_but")
+        font1 = QFont()
+        font1.setPointSize(12)
+        font1.setBold(False)
+        font1.setUnderline(False)
+        self.apply_PSK_but.setFont(font1)
+
+        self.horizontalLayout_3.addWidget(self.apply_PSK_but)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout_34.addWidget(self.widget_2)
 
 
         self.verticalLayout.addWidget(self.main_PSK_wid)
@@ -513,17 +536,36 @@ class Ui_MainWindow(object):
 
         self.plot_QAM = QPushButton(self.main_QAM_wid)
         self.plot_QAM.setObjectName(u"plot_QAM")
+        self.plot_QAM.setMinimumSize(QSize(0, 40))
+        self.plot_QAM.setFont(font)
 
         self.verticalLayout_13.addWidget(self.plot_QAM)
 
-        self.apply_QAM_but = QCheckBox(self.main_QAM_wid)
-        self.apply_QAM_but.setObjectName(u"apply_QAM_but")
-        font1 = QFont()
-        font1.setPointSize(11)
-        font1.setBold(True)
-        self.apply_QAM_but.setFont(font1)
+        self.widget = QWidget(self.main_QAM_wid)
+        self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(0, 50))
+        self.horizontalLayout = QHBoxLayout(self.widget)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_13.addWidget(self.apply_QAM_but)
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.apply_QAM_but = QCheckBox(self.widget)
+        self.apply_QAM_but.setObjectName(u"apply_QAM_but")
+        font2 = QFont()
+        font2.setPointSize(12)
+        font2.setBold(False)
+        font2.setItalic(False)
+        self.apply_QAM_but.setFont(font2)
+
+        self.horizontalLayout.addWidget(self.apply_QAM_but)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_13.addWidget(self.widget)
 
 
         self.verticalLayout_9.addWidget(self.main_QAM_wid)
@@ -563,7 +605,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.left_tab_wid.setCurrentIndex(2)
+        self.left_tab_wid.setCurrentIndex(0)
         self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
 
@@ -575,6 +617,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"ComSysSim", None))
         self.actionRun.setText(QCoreApplication.translate("MainWindow", u"Run", None))
         self.actionPlot.setText(QCoreApplication.translate("MainWindow", u"Plot", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Version 0.1 - 2022", None))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), QCoreApplication.translate("MainWindow", u"Instruction", None))
         self.params_wid_PSK.setTitle(QCoreApplication.translate("MainWindow", u"Params", None))
         self.message_PSK_lable.setText(QCoreApplication.translate("MainWindow", u"Message", None))
