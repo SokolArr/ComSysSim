@@ -38,7 +38,7 @@ class MainFunc(QMainWindow):
         
     
     def apply_PSK_but_handler(self):
-        if self.apply_QAM_but.isChecked() == True:
+        if self.apply_PSK_but.isChecked() == True:
             self.plot_PSK.setEnabled(True)
         else:
             self.plot_PSK.setEnabled(False)

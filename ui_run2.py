@@ -605,7 +605,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.left_tab_wid.setCurrentIndex(0)
+        self.left_tab_wid.setCurrentIndex(1)
         self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
 
