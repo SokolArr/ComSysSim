@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QDialog, QMainWindow
 from PyQt6.uic import loadUi
 
 import numpy as np
+import random
 
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 import plot_PSK as PSK
@@ -20,6 +21,8 @@ class MainFunc(QMainWindow):
         
         self.plot_QAM.clicked.connect(self.check_but_QAM) #Buttons
         self.plot_PSK.clicked.connect(self.check_but_PSK) #Buttons
+        self.pushButton_generate_sid_PSK.clicked.connect(self.generate_sid_PSK_handler) #Buttons
+        
         
         self.combobox_signal_type_QAM.currentTextChanged.connect(self.signal_QAM_handler)
         self.combobox_signal_type_PSK.currentTextChanged.connect(self.signal_PSK_handler)
@@ -31,6 +34,9 @@ class MainFunc(QMainWindow):
         self.combobox_decision_PSK.setEnabled(False)
         self.plot_QAM.setEnabled(False)
         self.plot_PSK.setEnabled(False)
+        
+        
+        self.progressBar_PSK.setValue(0)
         
         # self.addToolBar(NavigationToolbar(self.plot_constel_psk.canvas, self))
         self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
@@ -48,6 +54,21 @@ class MainFunc(QMainWindow):
             self.plot_QAM.setEnabled(True)
         else:
             self.plot_QAM.setEnabled(False)
+            
+    def generate_sid_PSK_handler(self):
+        self.progressBar_PSK.setValue(0)
+        n_max = 1
+        if self.all_numbers_PSK.isChecked() == True:
+            n_max = int(self.combobox_coef_PSK.currentText()) - 1 
+        rand_list=[]
+        n = int(self.spinBox_PSK.value() )
+        self.progressBar_PSK.setValue(50)
+        for i in range(n):
+            rand_list.append(random.randint(0,n_max))
+        self.progressBar_PSK.setValue(70)
+        self.plainText_sid_PSK.setPlainText(''.join(str(x) for x in rand_list))
+        self.progressBar_PSK.setValue(100)
+
         
     def check_but_QAM(self):
         if self.apply_QAM_but.isChecked() == True:
@@ -105,13 +126,14 @@ class MainFunc(QMainWindow):
             self.plot_area_wid.canvas.axes.set_title("Subtract original signal and demodulated signal")
             self.plot_area_wid.canvas.axes.set_xlabel('t, s')
             self.plot_area_wid.canvas.axes.set_ylabel('A, V')
-            
-            
             self.plot_area_wid.canvas.axes.grid()
             self.plot_area_wid.canvas.draw()
+            
 
+   
     def check_but_PSK(self):
         if self.apply_PSK_but.isChecked() == True:
+            self.progressBar_PSK.setValue(0)
             if self.combobox_signal_type_PSK.currentText() == 'Binary':
                 bin_input = True
                 bin_output = True
@@ -142,7 +164,28 @@ class MainFunc(QMainWindow):
             
             
             mod, newMod, demod, modem2= PSK.runEnginePSK(mes, int(M), int(noise_coef), int(phase), grey_cod, bin_input, soft_decis, bin_output)
-        
+            
+            self.progressBar_PSK.setValue(50)    
+                    
+            ch = 0
+            for index in range(mes.__len__()):
+                if mes[index] != demod[index]:
+                    ch = ch + 1
+                    
+                    
+            message_length = demod.__len__()
+            if message_length < 10000:
+                self.message_template.setText("Message: " + str(demod))
+            else:
+                self.message_template.setText("Big message!")
+            
+            self.label_bit_error.setText("Bit errors: " + str(ch))
+            
+            # # tste = np.count_nonzero(abs(np.subtract(mes,demod)) == 1)
+            # self.message_template.setText(str(demod) + "Bit errors: " + str(ch))
+            
+            self.progressBar_PSK.setValue(60)
+            
             dmsg = demod
             dmsg_x = np.repeat(range(len(dmsg)), 2)
             dmsg_y = np.repeat(dmsg, 2)
@@ -170,13 +213,28 @@ class MainFunc(QMainWindow):
             # self.plot_constel_psk.canvas.axes.grid()
             # self.plot_constel_psk.canvas.draw()
             
+            
+            self.progressBar_PSK.setValue(50)
+            
             self.plot_area_wid.canvas.axes.clear()
             self.plot_area_wid.canvas.axes.plot(abs(np.subtract(mes,demod)))
+            self.progressBar_PSK.setValue(60)
             self.plot_area_wid.canvas.axes.set_title("Subtract original signal and demodulated signal")
             self.plot_area_wid.canvas.axes.set_xlabel('t, s')
             self.plot_area_wid.canvas.axes.set_ylabel('A, V')
             self.plot_area_wid.canvas.axes.grid()
             self.plot_area_wid.canvas.draw()
+            
+            draw_21(self, msg_x, msg_y)
+            self.progressBar_PSK.setValue(75)
+            draw_22(self, mod_reals, mod_imags)
+            self.progressBar_PSK.setValue(80)
+            draw_23(self, dmsg_x, dmsg_y)
+            self.progressBar_PSK.setValue(90)
+            draw_24(self, n_mod_reals, n_mod_imags)
+            
+            self.progressBar_PSK.setValue(100)
+            
 
     def signal_QAM_handler(self):
         if int(self.combobox_coef_QAM.currentText()) < 32:
@@ -240,6 +298,47 @@ class MainFunc(QMainWindow):
         self.plot_area_wid.canvas.axes.set_title('График')
         self.plot_area_wid.canvas.draw()
     
+
+
+
+def draw_21(self, msg_x, msg_y):
+    self.plot_area_wid_21.canvas.axes.clear()
+    self.plot_area_wid_21.canvas.axes.plot(msg_x, msg_y)
+    self.plot_area_wid_21.canvas.axes.set_title("Original message")
+    self.plot_area_wid_21.canvas.axes.set_xlabel('t, s')
+    self.plot_area_wid_21.canvas.axes.set_ylabel('A, V')
+    self.plot_area_wid_21.canvas.axes.grid()
+    self.plot_area_wid_21.canvas.draw()
+
+
+def draw_22(self, mod_reals, mod_imags):
+    self.plot_area_wid_22.canvas.axes.clear()
+    self.plot_area_wid_22.canvas.axes.scatter(mod_reals, mod_imags)
+    self.plot_area_wid_22.canvas.axes.set_title("Complex message")
+    self.plot_area_wid_22.canvas.axes.set_xlabel('Real')
+    self.plot_area_wid_22.canvas.axes.set_ylabel('Imag')
+    self.plot_area_wid_22.canvas.axes.grid()
+    self.plot_area_wid_22.canvas.draw()
+    
+    
+def draw_23(self, dmsg_x, dmsg_y):
+    self.plot_area_wid_23.canvas.axes.clear()
+    self.plot_area_wid_23.canvas.axes.plot(dmsg_x, dmsg_y)
+    self.plot_area_wid_23.canvas.axes.set_title("Demodulated message")
+    self.plot_area_wid_23.canvas.axes.set_xlabel('t, s')
+    self.plot_area_wid_23.canvas.axes.set_ylabel('A, V')
+    self.plot_area_wid_23.canvas.axes.grid()
+    self.plot_area_wid_23.canvas.draw()
+
+def draw_24(self, n_mod_reals, n_mod_imags):
+    self.plot_area_wid_24.canvas.axes.clear()
+    self.plot_area_wid_24.canvas.axes.scatter(n_mod_reals, n_mod_imags)
+    self.plot_area_wid_24.canvas.axes.set_title("Demodulated complex message")
+    self.plot_area_wid_24.canvas.axes.set_xlabel('Real')
+    self.plot_area_wid_24.canvas.axes.set_ylabel('Imag')
+    self.plot_area_wid_24.canvas.axes.grid()
+    self.plot_area_wid_24.canvas.draw()
+
 
 
 app = QApplication([])

@@ -7,9 +7,9 @@ from ModulationPy import PSKModem
 import matplotlib.pyplot as plt
 
 noise_coef = 5
-modem = PSKModem(32, np.pi/4, 
+modem = PSKModem(4, np.pi/4, 
                  bin_input=True,
-                 soft_decision=True,
+                 soft_decision=False,
                  bin_output=True)
 
 # msg = np.array([0, 0, 0, 1, 1, 0, 1, 1]) # input message
@@ -22,7 +22,7 @@ modem = PSKModem(32, np.pi/4,
 # for i in range(n):
 #     rand_list.append(random.randint(0,3))
 
-msg = np.array([1,0,1,0,1,0,1,0,1])
+msg = np.array([1,0,1,0,0,0,1,0])
 
 print (msg)
 

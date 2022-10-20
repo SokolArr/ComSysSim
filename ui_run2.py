@@ -18,17 +18,22 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QComboBox,
     QGroupBox, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QMenuBar, QPlainTextEdit, QPushButton,
-    QScrollArea, QSizePolicy, QSpacerItem, QStatusBar,
-    QTabWidget, QVBoxLayout, QWidget)
+    QMainWindow, QMenuBar, QPlainTextEdit, QProgressBar,
+    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
+    QSpinBox, QStatusBar, QTabWidget, QVBoxLayout,
+    QWidget)
 
 from plot_area_wid import plot_area_wid
+from plot_area_wid_21 import plot_area_wid_21
+from plot_area_wid_22 import plot_area_wid_22
+from plot_area_wid_23 import plot_area_wid_23
+from plot_area_wid_24 import plot_area_wid_24
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1953, 1024)
+        MainWindow.resize(1400, 800)
         MainWindow.setMinimumSize(QSize(1400, 800))
         MainWindow.setTabShape(QTabWidget.Triangular)
         self.actionRun = QAction(MainWindow)
@@ -44,9 +49,13 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setMaximumSize(QSize(600, 16777215))
         self.instruct_tab = QWidget()
         self.instruct_tab.setObjectName(u"instruct_tab")
+        self.verticalLayout_8 = QVBoxLayout(self.instruct_tab)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.label = QLabel(self.instruct_tab)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(496, 920, 91, 20))
+
+        self.verticalLayout_8.addWidget(self.label)
+
         self.left_tab_wid.addTab(self.instruct_tab, "")
         self.PSK_tab = QWidget()
         self.PSK_tab.setObjectName(u"PSK_tab")
@@ -69,7 +78,7 @@ class Ui_MainWindow(object):
         self.main_params_PSK_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_PSK = QWidget()
         self.scrollAreaWidgetContents_PSK.setObjectName(u"scrollAreaWidgetContents_PSK")
-        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, 0, 519, 457))
+        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, -98, 519, 457))
         self.verticalLayout_35 = QVBoxLayout(self.scrollAreaWidgetContents_PSK)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
         self.message_PSK = QWidget(self.scrollAreaWidgetContents_PSK)
@@ -256,15 +265,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_42.addWidget(self.label_length_PSK)
 
-        self.comboBox_length_PSK = QComboBox(self.sid_PSK)
-        self.comboBox_length_PSK.addItem("")
-        self.comboBox_length_PSK.addItem("")
-        self.comboBox_length_PSK.addItem("")
-        self.comboBox_length_PSK.addItem("")
-        self.comboBox_length_PSK.addItem("")
-        self.comboBox_length_PSK.setObjectName(u"comboBox_length_PSK")
+        self.spinBox_PSK = QSpinBox(self.sid_PSK)
+        self.spinBox_PSK.setObjectName(u"spinBox_PSK")
+        self.spinBox_PSK.setMaximum(100000)
 
-        self.verticalLayout_42.addWidget(self.comboBox_length_PSK)
+        self.verticalLayout_42.addWidget(self.spinBox_PSK)
+
+        self.all_numbers_PSK = QCheckBox(self.sid_PSK)
+        self.all_numbers_PSK.setObjectName(u"all_numbers_PSK")
+
+        self.verticalLayout_42.addWidget(self.all_numbers_PSK)
 
         self.pushButton_generate_sid_PSK = QPushButton(self.sid_PSK)
         self.pushButton_generate_sid_PSK.setObjectName(u"pushButton_generate_sid_PSK")
@@ -279,13 +289,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_39.addWidget(self.sid_PSK)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_39.addItem(self.verticalSpacer_2)
-
         self.other_prefs_PSK.addTab(self.other_prefs_wid_PSK, "")
         self.scheme_PSK = QWidget()
         self.scheme_PSK.setObjectName(u"scheme_PSK")
+        self.horizontalLayout_5 = QHBoxLayout(self.scheme_PSK)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.label_2 = QLabel(self.scheme_PSK)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setPixmap(QPixmap(u"../../../Desktop/1123.png"))
+        self.label_2.setScaledContents(True)
+
+        self.horizontalLayout_5.addWidget(self.label_2)
+
         self.other_prefs_PSK.addTab(self.scheme_PSK, "")
 
         self.verticalLayout_34.addWidget(self.other_prefs_PSK)
@@ -324,6 +339,12 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_34.addWidget(self.widget_2)
+
+        self.progressBar_PSK = QProgressBar(self.main_PSK_wid)
+        self.progressBar_PSK.setObjectName(u"progressBar_PSK")
+        self.progressBar_PSK.setValue(0)
+
+        self.verticalLayout_34.addWidget(self.progressBar_PSK)
 
 
         self.verticalLayout.addWidget(self.main_PSK_wid)
@@ -567,6 +588,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.widget)
 
+        self.progressBar_QAM = QProgressBar(self.main_QAM_wid)
+        self.progressBar_QAM.setObjectName(u"progressBar_QAM")
+        self.progressBar_QAM.setValue(0)
+
+        self.verticalLayout_13.addWidget(self.progressBar_QAM)
+
 
         self.verticalLayout_9.addWidget(self.main_QAM_wid)
 
@@ -578,18 +605,96 @@ class Ui_MainWindow(object):
         self.graphs.setObjectName(u"graphs")
         self.verticalLayout_3 = QVBoxLayout(self.graphs)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label_graphs = QLabel(self.graphs)
-        self.label_graphs.setObjectName(u"label_graphs")
-        self.label_graphs.setMinimumSize(QSize(0, 0))
-        self.label_graphs.setMaximumSize(QSize(16777215, 20))
-        self.label_graphs.setAlignment(Qt.AlignCenter)
+        self.graphs_tab_wid = QTabWidget(self.graphs)
+        self.graphs_tab_wid.setObjectName(u"graphs_tab_wid")
+        self.signal_tab = QWidget()
+        self.signal_tab.setObjectName(u"signal_tab")
+        self.horizontalLayout_7 = QHBoxLayout(self.signal_tab)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.widget_3 = QWidget(self.signal_tab)
+        self.widget_3.setObjectName(u"widget_3")
+        self.verticalLayout_16 = QVBoxLayout(self.widget_3)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.plot_area_wid_21 = plot_area_wid_21(self.widget_3)
+        self.plot_area_wid_21.setObjectName(u"plot_area_wid_21")
 
-        self.verticalLayout_3.addWidget(self.label_graphs)
+        self.verticalLayout_16.addWidget(self.plot_area_wid_21)
 
-        self.plot_area_wid = plot_area_wid(self.graphs)
+        self.plot_area_wid_23 = plot_area_wid_23(self.widget_3)
+        self.plot_area_wid_23.setObjectName(u"plot_area_wid_23")
+
+        self.verticalLayout_16.addWidget(self.plot_area_wid_23)
+
+
+        self.horizontalLayout_7.addWidget(self.widget_3)
+
+        self.widget_4 = QWidget(self.signal_tab)
+        self.widget_4.setObjectName(u"widget_4")
+        self.verticalLayout_17 = QVBoxLayout(self.widget_4)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.plot_area_wid_22 = plot_area_wid_22(self.widget_4)
+        self.plot_area_wid_22.setObjectName(u"plot_area_wid_22")
+
+        self.verticalLayout_17.addWidget(self.plot_area_wid_22)
+
+        self.plot_area_wid_24 = plot_area_wid_24(self.widget_4)
+        self.plot_area_wid_24.setObjectName(u"plot_area_wid_24")
+
+        self.verticalLayout_17.addWidget(self.plot_area_wid_24)
+
+
+        self.horizontalLayout_7.addWidget(self.widget_4)
+
+        self.graphs_tab_wid.addTab(self.signal_tab, "")
+        self.Sub = QWidget()
+        self.Sub.setObjectName(u"Sub")
+        self.horizontalLayout_4 = QHBoxLayout(self.Sub)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.plot_area_wid = plot_area_wid(self.Sub)
         self.plot_area_wid.setObjectName(u"plot_area_wid")
 
-        self.verticalLayout_3.addWidget(self.plot_area_wid)
+        self.horizontalLayout_4.addWidget(self.plot_area_wid)
+
+        self.graphs_tab_wid.addTab(self.Sub, "")
+        self.report_tab = QWidget()
+        self.report_tab.setObjectName(u"report_tab")
+        self.verticalLayout_18 = QVBoxLayout(self.report_tab)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.scrollArea_message = QScrollArea(self.report_tab)
+        self.scrollArea_message.setObjectName(u"scrollArea_message")
+        self.scrollArea_message.setMaximumSize(QSize(16777215, 100))
+        self.scrollArea_message.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 732, 98))
+        self.verticalLayout_19 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.message_template = QLabel(self.scrollAreaWidgetContents)
+        self.message_template.setObjectName(u"message_template")
+        self.message_template.setFont(font)
+        self.message_template.setTextFormat(Qt.RichText)
+        self.message_template.setWordWrap(True)
+
+        self.verticalLayout_19.addWidget(self.message_template)
+
+        self.scrollArea_message.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout_18.addWidget(self.scrollArea_message)
+
+        self.label_bit_error = QLabel(self.report_tab)
+        self.label_bit_error.setObjectName(u"label_bit_error")
+        self.label_bit_error.setFont(font)
+        self.label_bit_error.setCursor(QCursor(Qt.IBeamCursor))
+
+        self.verticalLayout_18.addWidget(self.label_bit_error)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_18.addItem(self.verticalSpacer_5)
+
+        self.graphs_tab_wid.addTab(self.report_tab, "")
+
+        self.verticalLayout_3.addWidget(self.graphs_tab_wid)
 
 
         self.horizontalLayout_2.addWidget(self.graphs)
@@ -597,7 +702,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1953, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1400, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -608,6 +713,7 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setCurrentIndex(1)
         self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
+        self.graphs_tab_wid.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -665,18 +771,14 @@ class Ui_MainWindow(object):
         self.checkBox_show_sig_cons_psk.setText(QCoreApplication.translate("MainWindow", u"Show signal constellation", None))
         self.sid_PSK.setTitle(QCoreApplication.translate("MainWindow", u"Sid", None))
         self.label_length_PSK.setText(QCoreApplication.translate("MainWindow", u"Length", None))
-        self.comboBox_length_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"8", None))
-        self.comboBox_length_PSK.setItemText(1, QCoreApplication.translate("MainWindow", u"16", None))
-        self.comboBox_length_PSK.setItemText(2, QCoreApplication.translate("MainWindow", u"32", None))
-        self.comboBox_length_PSK.setItemText(3, QCoreApplication.translate("MainWindow", u"64", None))
-        self.comboBox_length_PSK.setItemText(4, QCoreApplication.translate("MainWindow", u"128", None))
-
+        self.all_numbers_PSK.setText(QCoreApplication.translate("MainWindow", u"All allowed (for modulation coefficient)  numbers", None))
         self.pushButton_generate_sid_PSK.setText(QCoreApplication.translate("MainWindow", u"Generate sid", None))
         self.plainText_sid_PSK.setPlainText(QCoreApplication.translate("MainWindow", u"11011101111111000110101010101010101101101010101010110111110101011110111011111110001101010101010101011011010101010101101111101010111101110111111100011010101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110111110101011110111011111110001101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011110111011111110001101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110110111010111101110111111100011010101010101101101010101010110111110101011110111011111110001101010101010101011011010101010101101111101010111010110111110101011110111011111110001101010101010101011011010101010101101011011010101010101101111101010111010111101110111111100011"
                         "01010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110110111010111101110111111100011010101010101101101010101", None))
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.other_prefs_wid_PSK), QCoreApplication.translate("MainWindow", u"Other prefs", None))
+        self.label_2.setText("")
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.scheme_PSK), QCoreApplication.translate("MainWindow", u"Scheme", None))
-        self.plot_PSK.setText(QCoreApplication.translate("MainWindow", u"Plot graphs with PSK modulation!", None))
+        self.plot_PSK.setText(QCoreApplication.translate("MainWindow", u"Run Simulation and plot graphs with PSK modulation!", None))
         self.apply_PSK_but.setText(QCoreApplication.translate("MainWindow", u"Apply prefs PSK", None))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.PSK_tab), QCoreApplication.translate("MainWindow", u"PSK", None))
         self.params_wid_QAM.setTitle(QCoreApplication.translate("MainWindow", u"Params", None))
@@ -720,9 +822,13 @@ class Ui_MainWindow(object):
         self.plainText_sid_QAM.setPlainText(QCoreApplication.translate("MainWindow", u"1111010101010101010101010101010101010101010101010101101010101010101010101010111110101010101010101010111101101010101010101010101010101010101010010101010101010101010", None))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.other_prefs_wid_QAM), QCoreApplication.translate("MainWindow", u"Other prefs", None))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.scheme_QAM), QCoreApplication.translate("MainWindow", u"Scheme", None))
-        self.plot_QAM.setText(QCoreApplication.translate("MainWindow", u"Plot graphs with QAM modulation!", None))
+        self.plot_QAM.setText(QCoreApplication.translate("MainWindow", u"Run Simulation and plot graphs with QAM modulation!", None))
         self.apply_QAM_but.setText(QCoreApplication.translate("MainWindow", u"Apply prefs QAM", None))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.QAM_tab), QCoreApplication.translate("MainWindow", u"QAM", None))
-        self.label_graphs.setText(QCoreApplication.translate("MainWindow", u"Graphs", None))
+        self.graphs_tab_wid.setTabText(self.graphs_tab_wid.indexOf(self.signal_tab), QCoreApplication.translate("MainWindow", u"Signals", None))
+        self.graphs_tab_wid.setTabText(self.graphs_tab_wid.indexOf(self.Sub), QCoreApplication.translate("MainWindow", u"Substract signals", None))
+        self.message_template.setText(QCoreApplication.translate("MainWindow", u"Message: start simulation first!", None))
+        self.label_bit_error.setText(QCoreApplication.translate("MainWindow", u"Bits erorrs: start simulation first!", None))
+        self.graphs_tab_wid.setTabText(self.graphs_tab_wid.indexOf(self.report_tab), QCoreApplication.translate("MainWindow", u"Report", None))
     # retranslateUi
 
