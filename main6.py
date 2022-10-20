@@ -22,6 +22,7 @@ class MainFunc(QMainWindow):
         self.plot_QAM.clicked.connect(self.check_but_QAM) #Buttons
         self.plot_PSK.clicked.connect(self.check_but_PSK) #Buttons
         self.pushButton_generate_sid_PSK.clicked.connect(self.generate_sid_PSK_handler) #Buttons
+        self.pushButton_generate_sid_QAM.clicked.connect(self.generate_sid_QAM_handler) #Buttons
         
         
         self.combobox_signal_type_QAM.currentTextChanged.connect(self.signal_QAM_handler)
@@ -37,9 +38,10 @@ class MainFunc(QMainWindow):
         
         
         self.progressBar_PSK.setValue(0)
+        self.progressBar_QAM.setValue(0)
         
         # self.addToolBar(NavigationToolbar(self.plot_constel_psk.canvas, self))
-        self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
+        # self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
         
         
     
@@ -61,17 +63,37 @@ class MainFunc(QMainWindow):
         if self.all_numbers_PSK.isChecked() == True:
             n_max = int(self.combobox_coef_PSK.currentText()) - 1 
         rand_list=[]
+        
         n = int(self.spinBox_PSK.value() )
+        
         self.progressBar_PSK.setValue(50)
+        
         for i in range(n):
             rand_list.append(random.randint(0,n_max))
         self.progressBar_PSK.setValue(70)
-        self.plainText_sid_PSK.setPlainText(''.join(str(x) for x in rand_list))
+        
+        self.plainText_sid_PSK.setPlainText(' '.join(str(x) for x in rand_list))
+        
         self.progressBar_PSK.setValue(100)
+        
+    def generate_sid_QAM_handler(self):
+        self.progressBar_QAM.setValue(0)
+        n_max = 1
+        if self.all_numbers_QAM.isChecked() == True:
+            n_max = int(self.combobox_coef_QAM.currentText()) - 1 
+        rand_list=[]
+        n = int(self.spinBox_QAM.value() )
+        self.progressBar_QAM.setValue(50)
+        for i in range(n):
+            rand_list.append(random.randint(0,n_max))
+        self.progressBar_QAM.setValue(70)
+        self.plainText_sid_QAM.setPlainText(' '.join(str(x) for x in rand_list))
+        self.progressBar_QAM.setValue(100)
 
         
     def check_but_QAM(self):
         if self.apply_QAM_but.isChecked() == True:
+            self.progressBar_QAM.setValue(0)
             if self.combobox_signal_type_QAM.currentText() == 'Binary':
                 bin_input = True
                 bin_output = True
@@ -87,8 +109,15 @@ class MainFunc(QMainWindow):
                 grey_cod = True
             if self.combobox_grey_QAM.currentText() == 'No':
                 grey_cod = False
+                
+                
             inpText = self.QAM_input.text()
-            mes = list(map(int, inpText))
+            # mes = list(map(int, inpText))
+            # print (inpText)
+            
+            
+            mes = [int(s) for s in inpText.split() if s.isdigit()]
+            
             M = self.combobox_coef_QAM.currentText()
             noise_coef = self.combobox_noise_QAM.currentText()
             
@@ -101,6 +130,27 @@ class MainFunc(QMainWindow):
             
             mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), int(noise_coef), grey_cod, bin_input, soft_decis, bin_output)
         
+            self.progressBar_QAM.setValue(50)    
+            
+            ch = 0
+            for index in range(mes.__len__()):
+                if mes[index] != demod[index]:
+                    ch = ch + 1
+                    
+            dmessage_length = demod.__len__()
+            if dmessage_length < 10000:
+                self.dmessage_template.setText(str(demod))
+            else:
+                self.dmessage_template.setText("Big message!")
+            
+            self.label_bit_error.setText("Bit errors: " + str(ch))
+            
+            self.message_template.setText(str(mes))
+            self.type_mod.setText("Type modulation: QAM")
+    
+            
+            self.progressBar_QAM.setValue(60)
+            
             dmsg = demod
             dmsg_x = np.repeat(range(len(dmsg)), 2)
             dmsg_y = np.repeat(dmsg, 2)
@@ -121,6 +171,8 @@ class MainFunc(QMainWindow):
             if self.checkBox_show_sig_cons_qam.isChecked() == True:
                 modem1.plot_const()            
             
+            self.progressBar_QAM.setValue(50)
+            
             self.plot_area_wid.canvas.axes.clear()
             self.plot_area_wid.canvas.axes.plot(abs(np.subtract(mes,demod)))
             self.plot_area_wid.canvas.axes.set_title("Subtract original signal and demodulated signal")
@@ -128,6 +180,16 @@ class MainFunc(QMainWindow):
             self.plot_area_wid.canvas.axes.set_ylabel('A, V')
             self.plot_area_wid.canvas.axes.grid()
             self.plot_area_wid.canvas.draw()
+            
+            draw_21(self, msg_x, msg_y, "QAM")
+            self.progressBar_QAM.setValue(75)
+            draw_22(self, mod_reals, mod_imags, "QAM")
+            self.progressBar_QAM.setValue(80)
+            draw_23(self, dmsg_x, dmsg_y, "QAM")
+            self.progressBar_QAM.setValue(90)
+            draw_24(self, n_mod_reals, n_mod_imags, "QAM")
+            
+            self.progressBar_QAM.setValue(100)
             
 
    
@@ -149,8 +211,11 @@ class MainFunc(QMainWindow):
                 grey_cod = True
             if self.combobox_grey_PSK.currentText() == 'No':
                 grey_cod = False
+                
             inpText = self.PSK_input.text()
-            mes = list(map(int, inpText))
+            mes = [int(s) for s in inpText.split() if s.isdigit()]
+            
+            
             M = self.combobox_coef_PSK.currentText()
             noise_coef = self.combobox_noise_PSK.currentText()
             phase = self.combobox_phase_PSK.currentText()
@@ -173,13 +238,17 @@ class MainFunc(QMainWindow):
                     ch = ch + 1
                     
                     
-            message_length = demod.__len__()
-            if message_length < 10000:
-                self.message_template.setText("Message: " + str(demod))
+            dmessage_length = demod.__len__()
+            if dmessage_length < 10000:
+                self.dmessage_template.setText(str(demod))
             else:
-                self.message_template.setText("Big message!")
+                self.dmessage_template.setText("Big message!")
             
             self.label_bit_error.setText("Bit errors: " + str(ch))
+            
+            self.message_template.setText(str(mes))
+            self.type_mod.setText("Type modulation: PSK")
+    
             
             # # tste = np.count_nonzero(abs(np.subtract(mes,demod)) == 1)
             # self.message_template.setText(str(demod) + "Bit errors: " + str(ch))
@@ -225,13 +294,13 @@ class MainFunc(QMainWindow):
             self.plot_area_wid.canvas.axes.grid()
             self.plot_area_wid.canvas.draw()
             
-            draw_21(self, msg_x, msg_y)
+            draw_21(self, msg_x, msg_y, "PSK")
             self.progressBar_PSK.setValue(75)
-            draw_22(self, mod_reals, mod_imags)
+            draw_22(self, mod_reals, mod_imags, "PSK")
             self.progressBar_PSK.setValue(80)
-            draw_23(self, dmsg_x, dmsg_y)
+            draw_23(self, dmsg_x, dmsg_y, "PSK")
             self.progressBar_PSK.setValue(90)
-            draw_24(self, n_mod_reals, n_mod_imags)
+            draw_24(self, n_mod_reals, n_mod_imags, "PSK")
             
             self.progressBar_PSK.setValue(100)
             
@@ -239,8 +308,8 @@ class MainFunc(QMainWindow):
     def signal_QAM_handler(self):
         if int(self.combobox_coef_QAM.currentText()) < 32:
             pow = int(self.combobox_coef_QAM.currentText())
-            self.QAM_input.setMaxLength(2**(pow-1))      
-            print(2**(pow-1))
+            self.QAM_input.setMaxLength(2**(pow-1)* 2)      
+            print(2**(pow-1)* 2)
         else:
             self.QAM_input.setMaxLength(32000)     
                 
@@ -253,8 +322,8 @@ class MainFunc(QMainWindow):
     def signal_PSK_handler(self):
         if int(self.combobox_coef_PSK.currentText()) < 32:
             pow = int(self.combobox_coef_PSK.currentText())
-            self.PSK_input.setMaxLength(2**(pow-1))      
-            print(2**(pow-1))
+            self.PSK_input.setMaxLength(2**(pow-1) * 2)      
+            print(2**(pow-1) * 2)
         else:
             self.PSK_input.setMaxLength(32000)     
                 
@@ -268,8 +337,8 @@ class MainFunc(QMainWindow):
         if self.combobox_signal_type_QAM.currentText() == 'Binary':
             if int(self.combobox_coef_QAM.currentText()) < 30:
                 pow = int(self.combobox_coef_QAM.currentText())
-                self.QAM_input.setMaxLength(2**(pow-1))      
-                print(2**(pow-1))
+                self.QAM_input.setMaxLength(2**(pow-1)* 2)      
+                print(2**(pow-1)* 2)
         else:
                 self.QAM_input.setMaxLength(32000)      
                 
@@ -277,8 +346,8 @@ class MainFunc(QMainWindow):
         if self.combobox_signal_type_PSK.currentText() == 'Binary':
             if int(self.combobox_coef_PSK.currentText()) < 30:
                 pow = int(self.combobox_coef_PSK.currentText())
-                self.PSK_input.setMaxLength(2**(pow-1))      
-                print(2**(pow-1))
+                self.PSK_input.setMaxLength(2**(pow-1)* 2)      
+                print(2**(pow-1)* 2)
         else:
                 self.PSK_input.setMaxLength(32000)   
         
@@ -301,7 +370,7 @@ class MainFunc(QMainWindow):
 
 
 
-def draw_21(self, msg_x, msg_y):
+def draw_21(self, msg_x, msg_y, type_modul):
     self.plot_area_wid_21.canvas.axes.clear()
     self.plot_area_wid_21.canvas.axes.plot(msg_x, msg_y)
     self.plot_area_wid_21.canvas.axes.set_title("Original message")
@@ -311,17 +380,24 @@ def draw_21(self, msg_x, msg_y):
     self.plot_area_wid_21.canvas.draw()
 
 
-def draw_22(self, mod_reals, mod_imags):
+def draw_22(self, mod_reals, mod_imags, type_modul):
     self.plot_area_wid_22.canvas.axes.clear()
     self.plot_area_wid_22.canvas.axes.scatter(mod_reals, mod_imags)
     self.plot_area_wid_22.canvas.axes.set_title("Complex message")
     self.plot_area_wid_22.canvas.axes.set_xlabel('Real')
     self.plot_area_wid_22.canvas.axes.set_ylabel('Imag')
+
     self.plot_area_wid_22.canvas.axes.grid()
+    
+    if type_modul == "PSK":
+        self.plot_area_wid_22.canvas.axes.set_xlim(-1.1,1.1)
+        self.plot_area_wid_22.canvas.axes.set_ylim(-1.1,1.1)
+    
+    
     self.plot_area_wid_22.canvas.draw()
     
     
-def draw_23(self, dmsg_x, dmsg_y):
+def draw_23(self, dmsg_x, dmsg_y, type_modul):
     self.plot_area_wid_23.canvas.axes.clear()
     self.plot_area_wid_23.canvas.axes.plot(dmsg_x, dmsg_y)
     self.plot_area_wid_23.canvas.axes.set_title("Demodulated message")
@@ -330,13 +406,18 @@ def draw_23(self, dmsg_x, dmsg_y):
     self.plot_area_wid_23.canvas.axes.grid()
     self.plot_area_wid_23.canvas.draw()
 
-def draw_24(self, n_mod_reals, n_mod_imags):
+def draw_24(self, n_mod_reals, n_mod_imags, type_modul):
     self.plot_area_wid_24.canvas.axes.clear()
     self.plot_area_wid_24.canvas.axes.scatter(n_mod_reals, n_mod_imags)
     self.plot_area_wid_24.canvas.axes.set_title("Demodulated complex message")
     self.plot_area_wid_24.canvas.axes.set_xlabel('Real')
     self.plot_area_wid_24.canvas.axes.set_ylabel('Imag')
     self.plot_area_wid_24.canvas.axes.grid()
+    
+    if type_modul == "PSK":
+        self.plot_area_wid_24.canvas.axes.set_xlim(-1.1,1.1)
+        self.plot_area_wid_24.canvas.axes.set_ylim(-1.1,1.1)
+    
     self.plot_area_wid_24.canvas.draw()
 
 

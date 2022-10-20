@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1400, 800)
+        MainWindow.resize(1406, 1016)
         MainWindow.setMinimumSize(QSize(1400, 800))
         MainWindow.setTabShape(QTabWidget.Triangular)
         self.actionRun = QAction(MainWindow)
@@ -46,17 +46,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.left_tab_wid = QTabWidget(self.centralwidget)
         self.left_tab_wid.setObjectName(u"left_tab_wid")
-        self.left_tab_wid.setMaximumSize(QSize(600, 16777215))
-        self.instruct_tab = QWidget()
-        self.instruct_tab.setObjectName(u"instruct_tab")
-        self.verticalLayout_8 = QVBoxLayout(self.instruct_tab)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.label = QLabel(self.instruct_tab)
-        self.label.setObjectName(u"label")
-
-        self.verticalLayout_8.addWidget(self.label)
-
-        self.left_tab_wid.addTab(self.instruct_tab, "")
+        self.left_tab_wid.setMaximumSize(QSize(500, 16777215))
         self.PSK_tab = QWidget()
         self.PSK_tab.setObjectName(u"PSK_tab")
         self.verticalLayout = QVBoxLayout(self.PSK_tab)
@@ -78,7 +68,7 @@ class Ui_MainWindow(object):
         self.main_params_PSK_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_PSK = QWidget()
         self.scrollAreaWidgetContents_PSK.setObjectName(u"scrollAreaWidgetContents_PSK")
-        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, -98, 519, 457))
+        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, 0, 419, 457))
         self.verticalLayout_35 = QVBoxLayout(self.scrollAreaWidgetContents_PSK)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
         self.message_PSK = QWidget(self.scrollAreaWidgetContents_PSK)
@@ -252,6 +242,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
         self.checkBox_show_sig_cons_psk = QCheckBox(self.other_prefs_wid_PSK)
         self.checkBox_show_sig_cons_psk.setObjectName(u"checkBox_show_sig_cons_psk")
+        font = QFont()
+        font.setPointSize(10)
+        self.checkBox_show_sig_cons_psk.setFont(font)
 
         self.verticalLayout_39.addWidget(self.checkBox_show_sig_cons_psk)
 
@@ -268,6 +261,7 @@ class Ui_MainWindow(object):
         self.spinBox_PSK = QSpinBox(self.sid_PSK)
         self.spinBox_PSK.setObjectName(u"spinBox_PSK")
         self.spinBox_PSK.setMaximum(100000)
+        self.spinBox_PSK.setValue(100)
 
         self.verticalLayout_42.addWidget(self.spinBox_PSK)
 
@@ -308,9 +302,9 @@ class Ui_MainWindow(object):
         self.plot_PSK = QPushButton(self.main_PSK_wid)
         self.plot_PSK.setObjectName(u"plot_PSK")
         self.plot_PSK.setMinimumSize(QSize(0, 40))
-        font = QFont()
-        font.setPointSize(12)
-        self.plot_PSK.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(12)
+        self.plot_PSK.setFont(font1)
 
         self.verticalLayout_34.addWidget(self.plot_PSK)
 
@@ -325,11 +319,11 @@ class Ui_MainWindow(object):
 
         self.apply_PSK_but = QCheckBox(self.widget_2)
         self.apply_PSK_but.setObjectName(u"apply_PSK_but")
-        font1 = QFont()
-        font1.setPointSize(12)
-        font1.setBold(False)
-        font1.setUnderline(False)
-        self.apply_PSK_but.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(12)
+        font2.setBold(False)
+        font2.setUnderline(False)
+        self.apply_PSK_but.setFont(font2)
 
         self.horizontalLayout_3.addWidget(self.apply_PSK_but)
 
@@ -371,7 +365,7 @@ class Ui_MainWindow(object):
         self.main_params_QAM_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_QAM = QWidget()
         self.scrollAreaWidgetContents_QAM.setObjectName(u"scrollAreaWidgetContents_QAM")
-        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 519, 411))
+        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 419, 411))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents_QAM)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.message_QAM = QWidget(self.scrollAreaWidgetContents_QAM)
@@ -528,25 +522,44 @@ class Ui_MainWindow(object):
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
         self.checkBox_show_sig_cons_qam = QCheckBox(self.other_prefs_wid_QAM)
         self.checkBox_show_sig_cons_qam.setObjectName(u"checkBox_show_sig_cons_qam")
+        self.checkBox_show_sig_cons_qam.setFont(font)
 
         self.verticalLayout_40.addWidget(self.checkBox_show_sig_cons_qam)
 
         self.sid_QAM = QGroupBox(self.other_prefs_wid_QAM)
         self.sid_QAM.setObjectName(u"sid_QAM")
         self.sid_QAM.setMinimumSize(QSize(0, 200))
-        self.verticalLayout_41 = QVBoxLayout(self.sid_QAM)
-        self.verticalLayout_41.setObjectName(u"verticalLayout_41")
+        self.verticalLayout_51 = QVBoxLayout(self.sid_QAM)
+        self.verticalLayout_51.setObjectName(u"verticalLayout_51")
+        self.label_length_QAM = QLabel(self.sid_QAM)
+        self.label_length_QAM.setObjectName(u"label_length_QAM")
+
+        self.verticalLayout_51.addWidget(self.label_length_QAM)
+
+        self.spinBox_QAM = QSpinBox(self.sid_QAM)
+        self.spinBox_QAM.setObjectName(u"spinBox_QAM")
+        self.spinBox_QAM.setMaximum(100000)
+        self.spinBox_QAM.setValue(100)
+
+        self.verticalLayout_51.addWidget(self.spinBox_QAM)
+
+        self.all_numbers_QAM = QCheckBox(self.sid_QAM)
+        self.all_numbers_QAM.setObjectName(u"all_numbers_QAM")
+
+        self.verticalLayout_51.addWidget(self.all_numbers_QAM)
+
+        self.pushButton_generate_sid_QAM = QPushButton(self.sid_QAM)
+        self.pushButton_generate_sid_QAM.setObjectName(u"pushButton_generate_sid_QAM")
+
+        self.verticalLayout_51.addWidget(self.pushButton_generate_sid_QAM)
+
         self.plainText_sid_QAM = QPlainTextEdit(self.sid_QAM)
         self.plainText_sid_QAM.setObjectName(u"plainText_sid_QAM")
 
-        self.verticalLayout_41.addWidget(self.plainText_sid_QAM)
+        self.verticalLayout_51.addWidget(self.plainText_sid_QAM)
 
 
         self.verticalLayout_40.addWidget(self.sid_QAM)
-
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_40.addItem(self.verticalSpacer_3)
 
         self.other_prefs_QAM.addTab(self.other_prefs_wid_QAM, "")
         self.scheme_QAM = QWidget()
@@ -558,7 +571,7 @@ class Ui_MainWindow(object):
         self.plot_QAM = QPushButton(self.main_QAM_wid)
         self.plot_QAM.setObjectName(u"plot_QAM")
         self.plot_QAM.setMinimumSize(QSize(0, 40))
-        self.plot_QAM.setFont(font)
+        self.plot_QAM.setFont(font1)
 
         self.verticalLayout_13.addWidget(self.plot_QAM)
 
@@ -573,11 +586,11 @@ class Ui_MainWindow(object):
 
         self.apply_QAM_but = QCheckBox(self.widget)
         self.apply_QAM_but.setObjectName(u"apply_QAM_but")
-        font2 = QFont()
-        font2.setPointSize(12)
-        font2.setBold(False)
-        font2.setItalic(False)
-        self.apply_QAM_but.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(12)
+        font3.setBold(False)
+        font3.setItalic(False)
+        self.apply_QAM_but.setFont(font3)
 
         self.horizontalLayout.addWidget(self.apply_QAM_but)
 
@@ -598,6 +611,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.main_QAM_wid)
 
         self.left_tab_wid.addTab(self.QAM_tab, "")
+        self.instruct_tab = QWidget()
+        self.instruct_tab.setObjectName(u"instruct_tab")
+        self.verticalLayout_8 = QVBoxLayout(self.instruct_tab)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.label = QLabel(self.instruct_tab)
+        self.label.setObjectName(u"label")
+
+        self.verticalLayout_8.addWidget(self.label)
+
+        self.left_tab_wid.addTab(self.instruct_tab, "")
 
         self.horizontalLayout_2.addWidget(self.left_tab_wid)
 
@@ -660,30 +683,71 @@ class Ui_MainWindow(object):
         self.report_tab.setObjectName(u"report_tab")
         self.verticalLayout_18 = QVBoxLayout(self.report_tab)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.type_mod = QLabel(self.report_tab)
+        self.type_mod.setObjectName(u"type_mod")
+        self.type_mod.setFont(font1)
+
+        self.verticalLayout_18.addWidget(self.type_mod)
+
         self.scrollArea_message = QScrollArea(self.report_tab)
         self.scrollArea_message.setObjectName(u"scrollArea_message")
         self.scrollArea_message.setMaximumSize(QSize(16777215, 100))
         self.scrollArea_message.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 732, 98))
-        self.verticalLayout_19 = QVBoxLayout(self.scrollAreaWidgetContents)
-        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.message_template = QLabel(self.scrollAreaWidgetContents)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 838, 98))
+        self.verticalLayout_52 = QVBoxLayout(self.scrollAreaWidgetContents_2)
+        self.verticalLayout_52.setObjectName(u"verticalLayout_52")
+        self.groupBox = QGroupBox(self.scrollAreaWidgetContents_2)
+        self.groupBox.setObjectName(u"groupBox")
+        self.verticalLayout_54 = QVBoxLayout(self.groupBox)
+        self.verticalLayout_54.setObjectName(u"verticalLayout_54")
+        self.message_template = QLabel(self.groupBox)
         self.message_template.setObjectName(u"message_template")
-        self.message_template.setFont(font)
+        self.message_template.setFont(font1)
         self.message_template.setTextFormat(Qt.RichText)
         self.message_template.setWordWrap(True)
 
-        self.verticalLayout_19.addWidget(self.message_template)
+        self.verticalLayout_54.addWidget(self.message_template)
 
-        self.scrollArea_message.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout_52.addWidget(self.groupBox)
+
+        self.scrollArea_message.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_18.addWidget(self.scrollArea_message)
 
+        self.scrollArea_dmessage = QScrollArea(self.report_tab)
+        self.scrollArea_dmessage.setObjectName(u"scrollArea_dmessage")
+        self.scrollArea_dmessage.setMaximumSize(QSize(16777215, 100))
+        self.scrollArea_dmessage.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 838, 98))
+        self.verticalLayout_19 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.groupBox_2 = QGroupBox(self.scrollAreaWidgetContents)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.verticalLayout_53 = QVBoxLayout(self.groupBox_2)
+        self.verticalLayout_53.setObjectName(u"verticalLayout_53")
+        self.dmessage_template = QLabel(self.groupBox_2)
+        self.dmessage_template.setObjectName(u"dmessage_template")
+        self.dmessage_template.setFont(font1)
+        self.dmessage_template.setTextFormat(Qt.RichText)
+        self.dmessage_template.setWordWrap(True)
+
+        self.verticalLayout_53.addWidget(self.dmessage_template)
+
+
+        self.verticalLayout_19.addWidget(self.groupBox_2)
+
+        self.scrollArea_dmessage.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout_18.addWidget(self.scrollArea_dmessage)
+
         self.label_bit_error = QLabel(self.report_tab)
         self.label_bit_error.setObjectName(u"label_bit_error")
-        self.label_bit_error.setFont(font)
+        self.label_bit_error.setFont(font1)
         self.label_bit_error.setCursor(QCursor(Qt.IBeamCursor))
 
         self.verticalLayout_18.addWidget(self.label_bit_error)
@@ -702,7 +766,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1400, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1406, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -710,7 +774,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.left_tab_wid.setCurrentIndex(1)
+        self.left_tab_wid.setCurrentIndex(0)
         self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
         self.graphs_tab_wid.setCurrentIndex(0)
@@ -723,11 +787,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"ComSysSim", None))
         self.actionRun.setText(QCoreApplication.translate("MainWindow", u"Run", None))
         self.actionPlot.setText(QCoreApplication.translate("MainWindow", u"Plot", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Version 0.1 - 2022", None))
-        self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), QCoreApplication.translate("MainWindow", u"Instruction", None))
         self.params_wid_PSK.setTitle(QCoreApplication.translate("MainWindow", u"Params", None))
         self.message_PSK_lable.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.PSK_input.setText(QCoreApplication.translate("MainWindow", u"10101010", None))
+        self.PSK_input.setText(QCoreApplication.translate("MainWindow", u"1 0 1 0 1 0 1 0", None))
         self.signal_type_mess_PSK.setText(QCoreApplication.translate("MainWindow", u"Signal type", None))
         self.combobox_signal_type_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"Integers", None))
         self.combobox_signal_type_PSK.setItemText(1, QCoreApplication.translate("MainWindow", u"Binary", None))
@@ -773,8 +835,8 @@ class Ui_MainWindow(object):
         self.label_length_PSK.setText(QCoreApplication.translate("MainWindow", u"Length", None))
         self.all_numbers_PSK.setText(QCoreApplication.translate("MainWindow", u"All allowed (for modulation coefficient)  numbers", None))
         self.pushButton_generate_sid_PSK.setText(QCoreApplication.translate("MainWindow", u"Generate sid", None))
-        self.plainText_sid_PSK.setPlainText(QCoreApplication.translate("MainWindow", u"11011101111111000110101010101010101101101010101010110111110101011110111011111110001101010101010101011011010101010101101111101010111101110111111100011010101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110111110101011110111011111110001101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011110111011111110001101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110110111010111101110111111100011010101010101101101010101010110111110101011110111011111110001101010101010101011011010101010101101111101010111010110111110101011110111011111110001101010101010101011011010101010101101011011010101010101101111101010111010111101110111111100011"
-                        "01010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110110111010111101110111111100011010101010101101101010101", None))
+        self.plainText_sid_PSK.setPlainText(QCoreApplication.translate("MainWindow", u"0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1"
+                        " 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0", None))
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.other_prefs_wid_PSK), QCoreApplication.translate("MainWindow", u"Other prefs", None))
         self.label_2.setText("")
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.scheme_PSK), QCoreApplication.translate("MainWindow", u"Scheme", None))
@@ -783,7 +845,7 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.PSK_tab), QCoreApplication.translate("MainWindow", u"PSK", None))
         self.params_wid_QAM.setTitle(QCoreApplication.translate("MainWindow", u"Params", None))
         self.message_QAM_lable.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.QAM_input.setText(QCoreApplication.translate("MainWindow", u"10101010", None))
+        self.QAM_input.setText(QCoreApplication.translate("MainWindow", u"1 0 1 0 1 0 1 0", None))
         self.signal_type_mess_QAM.setText(QCoreApplication.translate("MainWindow", u"Signal type", None))
         self.combobox_signal_type_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"Integers", None))
         self.combobox_signal_type_QAM.setItemText(1, QCoreApplication.translate("MainWindow", u"Binary", None))
@@ -819,15 +881,25 @@ class Ui_MainWindow(object):
 
         self.checkBox_show_sig_cons_qam.setText(QCoreApplication.translate("MainWindow", u"Show signal constellation", None))
         self.sid_QAM.setTitle(QCoreApplication.translate("MainWindow", u"Sid", None))
-        self.plainText_sid_QAM.setPlainText(QCoreApplication.translate("MainWindow", u"1111010101010101010101010101010101010101010101010101101010101010101010101010111110101010101010101010111101101010101010101010101010101010101010010101010101010101010", None))
+        self.label_length_QAM.setText(QCoreApplication.translate("MainWindow", u"Length", None))
+        self.all_numbers_QAM.setText(QCoreApplication.translate("MainWindow", u"All allowed (for modulation coefficient)  numbers", None))
+        self.pushButton_generate_sid_QAM.setText(QCoreApplication.translate("MainWindow", u"Generate sid", None))
+        self.plainText_sid_QAM.setPlainText(QCoreApplication.translate("MainWindow", u"0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1"
+                        " 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0", None))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.other_prefs_wid_QAM), QCoreApplication.translate("MainWindow", u"Other prefs", None))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.scheme_QAM), QCoreApplication.translate("MainWindow", u"Scheme", None))
         self.plot_QAM.setText(QCoreApplication.translate("MainWindow", u"Run Simulation and plot graphs with QAM modulation!", None))
         self.apply_QAM_but.setText(QCoreApplication.translate("MainWindow", u"Apply prefs QAM", None))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.QAM_tab), QCoreApplication.translate("MainWindow", u"QAM", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Version 0.1 - 2022", None))
+        self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), QCoreApplication.translate("MainWindow", u"Instruction", None))
         self.graphs_tab_wid.setTabText(self.graphs_tab_wid.indexOf(self.signal_tab), QCoreApplication.translate("MainWindow", u"Signals", None))
         self.graphs_tab_wid.setTabText(self.graphs_tab_wid.indexOf(self.Sub), QCoreApplication.translate("MainWindow", u"Substract signals", None))
+        self.type_mod.setText(QCoreApplication.translate("MainWindow", u"Type modulation: start simulation first!", None))
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Message", None))
         self.message_template.setText(QCoreApplication.translate("MainWindow", u"Message: start simulation first!", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Demodulated message", None))
+        self.dmessage_template.setText(QCoreApplication.translate("MainWindow", u"Demodulated message: start simulation first!", None))
         self.label_bit_error.setText(QCoreApplication.translate("MainWindow", u"Bits erorrs: start simulation first!", None))
         self.graphs_tab_wid.setTabText(self.graphs_tab_wid.indexOf(self.report_tab), QCoreApplication.translate("MainWindow", u"Report", None))
     # retranslateUi

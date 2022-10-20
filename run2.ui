@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1400</width>
-    <height>800</height>
+    <width>1406</width>
+    <height>1016</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -28,27 +28,13 @@
      <widget class="QTabWidget" name="left_tab_wid">
       <property name="maximumSize">
        <size>
-        <width>600</width>
+        <width>500</width>
         <height>16777215</height>
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="instruct_tab">
-       <attribute name="title">
-        <string>Instruction</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Version 0.1 - 2022</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
       <widget class="QWidget" name="PSK_tab">
        <attribute name="title">
         <string>PSK</string>
@@ -90,8 +76,8 @@
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-98</y>
-                   <width>519</width>
+                   <y>0</y>
+                   <width>419</width>
                    <height>457</height>
                   </rect>
                  </property>
@@ -109,7 +95,7 @@
                      <item>
                       <widget class="QLineEdit" name="PSK_input">
                        <property name="text">
-                        <string>10101010</string>
+                        <string>1 0 1 0 1 0 1 0</string>
                        </property>
                        <property name="frame">
                         <bool>true</bool>
@@ -460,6 +446,11 @@
               <layout class="QVBoxLayout" name="verticalLayout_39">
                <item>
                 <widget class="QCheckBox" name="checkBox_show_sig_cons_psk">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>Show signal constellation</string>
                  </property>
@@ -489,6 +480,9 @@
                     <property name="maximum">
                      <number>100000</number>
                     </property>
+                    <property name="value">
+                     <number>100</number>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -508,7 +502,7 @@
                   <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_PSK">
                     <property name="plainText">
-                     <string>1101110111111100011010101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011110111011111110001101010101010101011011010101010101101111101010111101110111111100011010101010101010110110101010101011011111010101110101101111101010111101110111111100011010101010101010110110101010101011011111010101111011101111111000110101010101011011010101010101101111101010111101110111111100011010101010101010110110101010101011011111010101110101101111101010111101110111111100011010101010101010110110101010101011011111010101110101111011101111111000110101010101011011010101010101101111101010111101110111111100011010101010101010110110101010101011011111010101110101101111101010111101110111111100011010101010101010110110101010101011011011101011110111011111110001101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110101101101010101010110111110101011101011110111011111110001101010101010110110101010101011011111010101111011101111111000110101010101010101101101010101010110111110101011101011011111010101111011101111111000110101010101010101101101010101010110110111010111101110111111100011010101010101101101010101</string>
+                     <string>0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0</string>
                     </property>
                    </widget>
                   </item>
@@ -664,7 +658,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>519</width>
+                   <width>419</width>
                    <height>411</height>
                   </rect>
                  </property>
@@ -682,7 +676,7 @@
                      <item>
                       <widget class="QLineEdit" name="QAM_input">
                        <property name="text">
-                        <string>10101010</string>
+                        <string>1 0 1 0 1 0 1 0</string>
                        </property>
                        <property name="frame">
                         <bool>true</bool>
@@ -975,6 +969,11 @@
               <layout class="QVBoxLayout" name="verticalLayout_40">
                <item>
                 <widget class="QCheckBox" name="checkBox_show_sig_cons_qam">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>Show signal constellation</string>
                  </property>
@@ -991,29 +990,47 @@
                  <property name="title">
                   <string>Sid</string>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_41">
+                 <layout class="QVBoxLayout" name="verticalLayout_51">
+                  <item>
+                   <widget class="QLabel" name="label_length_QAM">
+                    <property name="text">
+                     <string>Length</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBox_QAM">
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="value">
+                     <number>100</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="all_numbers_QAM">
+                    <property name="text">
+                     <string>All allowed (for modulation coefficient)  numbers</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_generate_sid_QAM">
+                    <property name="text">
+                     <string>Generate sid</string>
+                    </property>
+                   </widget>
+                  </item>
                   <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_QAM">
                     <property name="plainText">
-                     <string>1111010101010101010101010101010101010101010101010101101010101010101010101010111110101010101010101010111101101010101010101010101010101010101010010101010101010101010</string>
+                     <string>0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
-               </item>
-               <item>
-                <spacer name="verticalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
@@ -1107,6 +1124,20 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="instruct_tab">
+       <attribute name="title">
+        <string>Instruction</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Version 0.1 - 2022</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item>
@@ -1164,7 +1195,71 @@
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_18">
            <item>
+            <widget class="QLabel" name="type_mod">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Type modulation: start simulation first!</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QScrollArea" name="scrollArea_message">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>838</width>
+                <height>98</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_52">
+               <item>
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="title">
+                  <string>Message</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_54">
+                  <item>
+                   <widget class="QLabel" name="message_template">
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Message: start simulation first!</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::RichText</enum>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="scrollArea_dmessage">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -1179,27 +1274,36 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>732</width>
+                <width>838</width>
                 <height>98</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
                <item>
-                <widget class="QLabel" name="message_template">
-                 <property name="font">
-                  <font>
-                   <pointsize>12</pointsize>
-                  </font>
+                <widget class="QGroupBox" name="groupBox_2">
+                 <property name="title">
+                  <string>Demodulated message</string>
                  </property>
-                 <property name="text">
-                  <string>Message: start simulation first!</string>
-                 </property>
-                 <property name="textFormat">
-                  <enum>Qt::RichText</enum>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_53">
+                  <item>
+                   <widget class="QLabel" name="dmessage_template">
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Demodulated message: start simulation first!</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::RichText</enum>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -1248,7 +1352,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1400</width>
+     <width>1406</width>
      <height>21</height>
     </rect>
    </property>
