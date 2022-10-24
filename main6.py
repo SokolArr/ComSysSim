@@ -5,12 +5,15 @@ import numpy as np
 import random
 
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
+
 import plot_PSK as PSK
 import plot_QAM as QAM
+from msg_to_bin import msg_to_bin
 
 
 class MainFunc(QMainWindow):
-    mes = []  
+    mes = []
+
     
     def __init__(self):
         QMainWindow.__init__(self)
@@ -60,7 +63,7 @@ class MainFunc(QMainWindow):
     def generate_sid_PSK_handler(self):
         self.progressBar_PSK.setValue(0)
         n_max = 1
-        if self.all_numbers_PSK.isChecked() == True:
+        if self.all_numbers_PSK.isChecked() == False:
             n_max = int(self.combobox_coef_PSK.currentText()) - 1 
         rand_list=[]
         
@@ -79,7 +82,7 @@ class MainFunc(QMainWindow):
     def generate_sid_QAM_handler(self):
         self.progressBar_QAM.setValue(0)
         n_max = 1
-        if self.all_numbers_QAM.isChecked() == True:
+        if self.all_numbers_QAM.isChecked() == False:
             n_max = int(self.combobox_coef_QAM.currentText()) - 1 
         rand_list=[]
         n = int(self.spinBox_QAM.value() )
@@ -94,12 +97,9 @@ class MainFunc(QMainWindow):
     def check_but_QAM(self):
         if self.apply_QAM_but.isChecked() == True:
             self.progressBar_QAM.setValue(0)
-            if self.combobox_signal_type_QAM.currentText() == 'Binary':
-                bin_input = True
-                bin_output = True
-            if self.combobox_signal_type_QAM.currentText() == 'Integers':
-                bin_input = False
-                bin_output = False
+            is_it_latters = False
+            bin_input, bin_output, is_it_latters = check_combobox_QAM(self)
+
                 
             if self.combobox_decision_QAM.currentText() == 'Not soft':
                 soft_decis = False
@@ -110,13 +110,13 @@ class MainFunc(QMainWindow):
             if self.combobox_grey_QAM.currentText() == 'No':
                 grey_cod = False
                 
+            if is_it_latters == False:    
+                inpText = self.QAM_input.text()
+                mes = [int(s) for s in inpText.split() if s.isdigit()]
                 
-            inpText = self.QAM_input.text()
-            # mes = list(map(int, inpText))
-            # print (inpText)
-            
-            
-            mes = [int(s) for s in inpText.split() if s.isdigit()]
+            if is_it_latters == True:  
+                inpText = msg_to_bin(self.QAM_input.text())
+                mes = [int(s) for s in inpText.split() if s.isdigit()]
             
             M = self.combobox_coef_QAM.currentText()
             noise_coef = self.combobox_noise_QAM.currentText()
@@ -190,19 +190,14 @@ class MainFunc(QMainWindow):
             draw_24(self, n_mod_reals, n_mod_imags, "QAM")
             
             self.progressBar_QAM.setValue(100)
-            
 
-   
     def check_but_PSK(self):
         if self.apply_PSK_but.isChecked() == True:
             self.progressBar_PSK.setValue(0)
-            if self.combobox_signal_type_PSK.currentText() == 'Binary':
-                bin_input = True
-                bin_output = True
-            if self.combobox_signal_type_PSK.currentText() == 'Integers':
-                bin_input = False
-                bin_output = False
-                
+
+            is_it_latters = False
+            bin_input, bin_output, is_it_latters = check_combobox_PSK(self)
+        
             if self.combobox_decision_PSK.currentText() == 'Not soft':
                 soft_decis = False
             if self.combobox_decision_PSK.currentText() == 'Soft':
@@ -211,11 +206,15 @@ class MainFunc(QMainWindow):
                 grey_cod = True
             if self.combobox_grey_PSK.currentText() == 'No':
                 grey_cod = False
+            
+            if is_it_latters == False:    
+                inpText = self.PSK_input.text()
+                mes = [int(s) for s in inpText.split() if s.isdigit()]
                 
-            inpText = self.PSK_input.text()
-            mes = [int(s) for s in inpText.split() if s.isdigit()]
-            
-            
+            if is_it_latters == True:  
+                inpText = msg_to_bin(self.PSK_input.text())
+                mes = [int(s) for s in inpText.split() if s.isdigit()]
+
             M = self.combobox_coef_PSK.currentText()
             noise_coef = self.combobox_noise_PSK.currentText()
             phase = self.combobox_phase_PSK.currentText()
@@ -309,13 +308,13 @@ class MainFunc(QMainWindow):
         if int(self.combobox_coef_QAM.currentText()) < 32:
             pow = int(self.combobox_coef_QAM.currentText())
             self.QAM_input.setMaxLength(2**(pow-1)* 2)      
-            print(2**(pow-1)* 2)
+            # print(2**(pow-1)* 2)
         else:
             self.QAM_input.setMaxLength(32000)     
                 
-        if self.combobox_signal_type_QAM.currentText() == 'Binary':
+        if self.combobox_signal_type_QAM.currentText() == 'Binary code':
                 self.combobox_decision_QAM.setEnabled(True)
-        if self.combobox_signal_type_QAM.currentText() == 'Integers':
+        if self.combobox_signal_type_QAM.currentText() == 'Only integers':
                 self.combobox_decision_QAM.setEnabled(False)
                 self.QAM_input.setMaxLength(32000)
                 
@@ -323,31 +322,31 @@ class MainFunc(QMainWindow):
         if int(self.combobox_coef_PSK.currentText()) < 32:
             pow = int(self.combobox_coef_PSK.currentText())
             self.PSK_input.setMaxLength(2**(pow-1) * 2)      
-            print(2**(pow-1) * 2)
+            # print(2**(pow-1) * 2)
         else:
             self.PSK_input.setMaxLength(32000)     
                 
-        if self.combobox_signal_type_PSK.currentText() == 'Binary':
+        if self.combobox_signal_type_PSK.currentText() == 'Binary code':
                 self.combobox_decision_PSK.setEnabled(True)
-        if self.combobox_signal_type_PSK.currentText() == 'Integers':
+        if self.combobox_signal_type_PSK.currentText() == 'Only integers':
                 self.combobox_decision_PSK.setEnabled(False)
                 self.PSK_input.setMaxLength(32000)
                 
     def coef_QAM_handler(self):
-        if self.combobox_signal_type_QAM.currentText() == 'Binary':
+        if self.combobox_signal_type_QAM.currentText() == 'Binary code':
             if int(self.combobox_coef_QAM.currentText()) < 30:
                 pow = int(self.combobox_coef_QAM.currentText())
                 self.QAM_input.setMaxLength(2**(pow-1)* 2)      
-                print(2**(pow-1)* 2)
+                # print(2**(pow-1)* 2)
         else:
                 self.QAM_input.setMaxLength(32000)      
                 
     def coef_PSK_handler(self):
-        if self.combobox_signal_type_PSK.currentText() == 'Binary':
+        if self.combobox_signal_type_PSK.currentText() == 'Binary code':
             if int(self.combobox_coef_PSK.currentText()) < 30:
                 pow = int(self.combobox_coef_PSK.currentText())
                 self.PSK_input.setMaxLength(2**(pow-1)* 2)      
-                print(2**(pow-1)* 2)
+                # print(2**(pow-1)* 2)
         else:
                 self.PSK_input.setMaxLength(32000)   
         
@@ -358,7 +357,7 @@ class MainFunc(QMainWindow):
     def draw_graph(self):
         # plot_PSK.mainFunc()
         
-        print(self.mes)
+        # print(self.mes)
         
         self.plot_area_wid.canvas.axes.clear()
         self.plot_area_wid.canvas.axes.plot([1]) 
@@ -419,7 +418,43 @@ def draw_24(self, n_mod_reals, n_mod_imags, type_modul):
         self.plot_area_wid_24.canvas.axes.set_ylim(-1.1,1.1)
     
     self.plot_area_wid_24.canvas.draw()
+    
+    
+    
 
+
+def check_combobox_QAM(self):
+    bin_input = False
+    bin_output = False
+    is_it_letters = False
+    if self.combobox_signal_type_QAM.currentText() == 'Binary code':
+        bin_input = True
+        bin_output = True
+    if self.combobox_signal_type_QAM.currentText() == 'Only integers':
+        bin_input = False
+        bin_output = False
+    if self.combobox_signal_type_QAM.currentText() == 'Message with letters':
+        bin_input = True
+        bin_output = True
+        is_it_letters = True        
+    return bin_input, bin_output, is_it_letters
+
+
+def check_combobox_PSK(self):
+    bin_input = False
+    bin_output = False
+    is_it_letters = False
+    if self.combobox_signal_type_PSK.currentText() == 'Binary code':
+        bin_input = True
+        bin_output = True
+    if self.combobox_signal_type_PSK.currentText() == 'Only integers':
+        bin_input = False
+        bin_output = False
+    if self.combobox_signal_type_PSK.currentText() == 'Message with letters':
+        bin_input = True
+        bin_output = True
+        is_it_letters = True  
+    return bin_input, bin_output, is_it_letters
 
 
 app = QApplication([])

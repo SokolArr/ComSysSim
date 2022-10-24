@@ -33,8 +33,22 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
+      <widget class="QWidget" name="instruct_tab">
+       <attribute name="title">
+        <string>Instruction</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Version 0.1 - 2022</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="PSK_tab">
        <attribute name="title">
         <string>PSK</string>
@@ -78,7 +92,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>457</height>
+                   <height>468</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
@@ -87,6 +101,11 @@
                     <layout class="QVBoxLayout" name="verticalLayout_36">
                      <item>
                       <widget class="QLabel" name="message_PSK_lable">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>Message</string>
                        </property>
@@ -94,6 +113,11 @@
                      </item>
                      <item>
                       <widget class="QLineEdit" name="PSK_input">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>1 0 1 0 1 0 1 0</string>
                        </property>
@@ -134,12 +158,17 @@
                       <widget class="QComboBox" name="combobox_signal_type_PSK">
                        <item>
                         <property name="text">
-                         <string>Integers</string>
+                         <string>Only integers</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>Binary</string>
+                         <string>Binary code</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Message with letters</string>
                         </property>
                        </item>
                       </widget>
@@ -373,9 +402,9 @@
                     <widget class="QComboBox" name="combobox_phase_PSK">
                      <property name="geometry">
                       <rect>
-                       <x>60</x>
+                       <x>70</x>
                        <y>10</y>
-                       <width>431</width>
+                       <width>321</width>
                        <height>22</height>
                       </rect>
                      </property>
@@ -437,7 +466,7 @@
               </size>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="other_prefs_wid_PSK">
               <attribute name="title">
@@ -448,7 +477,7 @@
                 <widget class="QCheckBox" name="checkBox_show_sig_cons_psk">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>12</pointsize>
                   </font>
                  </property>
                  <property name="text">
@@ -487,8 +516,13 @@
                   </item>
                   <item>
                    <widget class="QCheckBox" name="all_numbers_PSK">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
                     <property name="text">
-                     <string>All allowed (for modulation coefficient)  numbers</string>
+                     <string>For binary input message</string>
                     </property>
                    </widget>
                   </item>
@@ -502,7 +536,7 @@
                   <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_PSK">
                     <property name="plainText">
-                     <string>0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0</string>
+                     <string>Push button to genarate!</string>
                     </property>
                    </widget>
                   </item>
@@ -522,7 +556,7 @@
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>../../../Desktop/1123.png</pixmap>
+                  <pixmap>Pictures/Sheme1.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -659,7 +693,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>411</height>
+                   <height>422</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -668,6 +702,11 @@
                     <layout class="QVBoxLayout" name="verticalLayout_15">
                      <item>
                       <widget class="QLabel" name="message_QAM_lable">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>Message</string>
                        </property>
@@ -675,6 +714,11 @@
                      </item>
                      <item>
                       <widget class="QLineEdit" name="QAM_input">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>1 0 1 0 1 0 1 0</string>
                        </property>
@@ -715,12 +759,17 @@
                       <widget class="QComboBox" name="combobox_signal_type_QAM">
                        <item>
                         <property name="text">
-                         <string>Integers</string>
+                         <string>Only integers</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>Binary</string>
+                         <string>Binary code</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Message with letters</string>
                         </property>
                        </item>
                       </widget>
@@ -971,7 +1020,7 @@
                 <widget class="QCheckBox" name="checkBox_show_sig_cons_qam">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>12</pointsize>
                   </font>
                  </property>
                  <property name="text">
@@ -1010,8 +1059,13 @@
                   </item>
                   <item>
                    <widget class="QCheckBox" name="all_numbers_QAM">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
                     <property name="text">
-                     <string>All allowed (for modulation coefficient)  numbers</string>
+                     <string>For binary input message</string>
                     </property>
                    </widget>
                   </item>
@@ -1025,7 +1079,7 @@
                   <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_QAM">
                     <property name="plainText">
-                     <string>0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0 0 0 1 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 1 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0</string>
+                     <string>Push button to genarate!</string>
                     </property>
                    </widget>
                   </item>
@@ -1120,20 +1174,6 @@
             </widget>
            </item>
           </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="instruct_tab">
-       <attribute name="title">
-        <string>Instruction</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Version 0.1 - 2022</string>
-          </property>
          </widget>
         </item>
        </layout>
