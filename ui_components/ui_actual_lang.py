@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'run2.ui'
+## Form generated from reading UI file 'actual_lang.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.0
 ##
@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1406, 1016)
+        MainWindow.resize(1400, 966)
         MainWindow.setMinimumSize(QSize(1400, 800))
         MainWindow.setTabShape(QTabWidget.Triangular)
         self.actionRun = QAction(MainWindow)
@@ -304,12 +304,14 @@ class Ui_MainWindow(object):
         self.scheme_PSK.setObjectName(u"scheme_PSK")
         self.horizontalLayout_5 = QHBoxLayout(self.scheme_PSK)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.label_2 = QLabel(self.scheme_PSK)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setPixmap(QPixmap(u"../Pictures/Sheme1.png"))
-        self.label_2.setScaledContents(True)
+        self.pic_PSK = QLabel(self.scheme_PSK)
+        self.pic_PSK.setObjectName(u"pic_PSK")
+        self.pic_PSK.setMinimumSize(QSize(400, 400))
+        self.pic_PSK.setMaximumSize(QSize(400, 400))
+        self.pic_PSK.setPixmap(QPixmap(u"../pictures/psk_mod_schem.png"))
+        self.pic_PSK.setScaledContents(True)
 
-        self.horizontalLayout_5.addWidget(self.label_2)
+        self.horizontalLayout_5.addWidget(self.pic_PSK)
 
         self.other_prefs_PSK.addTab(self.scheme_PSK, "")
 
@@ -379,7 +381,7 @@ class Ui_MainWindow(object):
         self.main_params_QAM_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_QAM = QWidget()
         self.scrollAreaWidgetContents_QAM.setObjectName(u"scrollAreaWidgetContents_QAM")
-        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 419, 422))
+        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 161, 422))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents_QAM)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.message_QAM = QWidget(self.scrollAreaWidgetContents_QAM)
@@ -582,6 +584,17 @@ class Ui_MainWindow(object):
         self.other_prefs_QAM.addTab(self.other_prefs_wid_QAM, "")
         self.scheme_QAM = QWidget()
         self.scheme_QAM.setObjectName(u"scheme_QAM")
+        self.horizontalLayout_9 = QHBoxLayout(self.scheme_QAM)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.pic_QAM = QLabel(self.scheme_QAM)
+        self.pic_QAM.setObjectName(u"pic_QAM")
+        self.pic_QAM.setMinimumSize(QSize(400, 400))
+        self.pic_QAM.setMaximumSize(QSize(400, 400))
+        self.pic_QAM.setPixmap(QPixmap(u"../pictures/qam_mod_schem.png"))
+        self.pic_QAM.setScaledContents(True)
+
+        self.horizontalLayout_9.addWidget(self.pic_QAM)
+
         self.other_prefs_QAM.addTab(self.scheme_QAM, "")
 
         self.verticalLayout_13.addWidget(self.other_prefs_QAM)
@@ -703,7 +716,7 @@ class Ui_MainWindow(object):
         self.scrollArea_message.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 838, 98))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 111, 127))
         self.verticalLayout_52 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_52.setObjectName(u"verticalLayout_52")
         self.groupBox = QGroupBox(self.scrollAreaWidgetContents_2)
@@ -731,7 +744,7 @@ class Ui_MainWindow(object):
         self.scrollArea_dmessage.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 838, 98))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 145, 127))
         self.verticalLayout_19 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.groupBox_2 = QGroupBox(self.scrollAreaWidgetContents)
@@ -774,7 +787,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1406, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1400, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -783,9 +796,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.left_tab_wid.setCurrentIndex(1)
-        self.other_prefs_PSK.setCurrentIndex(1)
+        self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
-        self.graphs_tab_wid.setCurrentIndex(1)
+        self.graphs_tab_wid.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -848,7 +861,7 @@ class Ui_MainWindow(object):
         self.pushButton_generate_sid_PSK.setText(QCoreApplication.translate("MainWindow", u"Generate sid", None))
         self.plainText_sid_PSK.setPlainText(QCoreApplication.translate("MainWindow", u"Push button to genarate!", None))
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.other_prefs_wid_PSK), QCoreApplication.translate("MainWindow", u"Other prefs", None))
-        self.label_2.setText("")
+        self.pic_PSK.setText("")
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.scheme_PSK), QCoreApplication.translate("MainWindow", u"Scheme", None))
         self.plot_PSK.setText(QCoreApplication.translate("MainWindow", u"Run Simulation and plot graphs with PSK modulation!", None))
         self.apply_PSK_but.setText(QCoreApplication.translate("MainWindow", u"Apply prefs PSK", None))
@@ -897,6 +910,7 @@ class Ui_MainWindow(object):
         self.pushButton_generate_sid_QAM.setText(QCoreApplication.translate("MainWindow", u"Generate sid", None))
         self.plainText_sid_QAM.setPlainText(QCoreApplication.translate("MainWindow", u"Push button to genarate!", None))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.other_prefs_wid_QAM), QCoreApplication.translate("MainWindow", u"Other prefs", None))
+        self.pic_QAM.setText("")
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.scheme_QAM), QCoreApplication.translate("MainWindow", u"Scheme", None))
         self.plot_QAM.setText(QCoreApplication.translate("MainWindow", u"Run Simulation and plot graphs with QAM modulation!", None))
         self.apply_QAM_but.setText(QCoreApplication.translate("MainWindow", u"Apply prefs QAM", None))

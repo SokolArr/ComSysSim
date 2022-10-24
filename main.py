@@ -1,5 +1,7 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QDialog, QMainWindow
 from PyQt6.uic import loadUi
+from PyQt6 import QtGui
+
 
 import numpy as np
 import random
@@ -20,7 +22,8 @@ class MainFunc(QMainWindow):
     mes = []
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi("./ui_components/run2.ui",self)
+        loadUi("./ui_components/actual_lang.ui",self)
+        self.setWindowIcon(QtGui.QIcon('./pictures/icon.png'))
         
         self.apply_PSK_but.stateChanged.connect(self.apply_PSK_but_handler)
         self.apply_QAM_but.stateChanged.connect(self.apply_QAM_but_handler)
@@ -314,6 +317,8 @@ class MainFunc(QMainWindow):
                 self.PSK_input.setMaxLength(2**(pow-1)* 2)      
         else:
                 self.PSK_input.setMaxLength(32000)   
+
+
 
 
 def check_combobox_QAM(self):

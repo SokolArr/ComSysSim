@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1406</width>
-    <height>1016</height>
+    <width>1400</width>
+    <height>966</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -466,7 +466,7 @@
               </size>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="other_prefs_wid_PSK">
               <attribute name="title">
@@ -551,12 +551,24 @@
               </attribute>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
                <item>
-                <widget class="QLabel" name="label_2">
+                <widget class="QLabel" name="pic_PSK">
+                 <property name="minimumSize">
+                  <size>
+                   <width>400</width>
+                   <height>400</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>400</width>
+                   <height>400</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>../Pictures/Sheme1.png</pixmap>
+                  <pixmap>../pictures/psk_mod_schem.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -692,7 +704,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>419</width>
+                   <width>161</width>
                    <height>422</height>
                   </rect>
                  </property>
@@ -1092,6 +1104,33 @@
               <attribute name="title">
                <string>Scheme</string>
               </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QLabel" name="pic_QAM">
+                 <property name="minimumSize">
+                  <size>
+                   <width>400</width>
+                   <height>400</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>400</width>
+                   <height>400</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>../pictures/qam_mod_schem.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </widget>
            </item>
@@ -1186,7 +1225,7 @@
        <item>
         <widget class="QTabWidget" name="graphs_tab_wid">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="signal_tab">
           <attribute name="title">
@@ -1262,8 +1301,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>838</width>
-                <height>98</height>
+                <width>111</width>
+                <height>127</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
@@ -1314,8 +1353,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>838</width>
-                <height>98</height>
+                <width>145</width>
+                <height>127</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1392,7 +1431,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1406</width>
+     <width>1400</width>
      <height>21</height>
     </rect>
    </property>
