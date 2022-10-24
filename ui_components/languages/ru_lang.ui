@@ -33,7 +33,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="instruct_tab">
        <attribute name="title">
@@ -90,9 +90,9 @@
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-198</y>
+                   <y>0</y>
                    <width>419</width>
-                   <height>468</height>
+                   <height>487</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
@@ -100,15 +100,51 @@
                    <widget class="QWidget" name="message_PSK" native="true">
                     <layout class="QVBoxLayout" name="verticalLayout_36">
                      <item>
-                      <widget class="QLabel" name="message_PSK_lable">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Сообщение</string>
-                       </property>
+                      <widget class="QWidget" name="message_PSK_wid" native="true">
+                       <layout class="QHBoxLayout" name="horizontalLayout_10">
+                        <item>
+                         <widget class="QLabel" name="message_PSK_lable">
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Сообщение</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_5">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_2">
+                          <property name="text">
+                           <string>Количество символов:</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="length_PSK_mes">
+                          <property name="text">
+                           <string>--</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
@@ -703,9 +739,9 @@
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-152</y>
+                   <y>0</y>
                    <width>419</width>
-                   <height>422</height>
+                   <height>441</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -713,15 +749,51 @@
                    <widget class="QWidget" name="message_QAM" native="true">
                     <layout class="QVBoxLayout" name="verticalLayout_15">
                      <item>
-                      <widget class="QLabel" name="message_QAM_lable">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Сообщение</string>
-                       </property>
+                      <widget class="QWidget" name="widget_5" native="true">
+                       <layout class="QHBoxLayout" name="horizontalLayout_11">
+                        <item>
+                         <widget class="QLabel" name="message_QAM_lable">
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Сообщение</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_6">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_3">
+                          <property name="text">
+                           <string>Количество символов:</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="length_QAM_mes">
+                          <property name="text">
+                           <string>--</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
@@ -1225,7 +1297,7 @@
        <item>
         <widget class="QTabWidget" name="graphs_tab_wid">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="signal_tab">
           <attribute name="title">
@@ -1287,10 +1359,16 @@
            </item>
            <item>
             <widget class="QScrollArea" name="scrollArea_message">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>100</height>
+               <height>200</height>
               </size>
              </property>
              <property name="widgetResizable">
@@ -1302,7 +1380,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>832</width>
-                <height>98</height>
+                <height>198</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
@@ -1314,6 +1392,18 @@
                  <layout class="QVBoxLayout" name="verticalLayout_54">
                   <item>
                    <widget class="QLabel" name="message_template">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>100</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>200</height>
+                     </size>
+                    </property>
                     <property name="font">
                      <font>
                       <pointsize>12</pointsize>
@@ -1339,10 +1429,16 @@
            </item>
            <item>
             <widget class="QScrollArea" name="scrollArea_dmessage">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>100</height>
+               <height>200</height>
               </size>
              </property>
              <property name="widgetResizable">
@@ -1354,12 +1450,24 @@
                 <x>0</x>
                 <y>0</y>
                 <width>832</width>
-                <height>98</height>
+                <height>198</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
                <item>
                 <widget class="QGroupBox" name="groupBox_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>200</height>
+                  </size>
+                 </property>
                  <property name="title">
                   <string>Демодулированное сообщение</string>
                  </property>

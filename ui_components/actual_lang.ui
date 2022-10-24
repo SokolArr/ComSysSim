@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1400</width>
-    <height>966</height>
+    <height>967</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -33,11 +33,11 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="instruct_tab">
        <attribute name="title">
-        <string>Instruction</string>
+        <string>Инструкция</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
@@ -51,7 +51,7 @@
       </widget>
       <widget class="QWidget" name="PSK_tab">
        <attribute name="title">
-        <string>PSK</string>
+        <string>PSK Модуляция</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -72,7 +72,7 @@
               </size>
              </property>
              <property name="title">
-              <string>Params</string>
+              <string>Параметры</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_8">
               <item>
@@ -92,7 +92,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>468</height>
+                   <height>487</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
@@ -100,15 +100,51 @@
                    <widget class="QWidget" name="message_PSK" native="true">
                     <layout class="QVBoxLayout" name="verticalLayout_36">
                      <item>
-                      <widget class="QLabel" name="message_PSK_lable">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Message</string>
-                       </property>
+                      <widget class="QWidget" name="message_PSK_wid" native="true">
+                       <layout class="QHBoxLayout" name="horizontalLayout_10">
+                        <item>
+                         <widget class="QLabel" name="message_PSK_lable">
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Сообщение</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_5">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_2">
+                          <property name="text">
+                           <string>Количество символов:</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="length_PSK_mes">
+                          <property name="text">
+                           <string>--</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
@@ -150,7 +186,7 @@
                         </size>
                        </property>
                        <property name="text">
-                        <string>Signal type</string>
+                        <string>Тип сигнала</string>
                        </property>
                       </widget>
                      </item>
@@ -188,7 +224,7 @@
                      <item>
                       <widget class="QLabel" name="mod_label_PSK">
                        <property name="text">
-                        <string>Modulation coefficient</string>
+                        <string>Коэффициент модуляции</string>
                        </property>
                       </widget>
                      </item>
@@ -236,7 +272,7 @@
                      <item>
                       <widget class="QLabel" name="noise_label_PSK">
                        <property name="text">
-                        <string>Noise</string>
+                        <string>Шум</string>
                        </property>
                       </widget>
                      </item>
@@ -324,7 +360,7 @@
                      <item>
                       <widget class="QLabel" name="decision_label_PSK">
                        <property name="text">
-                        <string>Decision</string>
+                        <string>Решение</string>
                        </property>
                       </widget>
                      </item>
@@ -357,7 +393,7 @@
                      <item>
                       <widget class="QLabel" name="grey_label_PSK">
                        <property name="text">
-                        <string>Grey code</string>
+                        <string>Код Грея</string>
                        </property>
                       </widget>
                      </item>
@@ -396,7 +432,7 @@
                       </rect>
                      </property>
                      <property name="text">
-                      <string>Phase: PI/</string>
+                      <string>Фаза: PI/</string>
                      </property>
                     </widget>
                     <widget class="QComboBox" name="combobox_phase_PSK">
@@ -470,7 +506,7 @@
              </property>
              <widget class="QWidget" name="other_prefs_wid_PSK">
               <attribute name="title">
-               <string>Other prefs</string>
+               <string>Другие параметры</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_39">
                <item>
@@ -481,7 +517,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Show signal constellation</string>
+                  <string>Показать сигнальное созвездие</string>
                  </property>
                 </widget>
                </item>
@@ -494,13 +530,13 @@
                   </size>
                  </property>
                  <property name="title">
-                  <string>Sid</string>
+                  <string>Сид</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_42">
                   <item>
                    <widget class="QLabel" name="label_length_PSK">
                     <property name="text">
-                     <string>Length</string>
+                     <string>Длина</string>
                     </property>
                    </widget>
                   </item>
@@ -522,21 +558,21 @@
                      </font>
                     </property>
                     <property name="text">
-                     <string>For binary input message</string>
+                     <string>Для бинарного входного сообщения</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QPushButton" name="pushButton_generate_sid_PSK">
                     <property name="text">
-                     <string>Generate sid</string>
+                     <string>Генерация сида</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_PSK">
                     <property name="plainText">
-                     <string>Push button to genarate!</string>
+                     <string>Нажми на кнопку генерации сида</string>
                     </property>
                    </widget>
                   </item>
@@ -547,7 +583,7 @@
              </widget>
              <widget class="QWidget" name="scheme_PSK">
               <attribute name="title">
-               <string>Scheme</string>
+               <string>Схема</string>
               </attribute>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
                <item>
@@ -593,7 +629,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Run Simulation and plot graphs with PSK modulation!</string>
+              <string>Запуск симуляции и построения графиков PSK модуляции!</string>
              </property>
             </widget>
            </item>
@@ -630,7 +666,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>Apply prefs PSK</string>
+                 <string>Применить настройки PSK</string>
                 </property>
                </widget>
               </item>
@@ -664,7 +700,7 @@
       </widget>
       <widget class="QWidget" name="QAM_tab">
        <attribute name="title">
-        <string>QAM</string>
+        <string>QAM Модуляция</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
@@ -685,7 +721,7 @@
               </size>
              </property>
              <property name="title">
-              <string>Params</string>
+              <string>Параметры</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_6">
               <item>
@@ -704,8 +740,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>161</width>
-                   <height>422</height>
+                   <width>419</width>
+                   <height>441</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -713,15 +749,51 @@
                    <widget class="QWidget" name="message_QAM" native="true">
                     <layout class="QVBoxLayout" name="verticalLayout_15">
                      <item>
-                      <widget class="QLabel" name="message_QAM_lable">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Message</string>
-                       </property>
+                      <widget class="QWidget" name="widget_5" native="true">
+                       <layout class="QHBoxLayout" name="horizontalLayout_11">
+                        <item>
+                         <widget class="QLabel" name="message_QAM_lable">
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Сообщение</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_6">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_3">
+                          <property name="text">
+                           <string>Количество символов:</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="length_QAM_mes">
+                          <property name="text">
+                           <string>--</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
@@ -763,7 +835,7 @@
                         </size>
                        </property>
                        <property name="text">
-                        <string>Signal type</string>
+                        <string>Тип сигнала</string>
                        </property>
                       </widget>
                      </item>
@@ -801,7 +873,7 @@
                      <item>
                       <widget class="QLabel" name="mod_label_QAM">
                        <property name="text">
-                        <string>Modulation coefficient</string>
+                        <string>Коэффициент модуляции</string>
                        </property>
                       </widget>
                      </item>
@@ -844,7 +916,7 @@
                      <item>
                       <widget class="QLabel" name="noise_label_QAM">
                        <property name="text">
-                        <string>Noise</string>
+                        <string>Шум</string>
                        </property>
                       </widget>
                      </item>
@@ -932,7 +1004,7 @@
                      <item>
                       <widget class="QLabel" name="decision_label_QAM">
                        <property name="text">
-                        <string>Decision</string>
+                        <string>Решение</string>
                        </property>
                       </widget>
                      </item>
@@ -965,7 +1037,7 @@
                      <item>
                       <widget class="QLabel" name="grey_label_QAM">
                        <property name="text">
-                        <string>Grey code</string>
+                        <string>Код Грея</string>
                        </property>
                       </widget>
                      </item>
@@ -1025,7 +1097,7 @@
              </property>
              <widget class="QWidget" name="other_prefs_wid_QAM">
               <attribute name="title">
-               <string>Other prefs</string>
+               <string>Другие параметры</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_40">
                <item>
@@ -1036,7 +1108,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Show signal constellation</string>
+                  <string>Показать сигнальное созвездие</string>
                  </property>
                 </widget>
                </item>
@@ -1049,13 +1121,13 @@
                   </size>
                  </property>
                  <property name="title">
-                  <string>Sid</string>
+                  <string>Сид</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_51">
                   <item>
                    <widget class="QLabel" name="label_length_QAM">
                     <property name="text">
-                     <string>Length</string>
+                     <string>Длина</string>
                     </property>
                    </widget>
                   </item>
@@ -1077,21 +1149,21 @@
                      </font>
                     </property>
                     <property name="text">
-                     <string>For binary input message</string>
+                     <string>Для бинарного входного сообщения</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QPushButton" name="pushButton_generate_sid_QAM">
                     <property name="text">
-                     <string>Generate sid</string>
+                     <string>Генерация сида</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_QAM">
                     <property name="plainText">
-                     <string>Push button to genarate!</string>
+                     <string>Нажми на кнопку генерации сида</string>
                     </property>
                    </widget>
                   </item>
@@ -1102,7 +1174,7 @@
              </widget>
              <widget class="QWidget" name="scheme_QAM">
               <attribute name="title">
-               <string>Scheme</string>
+               <string>Схема</string>
               </attribute>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
@@ -1148,7 +1220,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Run Simulation and plot graphs with QAM modulation!</string>
+              <string>Запуск симуляции и построения графиков QAM модуляции!</string>
              </property>
             </widget>
            </item>
@@ -1185,7 +1257,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>Apply prefs QAM</string>
+                 <string>Применить настройки QAM</string>
                 </property>
                </widget>
               </item>
@@ -1229,7 +1301,7 @@
          </property>
          <widget class="QWidget" name="signal_tab">
           <attribute name="title">
-           <string>Signals</string>
+           <string>Сигналы</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
@@ -1260,7 +1332,7 @@
          </widget>
          <widget class="QWidget" name="Sub">
           <attribute name="title">
-           <string>Substract signals</string>
+           <string>Вычтенный сигнал</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
@@ -1270,7 +1342,7 @@
          </widget>
          <widget class="QWidget" name="report_tab">
           <attribute name="title">
-           <string>Report</string>
+           <string>Отчет</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_18">
            <item>
@@ -1301,15 +1373,15 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>111</width>
-                <height>127</height>
+                <width>832</width>
+                <height>98</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
                <item>
                 <widget class="QGroupBox" name="groupBox">
                  <property name="title">
-                  <string>Message</string>
+                  <string>Сообщние</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_54">
                   <item>
@@ -1353,15 +1425,15 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>145</width>
-                <height>127</height>
+                <width>832</width>
+                <height>98</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
                <item>
                 <widget class="QGroupBox" name="groupBox_2">
                  <property name="title">
-                  <string>Demodulated message</string>
+                  <string>Демодулированное сообщение</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_53">
                   <item>

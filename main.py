@@ -28,6 +28,12 @@ class MainFunc(QMainWindow):
         self.apply_PSK_but.stateChanged.connect(self.apply_PSK_but_handler)
         self.apply_QAM_but.stateChanged.connect(self.apply_QAM_but_handler)
         
+        self.PSK_input.textChanged.connect(self.PSK_input_change_handler)
+        self.length_PSK_mes.setText(str(self.PSK_input.text().__len__()))
+        
+        self.QAM_input.textChanged.connect(self.QAM_input_change_handler)
+        self.length_QAM_mes.setText(str(self.QAM_input.text().__len__()))
+        
         self.plot_QAM.clicked.connect(self.check_but_QAM) #Buttons
         self.plot_PSK.clicked.connect(self.check_but_PSK) #Buttons
         
@@ -318,6 +324,12 @@ class MainFunc(QMainWindow):
         else:
                 self.PSK_input.setMaxLength(32000)   
 
+    def PSK_input_change_handler(self):
+        self.length_PSK_mes.setText(str(self.PSK_input.text().__len__()))
+        
+    def QAM_input_change_handler(self):
+        self.length_QAM_mes.setText(str(self.QAM_input.text().__len__()))
+    
 
 
 
@@ -352,6 +364,7 @@ def check_combobox_PSK(self):
         bin_output = True
         is_it_letters = True  
     return bin_input, bin_output, is_it_letters
+
 
 
 app = QApplication([])
