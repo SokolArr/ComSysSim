@@ -6,18 +6,15 @@ import random
 
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
-import plot_PSK as PSK
-import plot_QAM as QAM
-from msg_to_bin import msg_to_bin
-
+import modulations.engine_PSK as PSK
+import modulations.engine_QAM as QAM
+from helpers.msg_to_bin import msg_to_bin
 
 class MainFunc(QMainWindow):
     mes = []
-
-    
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi("run2.ui",self)
+        loadUi("./ui_components/run2.ui",self)
         
         self.apply_PSK_but.stateChanged.connect(self.apply_PSK_but_handler)
         self.apply_QAM_but.stateChanged.connect(self.apply_QAM_but_handler)
@@ -46,8 +43,6 @@ class MainFunc(QMainWindow):
         # self.addToolBar(NavigationToolbar(self.plot_constel_psk.canvas, self))
         # self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
         
-        
-    
     def apply_PSK_but_handler(self):
         if self.apply_PSK_but.isChecked() == True:
             self.plot_PSK.setEnabled(True)

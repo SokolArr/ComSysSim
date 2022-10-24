@@ -556,7 +556,7 @@
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>Pictures/Sheme1.png</pixmap>
+                  <pixmap>../Pictures/Sheme1.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -1186,7 +1186,7 @@
        <item>
         <widget class="QTabWidget" name="graphs_tab_wid">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="signal_tab">
           <attribute name="title">
@@ -1411,33 +1411,33 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>plot_area_wid</class>
-   <extends>QWidget</extends>
-   <header>plot_area_wid.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>plot_area_wid_21</class>
    <extends>QWidget</extends>
-   <header>plot_area_wid_21.h</header>
+   <header location="global">ui_components.plot_area_wid_21.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>plot_area_wid_22</class>
    <extends>QWidget</extends>
-   <header>plot_area_wid_22.h</header>
+   <header location="global">ui_components.plot_area_wid_22.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>plot_area_wid_23</class>
    <extends>QWidget</extends>
-   <header>plot_area_wid_23.h</header>
+   <header location="global">ui_components.plot_area_wid_23.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>plot_area_wid_24</class>
    <extends>QWidget</extends>
-   <header>plot_area_wid_24.h</header>
+   <header location="global">ui_components.plot_area_wid_24.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>plot_area_wid</class>
+   <extends>QWidget</extends>
+   <header location="global">ui_components.plot_area_wid.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

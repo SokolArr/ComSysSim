@@ -23,11 +23,11 @@ from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QCo
     QSpinBox, QStatusBar, QTabWidget, QVBoxLayout,
     QWidget)
 
-from plot_area_wid import plot_area_wid
-from plot_area_wid_21 import plot_area_wid_21
-from plot_area_wid_22 import plot_area_wid_22
-from plot_area_wid_23 import plot_area_wid_23
-from plot_area_wid_24 import plot_area_wid_24
+from ui_components.plot_area_wid import plot_area_wid
+from ui_components.plot_area_wid_21 import plot_area_wid_21
+from ui_components.plot_area_wid_22 import plot_area_wid_22
+from ui_components.plot_area_wid_23 import plot_area_wid_23
+from ui_components.plot_area_wid_24 import plot_area_wid_24
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -306,7 +306,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.label_2 = QLabel(self.scheme_PSK)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setPixmap(QPixmap(u"Pictures/Sheme1.png"))
+        self.label_2.setPixmap(QPixmap(u"../Pictures/Sheme1.png"))
         self.label_2.setScaledContents(True)
 
         self.horizontalLayout_5.addWidget(self.label_2)
@@ -785,7 +785,7 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setCurrentIndex(1)
         self.other_prefs_PSK.setCurrentIndex(1)
         self.other_prefs_QAM.setCurrentIndex(0)
-        self.graphs_tab_wid.setCurrentIndex(0)
+        self.graphs_tab_wid.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

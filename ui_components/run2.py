@@ -371,4 +371,4 @@ class Ui_MainWindow(object):
         self.label_graphs.setText(_translate("MainWindow", "Graphs"))
         self.actionRun.setText(_translate("MainWindow", "Run"))
         self.actionPlot.setText(_translate("MainWindow", "Plot"))
-from plot_area_wid import plot_area_wid
+from ui_components.plot_area_wid import plot_area_wid
