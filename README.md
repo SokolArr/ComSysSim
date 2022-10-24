@@ -27,9 +27,21 @@ pip install PyQt6
 ---
 ## Зависимости
 ### Pyqtgraph
-Для графиков
+Для графиков **matplotlib 3.6.1**
 ```
-pip install pyqtgraph
+pip install matplotlib
+```
+
+### Numpy
+Для работы с данными **numpy 1.23.4**
+```
+pip install numpy
+```
+
+### ModulationPy
+Цифровые модемы M-PSK и M-QAM **ModulationPy 0.1.8**
+```
+pip install ModulationPy
 ```
 
 ### pyqt6-tools
