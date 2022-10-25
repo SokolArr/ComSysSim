@@ -303,21 +303,20 @@ class MainFunc(QMainWindow):
 
 def check_input_QAM_len(self):
     M = int(self.combobox_coef_QAM.currentText())
-    if M < 65:
-        str_hint = str(2**M)
-    else:
-        str_hint = "Big number!"
-        
     if self.combobox_signal_type_QAM.currentText() == 'Message with letters':
         self.hint_QAM.setText('Длина может быть: ' + 'любой')
         
     if self.combobox_signal_type_QAM.currentText() == 'Binary code':
-        self.hint_QAM.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ",словарь: только 0 и 1")
+        self.hint_QAM.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ", словарь: только 0 и 1")
         
     if self.combobox_signal_type_QAM.currentText() == 'Only integers':
-        self.hint_QAM.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M+1))   
+        self.hint_QAM.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M+1))
+        
+    if self.QAM_input.text() == "":
+        self.hint_QAM.setText('СООБЩЕНИЕ НЕ МОЖЕТ БЫТЬ ПУСТЫМ!')
+        print("void QAM inp")   
                 
-def check_input_PSK_len(self):
+def check_input_PSK_len(self):  
     M = int(self.combobox_coef_PSK.currentText())
     if self.combobox_signal_type_PSK.currentText() == 'Message with letters':
         self.hint_PSK.setText('Длина может быть: ' + 'любой')
@@ -326,7 +325,12 @@ def check_input_PSK_len(self):
         self.hint_PSK.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ", словарь: только 0 и 1")
         
     if self.combobox_signal_type_PSK.currentText() == 'Only integers':
-        self.hint_PSK.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M-1))       
+        self.hint_PSK.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M-1))
+        
+    if self.PSK_input.text() == "":
+        self.hint_PSK.setText('СООБЩЕНИЕ НЕ МОЖЕТ БЫТЬ ПУСТЫМ!')
+        print("void PSK inp")
+           
 
 
 def check_combobox_QAM(self):

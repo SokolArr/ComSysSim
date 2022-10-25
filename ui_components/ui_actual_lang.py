@@ -20,8 +20,8 @@ from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QCo
     QGroupBox, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QMenuBar, QPlainTextEdit, QProgressBar,
     QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QSpinBox, QStatusBar, QTabWidget, QVBoxLayout,
-    QWidget)
+    QSpinBox, QStatusBar, QTabWidget, QTextBrowser,
+    QVBoxLayout, QWidget)
 
 from ui_components.plot_area_wid import plot_area_wid
 from ui_components.plot_area_wid_21 import plot_area_wid_21
@@ -51,8 +51,18 @@ class Ui_MainWindow(object):
         self.instruct_tab.setObjectName(u"instruct_tab")
         self.verticalLayout_8 = QVBoxLayout(self.instruct_tab)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.textBrowser = QTextBrowser(self.instruct_tab)
+        self.textBrowser.setObjectName(u"textBrowser")
+
+        self.verticalLayout_8.addWidget(self.textBrowser)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_8.addItem(self.verticalSpacer_2)
+
         self.label = QLabel(self.instruct_tab)
         self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_8.addWidget(self.label)
 
@@ -872,7 +882,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.left_tab_wid.setCurrentIndex(1)
+        self.left_tab_wid.setCurrentIndex(0)
         self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
         self.graphs_tab_wid.setCurrentIndex(0)
@@ -885,13 +895,23 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"ComSysSim", None))
         self.actionRun.setText(QCoreApplication.translate("MainWindow", u"Run", None))
         self.actionPlot.setText(QCoreApplication.translate("MainWindow", u"Plot", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Version 0.1 - 2022", None))
+        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600; color:#5e9ca0;\">	\u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u043c\u043e\u0434\u0435\u043b\u0438 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0439 \u0441\u0432\u044f\u0437\u0438 \u0434\u043b\u044f \u0438\u0437\u0443\u0447\u0435\u043d\u0438\u044f\u00a0 \u0441\u043f\u043e\u0441\u043e\u0431\u043e\u0432 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438 \u0441\u0438\u0433\u043d\u0430\u043b\u043e\u0432!</span><"
+                        "/p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a name=\"user-content-\u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f\"></a><span style=\" font-size:11pt; font-weight:600;\">\u0420</span><span style=\" font-size:11pt; font-weight:600;\">\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  \u2714 \u041f\u041e \u043e\u0441\u043d\u043e\u0432\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u043e\u0439 \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0435 PyQt</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  \u2714"
+                        " \u0420\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d \u0440\u0435\u0436\u0438\u043c \u0441\u0438\u043c\u0443\u043b\u044f\u0446\u0438\u0438 \u0438 \u0438\u0437\u043c\u0435\u043d\u044f\u0435\u043c\u044b\u043c\u0438 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u043c\u0438 (\u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u043c\u0438)</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Version 0.3 -10.2022", None))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f", None))
         self.params_wid_PSK.setTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.message_PSK_lable.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432 \u0432 \u0441\u0442\u0440\u043e\u043a\u0435:", None))
         self.length_PSK_mes.setText(QCoreApplication.translate("MainWindow", u"--", None))
-        self.PSK_input.setText(QCoreApplication.translate("MainWindow", u"Type here", None))
+        self.PSK_input.setText("")
         self.hint_PSK.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u041d\u0430\u0447\u043d\u0438 \u0432\u0432\u043e\u0434\u0438\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0438 \u0441\u043b\u0435\u0434\u0438 \u0437\u0430 \u043f\u043e\u0434\u0441\u043a\u0430\u0437\u043a\u043e\u0439</span></p></body></html>", None))
         self.signal_type_mess_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0430", None))
         self.combobox_signal_type_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"Message with letters", None))
@@ -936,9 +956,9 @@ class Ui_MainWindow(object):
 
         self.checkBox_show_sig_cons_psk.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u0438\u0433\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u0441\u043e\u0437\u0432\u0435\u0437\u0434\u0438\u0435", None))
         self.sid_PSK.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u0438\u0434", None))
-        self.label_length_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u0430", None))
+        self.label_length_PSK.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u043b\u0438\u0441\u0442\u0432\u043e \u0447\u0438\u0441\u0435\u043b", None))
         self.all_numbers_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u044f \u0431\u0438\u043d\u0430\u0440\u043d\u043e\u0433\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0433\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", None))
-        self.pushButton_generate_sid_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0441\u0438\u0434\u0430", None))
+        self.pushButton_generate_sid_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u043e\u0433\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", None))
         self.plainText_sid_PSK.setPlainText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0436\u043c\u0438 \u043d\u0430 \u043a\u043d\u043e\u043f\u043a\u0443 \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u0441\u0438\u0434\u0430", None))
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.other_prefs_wid_PSK), QCoreApplication.translate("MainWindow", u"\u0414\u0440\u0443\u0433\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.pic_PSK.setText("")
@@ -950,7 +970,7 @@ class Ui_MainWindow(object):
         self.message_QAM_lable.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432 \u0432 \u0441\u0442\u0440\u043e\u043a\u0435:", None))
         self.length_QAM_mes.setText(QCoreApplication.translate("MainWindow", u"--", None))
-        self.QAM_input.setText(QCoreApplication.translate("MainWindow", u"Type here", None))
+        self.QAM_input.setText("")
         self.hint_QAM.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u041d\u0430\u0447\u043d\u0438 \u0432\u0432\u043e\u0434\u0438\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0438 \u0441\u043b\u0435\u0434\u0438 \u0437\u0430 \u043f\u043e\u0434\u0441\u043a\u0430\u0437\u043a\u043e\u0439</span></p></body></html>", None))
         self.signal_type_mess_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0430", None))
         self.combobox_signal_type_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"Message with letters", None))
@@ -988,9 +1008,9 @@ class Ui_MainWindow(object):
 
         self.checkBox_show_sig_cons_qam.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u0438\u0433\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u0441\u043e\u0437\u0432\u0435\u0437\u0434\u0438\u0435", None))
         self.sid_QAM.setTitle(QCoreApplication.translate("MainWindow", u"\u0421\u0438\u0434", None))
-        self.label_length_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u0430", None))
+        self.label_length_QAM.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u043b\u0438\u0441\u0442\u0432\u043e \u0447\u0438\u0441\u0435\u043b", None))
         self.all_numbers_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u044f \u0431\u0438\u043d\u0430\u0440\u043d\u043e\u0433\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0433\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", None))
-        self.pushButton_generate_sid_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0441\u0438\u0434\u0430", None))
+        self.pushButton_generate_sid_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u043e\u0433\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", None))
         self.plainText_sid_QAM.setPlainText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0436\u043c\u0438 \u043d\u0430 \u043a\u043d\u043e\u043f\u043a\u0443 \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u0441\u0438\u0434\u0430", None))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.other_prefs_wid_QAM), QCoreApplication.translate("MainWindow", u"\u0414\u0440\u0443\u0433\u0438\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.pic_QAM.setText("")
