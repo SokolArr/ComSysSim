@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1400, 967)
+        MainWindow.resize(1470, 1224)
         MainWindow.setMinimumSize(QSize(1400, 800))
         MainWindow.setTabShape(QTabWidget.Triangular)
         self.actionRun = QAction(MainWindow)
@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.main_params_PSK_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_PSK = QWidget()
         self.scrollAreaWidgetContents_PSK.setObjectName(u"scrollAreaWidgetContents_PSK")
-        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, 0, 419, 487))
+        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, 0, 419, 506))
         self.verticalLayout_35 = QVBoxLayout(self.scrollAreaWidgetContents_PSK)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
         self.message_PSK = QWidget(self.scrollAreaWidgetContents_PSK)
@@ -122,6 +122,16 @@ class Ui_MainWindow(object):
         self.PSK_input.setClearButtonEnabled(True)
 
         self.verticalLayout_36.addWidget(self.PSK_input)
+
+        self.label_4 = QLabel(self.message_PSK)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMaximumSize(QSize(16777215, 15))
+        font1 = QFont()
+        font1.setItalic(True)
+        self.label_4.setFont(font1)
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_36.addWidget(self.label_4)
 
 
         self.verticalLayout_35.addWidget(self.message_PSK)
@@ -302,9 +312,9 @@ class Ui_MainWindow(object):
 
         self.all_numbers_PSK = QCheckBox(self.sid_PSK)
         self.all_numbers_PSK.setObjectName(u"all_numbers_PSK")
-        font1 = QFont()
-        font1.setPointSize(10)
-        self.all_numbers_PSK.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(10)
+        self.all_numbers_PSK.setFont(font2)
 
         self.verticalLayout_42.addWidget(self.all_numbers_PSK)
 
@@ -357,11 +367,11 @@ class Ui_MainWindow(object):
 
         self.apply_PSK_but = QCheckBox(self.widget_2)
         self.apply_PSK_but.setObjectName(u"apply_PSK_but")
-        font2 = QFont()
-        font2.setPointSize(12)
-        font2.setBold(False)
-        font2.setUnderline(False)
-        self.apply_PSK_but.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(12)
+        font3.setBold(False)
+        font3.setUnderline(False)
+        self.apply_PSK_but.setFont(font3)
 
         self.horizontalLayout_3.addWidget(self.apply_PSK_but)
 
@@ -403,7 +413,7 @@ class Ui_MainWindow(object):
         self.main_params_QAM_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_QAM = QWidget()
         self.scrollAreaWidgetContents_QAM.setObjectName(u"scrollAreaWidgetContents_QAM")
-        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 419, 441))
+        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 419, 460))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents_QAM)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.message_QAM = QWidget(self.scrollAreaWidgetContents_QAM)
@@ -416,7 +426,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.message_QAM_lable = QLabel(self.widget_5)
         self.message_QAM_lable.setObjectName(u"message_QAM_lable")
-        self.message_QAM_lable.setFont(font)
+        font4 = QFont()
+        font4.setPointSize(11)
+        self.message_QAM_lable.setFont(font4)
 
         self.horizontalLayout_11.addWidget(self.message_QAM_lable)
 
@@ -445,6 +457,14 @@ class Ui_MainWindow(object):
         self.QAM_input.setClearButtonEnabled(True)
 
         self.verticalLayout_15.addWidget(self.QAM_input)
+
+        self.label_5 = QLabel(self.message_QAM)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setMaximumSize(QSize(16777215, 15))
+        self.label_5.setFont(font1)
+        self.label_5.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_15.addWidget(self.label_5)
 
 
         self.verticalLayout_14.addWidget(self.message_QAM)
@@ -608,7 +628,7 @@ class Ui_MainWindow(object):
 
         self.all_numbers_QAM = QCheckBox(self.sid_QAM)
         self.all_numbers_QAM.setObjectName(u"all_numbers_QAM")
-        self.all_numbers_QAM.setFont(font1)
+        self.all_numbers_QAM.setFont(font2)
 
         self.verticalLayout_51.addWidget(self.all_numbers_QAM)
 
@@ -661,11 +681,11 @@ class Ui_MainWindow(object):
 
         self.apply_QAM_but = QCheckBox(self.widget)
         self.apply_QAM_but.setObjectName(u"apply_QAM_but")
-        font3 = QFont()
-        font3.setPointSize(12)
-        font3.setBold(False)
-        font3.setItalic(False)
-        self.apply_QAM_but.setFont(font3)
+        font5 = QFont()
+        font5.setPointSize(12)
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.apply_QAM_but.setFont(font5)
 
         self.horizontalLayout.addWidget(self.apply_QAM_but)
 
@@ -736,12 +756,12 @@ class Ui_MainWindow(object):
         self.graphs_tab_wid.addTab(self.signal_tab, "")
         self.Sub = QWidget()
         self.Sub.setObjectName(u"Sub")
-        self.horizontalLayout_4 = QHBoxLayout(self.Sub)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.verticalLayout_20 = QVBoxLayout(self.Sub)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.plot_area_wid = plot_area_wid(self.Sub)
         self.plot_area_wid.setObjectName(u"plot_area_wid")
 
-        self.horizontalLayout_4.addWidget(self.plot_area_wid)
+        self.verticalLayout_20.addWidget(self.plot_area_wid)
 
         self.graphs_tab_wid.addTab(self.Sub, "")
         self.report_tab = QWidget()
@@ -756,11 +776,12 @@ class Ui_MainWindow(object):
 
         self.scrollArea_message = QScrollArea(self.report_tab)
         self.scrollArea_message.setObjectName(u"scrollArea_message")
-        self.scrollArea_message.setMaximumSize(QSize(16777215, 100))
+        self.scrollArea_message.setMinimumSize(QSize(0, 0))
+        self.scrollArea_message.setMaximumSize(QSize(16777215, 200))
         self.scrollArea_message.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 832, 98))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 902, 198))
         self.verticalLayout_52 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_52.setObjectName(u"verticalLayout_52")
         self.groupBox = QGroupBox(self.scrollAreaWidgetContents_2)
@@ -769,6 +790,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_54.setObjectName(u"verticalLayout_54")
         self.message_template = QLabel(self.groupBox)
         self.message_template.setObjectName(u"message_template")
+        self.message_template.setMinimumSize(QSize(0, 100))
+        self.message_template.setMaximumSize(QSize(16777215, 200))
         self.message_template.setFont(font)
         self.message_template.setTextFormat(Qt.RichText)
         self.message_template.setWordWrap(True)
@@ -784,15 +807,18 @@ class Ui_MainWindow(object):
 
         self.scrollArea_dmessage = QScrollArea(self.report_tab)
         self.scrollArea_dmessage.setObjectName(u"scrollArea_dmessage")
-        self.scrollArea_dmessage.setMaximumSize(QSize(16777215, 100))
+        self.scrollArea_dmessage.setMinimumSize(QSize(0, 0))
+        self.scrollArea_dmessage.setMaximumSize(QSize(16777215, 200))
         self.scrollArea_dmessage.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 832, 98))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 902, 198))
         self.verticalLayout_19 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.groupBox_2 = QGroupBox(self.scrollAreaWidgetContents)
         self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setMinimumSize(QSize(0, 100))
+        self.groupBox_2.setMaximumSize(QSize(16777215, 200))
         self.verticalLayout_53 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_53.setObjectName(u"verticalLayout_53")
         self.dmessage_template = QLabel(self.groupBox_2)
@@ -831,7 +857,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1400, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1470, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -859,12 +885,13 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432:", None))
         self.length_PSK_mes.setText(QCoreApplication.translate("MainWindow", u"--", None))
         self.PSK_input.setText(QCoreApplication.translate("MainWindow", u"1 0 1 0 1 0 1 0", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u0434\u043b\u0438\u043d\u0430 \u0434\u043e\u043b\u0436\u043d\u0430 \u0431\u044b\u0442\u044c \u043a\u0440\u0430\u0442\u043d\u0430 log2(M)</span></p></body></html>", None))
         self.signal_type_mess_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0430", None))
         self.combobox_signal_type_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"Only integers", None))
         self.combobox_signal_type_PSK.setItemText(1, QCoreApplication.translate("MainWindow", u"Binary code", None))
         self.combobox_signal_type_PSK.setItemText(2, QCoreApplication.translate("MainWindow", u"Message with letters", None))
 
-        self.mod_label_PSK.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438", None))
+        self.mod_label_PSK.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438 (M)", None))
         self.combobox_coef_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"2", None))
         self.combobox_coef_PSK.setItemText(1, QCoreApplication.translate("MainWindow", u"4", None))
         self.combobox_coef_PSK.setItemText(2, QCoreApplication.translate("MainWindow", u"8", None))
@@ -917,12 +944,13 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432:", None))
         self.length_QAM_mes.setText(QCoreApplication.translate("MainWindow", u"--", None))
         self.QAM_input.setText(QCoreApplication.translate("MainWindow", u"1 0 1 0 1 0 1 0", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u0434\u043b\u0438\u043d\u0430 \u0434\u043e\u043b\u0436\u043d\u0430 \u0431\u044b\u0442\u044c \u0440\u0430\u0432\u043d\u0430 2 \u0432 \u0441\u0442\u0435\u043f\u0435\u043d\u0438 (M-1)</span></p></body></html>", None))
         self.signal_type_mess_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0430", None))
         self.combobox_signal_type_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"Only integers", None))
         self.combobox_signal_type_QAM.setItemText(1, QCoreApplication.translate("MainWindow", u"Binary code", None))
         self.combobox_signal_type_QAM.setItemText(2, QCoreApplication.translate("MainWindow", u"Message with letters", None))
 
-        self.mod_label_QAM.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438", None))
+        self.mod_label_QAM.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438 (M)", None))
         self.combobox_coef_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"4", None))
         self.combobox_coef_QAM.setItemText(1, QCoreApplication.translate("MainWindow", u"16", None))
         self.combobox_coef_QAM.setItemText(2, QCoreApplication.translate("MainWindow", u"64", None))

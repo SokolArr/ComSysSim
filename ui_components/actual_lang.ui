@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1400</width>
-    <height>967</height>
+    <width>1470</width>
+    <height>1224</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -92,7 +92,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>487</height>
+                   <height>506</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
@@ -165,6 +165,27 @@
                        </property>
                       </widget>
                      </item>
+                     <item>
+                      <widget class="QLabel" name="label_4">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>15</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <italic>true</italic>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;длина должна быть кратна log2(M)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
                     </layout>
                    </widget>
                   </item>
@@ -224,7 +245,7 @@
                      <item>
                       <widget class="QLabel" name="mod_label_PSK">
                        <property name="text">
-                        <string>Коэффициент модуляции</string>
+                        <string>Коэффициент модуляции (M)</string>
                        </property>
                       </widget>
                      </item>
@@ -741,7 +762,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>441</height>
+                   <height>460</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -755,7 +776,7 @@
                          <widget class="QLabel" name="message_QAM_lable">
                           <property name="font">
                            <font>
-                            <pointsize>12</pointsize>
+                            <pointsize>11</pointsize>
                            </font>
                           </property>
                           <property name="text">
@@ -811,6 +832,27 @@
                        </property>
                        <property name="clearButtonEnabled">
                         <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_5">
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>15</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <italic>true</italic>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;длина должна быть равна 2 в степени (M-1)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
                        </property>
                       </widget>
                      </item>
@@ -873,7 +915,7 @@
                      <item>
                       <widget class="QLabel" name="mod_label_QAM">
                        <property name="text">
-                        <string>Коэффициент модуляции</string>
+                        <string>Коэффициент модуляции (M)</string>
                        </property>
                       </widget>
                      </item>
@@ -1334,7 +1376,7 @@
           <attribute name="title">
            <string>Вычтенный сигнал</string>
           </attribute>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <layout class="QVBoxLayout" name="verticalLayout_20">
            <item>
             <widget class="plot_area_wid" name="plot_area_wid" native="true"/>
            </item>
@@ -1359,10 +1401,16 @@
            </item>
            <item>
             <widget class="QScrollArea" name="scrollArea_message">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>100</height>
+               <height>200</height>
               </size>
              </property>
              <property name="widgetResizable">
@@ -1373,8 +1421,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>832</width>
-                <height>98</height>
+                <width>902</width>
+                <height>198</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
@@ -1386,6 +1434,18 @@
                  <layout class="QVBoxLayout" name="verticalLayout_54">
                   <item>
                    <widget class="QLabel" name="message_template">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>100</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>200</height>
+                     </size>
+                    </property>
                     <property name="font">
                      <font>
                       <pointsize>12</pointsize>
@@ -1411,10 +1471,16 @@
            </item>
            <item>
             <widget class="QScrollArea" name="scrollArea_dmessage">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>100</height>
+               <height>200</height>
               </size>
              </property>
              <property name="widgetResizable">
@@ -1425,13 +1491,25 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>832</width>
-                <height>98</height>
+                <width>902</width>
+                <height>198</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
                <item>
                 <widget class="QGroupBox" name="groupBox_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>200</height>
+                  </size>
+                 </property>
                  <property name="title">
                   <string>Демодулированное сообщение</string>
                  </property>
@@ -1503,7 +1581,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1400</width>
+     <width>1470</width>
      <height>21</height>
     </rect>
    </property>

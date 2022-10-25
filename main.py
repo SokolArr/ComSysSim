@@ -56,7 +56,9 @@ class MainFunc(QMainWindow):
         self.progressBar_QAM.setValue(0)
         
         # self.addToolBar(NavigationToolbar(self.plot_constel_psk.canvas, self))
+        self.addToolBar("NavigationToolbar(self.plot_area_wid.canvas, self)")
         # self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
+
         
     def apply_PSK_but_handler(self):
         if self.apply_PSK_but.isChecked() == True:
@@ -329,8 +331,6 @@ class MainFunc(QMainWindow):
         
     def QAM_input_change_handler(self):
         self.length_QAM_mes.setText(str(self.QAM_input.text().__len__()))
-    
-
 
 
 def check_combobox_QAM(self):
