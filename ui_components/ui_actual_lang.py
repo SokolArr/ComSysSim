@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1470, 1224)
+        MainWindow.resize(1429, 1033)
         MainWindow.setMinimumSize(QSize(1400, 800))
         MainWindow.setTabShape(QTabWidget.Triangular)
         self.actionRun = QAction(MainWindow)
@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.main_params_PSK_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_PSK = QWidget()
         self.scrollAreaWidgetContents_PSK.setObjectName(u"scrollAreaWidgetContents_PSK")
-        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, 0, 419, 506))
+        self.scrollAreaWidgetContents_PSK.setGeometry(QRect(0, 0, 419, 537))
         self.verticalLayout_35 = QVBoxLayout(self.scrollAreaWidgetContents_PSK)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
         self.message_PSK = QWidget(self.scrollAreaWidgetContents_PSK)
@@ -89,10 +89,11 @@ class Ui_MainWindow(object):
         self.message_PSK_wid.setObjectName(u"message_PSK_wid")
         self.horizontalLayout_10 = QHBoxLayout(self.message_PSK_wid)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(0, -1, -1, 0)
         self.message_PSK_lable = QLabel(self.message_PSK_wid)
         self.message_PSK_lable.setObjectName(u"message_PSK_lable")
         font = QFont()
-        font.setPointSize(12)
+        font.setPointSize(11)
         self.message_PSK_lable.setFont(font)
 
         self.horizontalLayout_10.addWidget(self.message_PSK_lable)
@@ -117,21 +118,25 @@ class Ui_MainWindow(object):
 
         self.PSK_input = QLineEdit(self.message_PSK)
         self.PSK_input.setObjectName(u"PSK_input")
-        self.PSK_input.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(12)
+        self.PSK_input.setFont(font1)
         self.PSK_input.setFrame(True)
         self.PSK_input.setClearButtonEnabled(True)
 
         self.verticalLayout_36.addWidget(self.PSK_input)
 
-        self.label_4 = QLabel(self.message_PSK)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMaximumSize(QSize(16777215, 15))
-        font1 = QFont()
-        font1.setItalic(True)
-        self.label_4.setFont(font1)
-        self.label_4.setAlignment(Qt.AlignCenter)
+        self.hint_PSK = QLabel(self.message_PSK)
+        self.hint_PSK.setObjectName(u"hint_PSK")
+        self.hint_PSK.setMaximumSize(QSize(16777215, 100))
+        font2 = QFont()
+        font2.setItalic(True)
+        self.hint_PSK.setFont(font2)
+        self.hint_PSK.setTextFormat(Qt.RichText)
+        self.hint_PSK.setAlignment(Qt.AlignCenter)
+        self.hint_PSK.setWordWrap(True)
 
-        self.verticalLayout_36.addWidget(self.label_4)
+        self.verticalLayout_36.addWidget(self.hint_PSK)
 
 
         self.verticalLayout_35.addWidget(self.message_PSK)
@@ -289,7 +294,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
         self.checkBox_show_sig_cons_psk = QCheckBox(self.other_prefs_wid_PSK)
         self.checkBox_show_sig_cons_psk.setObjectName(u"checkBox_show_sig_cons_psk")
-        self.checkBox_show_sig_cons_psk.setFont(font)
+        self.checkBox_show_sig_cons_psk.setFont(font1)
 
         self.verticalLayout_39.addWidget(self.checkBox_show_sig_cons_psk)
 
@@ -312,9 +317,9 @@ class Ui_MainWindow(object):
 
         self.all_numbers_PSK = QCheckBox(self.sid_PSK)
         self.all_numbers_PSK.setObjectName(u"all_numbers_PSK")
-        font2 = QFont()
-        font2.setPointSize(10)
-        self.all_numbers_PSK.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(10)
+        self.all_numbers_PSK.setFont(font3)
 
         self.verticalLayout_42.addWidget(self.all_numbers_PSK)
 
@@ -352,7 +357,7 @@ class Ui_MainWindow(object):
         self.plot_PSK = QPushButton(self.main_PSK_wid)
         self.plot_PSK.setObjectName(u"plot_PSK")
         self.plot_PSK.setMinimumSize(QSize(0, 40))
-        self.plot_PSK.setFont(font)
+        self.plot_PSK.setFont(font1)
 
         self.verticalLayout_34.addWidget(self.plot_PSK)
 
@@ -367,11 +372,11 @@ class Ui_MainWindow(object):
 
         self.apply_PSK_but = QCheckBox(self.widget_2)
         self.apply_PSK_but.setObjectName(u"apply_PSK_but")
-        font3 = QFont()
-        font3.setPointSize(12)
-        font3.setBold(False)
-        font3.setUnderline(False)
-        self.apply_PSK_but.setFont(font3)
+        font4 = QFont()
+        font4.setPointSize(12)
+        font4.setBold(False)
+        font4.setUnderline(False)
+        self.apply_PSK_but.setFont(font4)
 
         self.horizontalLayout_3.addWidget(self.apply_PSK_but)
 
@@ -413,7 +418,7 @@ class Ui_MainWindow(object):
         self.main_params_QAM_wid.setWidgetResizable(True)
         self.scrollAreaWidgetContents_QAM = QWidget()
         self.scrollAreaWidgetContents_QAM.setObjectName(u"scrollAreaWidgetContents_QAM")
-        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 419, 460))
+        self.scrollAreaWidgetContents_QAM.setGeometry(QRect(0, 0, 419, 498))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents_QAM)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.message_QAM = QWidget(self.scrollAreaWidgetContents_QAM)
@@ -424,11 +429,10 @@ class Ui_MainWindow(object):
         self.widget_5.setObjectName(u"widget_5")
         self.horizontalLayout_11 = QHBoxLayout(self.widget_5)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, -1, -1, 0)
         self.message_QAM_lable = QLabel(self.widget_5)
         self.message_QAM_lable.setObjectName(u"message_QAM_lable")
-        font4 = QFont()
-        font4.setPointSize(11)
-        self.message_QAM_lable.setFont(font4)
+        self.message_QAM_lable.setFont(font)
 
         self.horizontalLayout_11.addWidget(self.message_QAM_lable)
 
@@ -452,19 +456,22 @@ class Ui_MainWindow(object):
 
         self.QAM_input = QLineEdit(self.message_QAM)
         self.QAM_input.setObjectName(u"QAM_input")
-        self.QAM_input.setFont(font)
+        self.QAM_input.setFont(font1)
         self.QAM_input.setFrame(True)
         self.QAM_input.setClearButtonEnabled(True)
 
         self.verticalLayout_15.addWidget(self.QAM_input)
 
-        self.label_5 = QLabel(self.message_QAM)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setMaximumSize(QSize(16777215, 15))
-        self.label_5.setFont(font1)
-        self.label_5.setAlignment(Qt.AlignCenter)
+        self.hint_QAM = QLabel(self.message_QAM)
+        self.hint_QAM.setObjectName(u"hint_QAM")
+        self.hint_QAM.setMinimumSize(QSize(0, 20))
+        self.hint_QAM.setMaximumSize(QSize(16777215, 100))
+        self.hint_QAM.setFont(font2)
+        self.hint_QAM.setTextFormat(Qt.RichText)
+        self.hint_QAM.setAlignment(Qt.AlignCenter)
+        self.hint_QAM.setWordWrap(True)
 
-        self.verticalLayout_15.addWidget(self.label_5)
+        self.verticalLayout_15.addWidget(self.hint_QAM)
 
 
         self.verticalLayout_14.addWidget(self.message_QAM)
@@ -605,7 +612,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
         self.checkBox_show_sig_cons_qam = QCheckBox(self.other_prefs_wid_QAM)
         self.checkBox_show_sig_cons_qam.setObjectName(u"checkBox_show_sig_cons_qam")
-        self.checkBox_show_sig_cons_qam.setFont(font)
+        self.checkBox_show_sig_cons_qam.setFont(font1)
 
         self.verticalLayout_40.addWidget(self.checkBox_show_sig_cons_qam)
 
@@ -628,7 +635,7 @@ class Ui_MainWindow(object):
 
         self.all_numbers_QAM = QCheckBox(self.sid_QAM)
         self.all_numbers_QAM.setObjectName(u"all_numbers_QAM")
-        self.all_numbers_QAM.setFont(font2)
+        self.all_numbers_QAM.setFont(font3)
 
         self.verticalLayout_51.addWidget(self.all_numbers_QAM)
 
@@ -666,7 +673,7 @@ class Ui_MainWindow(object):
         self.plot_QAM = QPushButton(self.main_QAM_wid)
         self.plot_QAM.setObjectName(u"plot_QAM")
         self.plot_QAM.setMinimumSize(QSize(0, 40))
-        self.plot_QAM.setFont(font)
+        self.plot_QAM.setFont(font1)
 
         self.verticalLayout_13.addWidget(self.plot_QAM)
 
@@ -770,7 +777,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.type_mod = QLabel(self.report_tab)
         self.type_mod.setObjectName(u"type_mod")
-        self.type_mod.setFont(font)
+        self.type_mod.setFont(font1)
 
         self.verticalLayout_18.addWidget(self.type_mod)
 
@@ -781,7 +788,7 @@ class Ui_MainWindow(object):
         self.scrollArea_message.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 902, 198))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 861, 198))
         self.verticalLayout_52 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_52.setObjectName(u"verticalLayout_52")
         self.groupBox = QGroupBox(self.scrollAreaWidgetContents_2)
@@ -792,7 +799,7 @@ class Ui_MainWindow(object):
         self.message_template.setObjectName(u"message_template")
         self.message_template.setMinimumSize(QSize(0, 100))
         self.message_template.setMaximumSize(QSize(16777215, 200))
-        self.message_template.setFont(font)
+        self.message_template.setFont(font1)
         self.message_template.setTextFormat(Qt.RichText)
         self.message_template.setWordWrap(True)
 
@@ -812,7 +819,7 @@ class Ui_MainWindow(object):
         self.scrollArea_dmessage.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 902, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 861, 198))
         self.verticalLayout_19 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.groupBox_2 = QGroupBox(self.scrollAreaWidgetContents)
@@ -823,7 +830,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_53.setObjectName(u"verticalLayout_53")
         self.dmessage_template = QLabel(self.groupBox_2)
         self.dmessage_template.setObjectName(u"dmessage_template")
-        self.dmessage_template.setFont(font)
+        self.dmessage_template.setFont(font1)
         self.dmessage_template.setTextFormat(Qt.RichText)
         self.dmessage_template.setWordWrap(True)
 
@@ -838,7 +845,7 @@ class Ui_MainWindow(object):
 
         self.label_bit_error = QLabel(self.report_tab)
         self.label_bit_error.setObjectName(u"label_bit_error")
-        self.label_bit_error.setFont(font)
+        self.label_bit_error.setFont(font1)
         self.label_bit_error.setCursor(QCursor(Qt.IBeamCursor))
 
         self.verticalLayout_18.addWidget(self.label_bit_error)
@@ -857,7 +864,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1470, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1429, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -865,7 +872,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.left_tab_wid.setCurrentIndex(2)
+        self.left_tab_wid.setCurrentIndex(1)
         self.other_prefs_PSK.setCurrentIndex(0)
         self.other_prefs_QAM.setCurrentIndex(0)
         self.graphs_tab_wid.setCurrentIndex(0)
@@ -882,14 +889,14 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f", None))
         self.params_wid_PSK.setTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.message_PSK_lable.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432:", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432 \u0432 \u0441\u0442\u0440\u043e\u043a\u0435:", None))
         self.length_PSK_mes.setText(QCoreApplication.translate("MainWindow", u"--", None))
-        self.PSK_input.setText(QCoreApplication.translate("MainWindow", u"1 0 1 0 1 0 1 0", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u0434\u043b\u0438\u043d\u0430 \u0434\u043e\u043b\u0436\u043d\u0430 \u0431\u044b\u0442\u044c \u043a\u0440\u0430\u0442\u043d\u0430 log2(M)</span></p></body></html>", None))
+        self.PSK_input.setText(QCoreApplication.translate("MainWindow", u"Type here", None))
+        self.hint_PSK.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u041d\u0430\u0447\u043d\u0438 \u0432\u0432\u043e\u0434\u0438\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0438 \u0441\u043b\u0435\u0434\u0438 \u0437\u0430 \u043f\u043e\u0434\u0441\u043a\u0430\u0437\u043a\u043e\u0439</span></p></body></html>", None))
         self.signal_type_mess_PSK.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0430", None))
-        self.combobox_signal_type_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"Only integers", None))
-        self.combobox_signal_type_PSK.setItemText(1, QCoreApplication.translate("MainWindow", u"Binary code", None))
-        self.combobox_signal_type_PSK.setItemText(2, QCoreApplication.translate("MainWindow", u"Message with letters", None))
+        self.combobox_signal_type_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"Message with letters", None))
+        self.combobox_signal_type_PSK.setItemText(1, QCoreApplication.translate("MainWindow", u"Only integers", None))
+        self.combobox_signal_type_PSK.setItemText(2, QCoreApplication.translate("MainWindow", u"Binary code", None))
 
         self.mod_label_PSK.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438 (M)", None))
         self.combobox_coef_PSK.setItemText(0, QCoreApplication.translate("MainWindow", u"2", None))
@@ -941,14 +948,14 @@ class Ui_MainWindow(object):
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.PSK_tab), QCoreApplication.translate("MainWindow", u"PSK \u041c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u044f", None))
         self.params_wid_QAM.setTitle(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         self.message_QAM_lable.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432:", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432 \u0432 \u0441\u0442\u0440\u043e\u043a\u0435:", None))
         self.length_QAM_mes.setText(QCoreApplication.translate("MainWindow", u"--", None))
-        self.QAM_input.setText(QCoreApplication.translate("MainWindow", u"1 0 1 0 1 0 1 0", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u0434\u043b\u0438\u043d\u0430 \u0434\u043e\u043b\u0436\u043d\u0430 \u0431\u044b\u0442\u044c \u0440\u0430\u0432\u043d\u0430 2 \u0432 \u0441\u0442\u0435\u043f\u0435\u043d\u0438 (M-1)</span></p></body></html>", None))
+        self.QAM_input.setText(QCoreApplication.translate("MainWindow", u"Type here", None))
+        self.hint_QAM.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#a81818;\">\u041d\u0430\u0447\u043d\u0438 \u0432\u0432\u043e\u0434\u0438\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0438 \u0441\u043b\u0435\u0434\u0438 \u0437\u0430 \u043f\u043e\u0434\u0441\u043a\u0430\u0437\u043a\u043e\u0439</span></p></body></html>", None))
         self.signal_type_mess_QAM.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0430", None))
-        self.combobox_signal_type_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"Only integers", None))
-        self.combobox_signal_type_QAM.setItemText(1, QCoreApplication.translate("MainWindow", u"Binary code", None))
-        self.combobox_signal_type_QAM.setItemText(2, QCoreApplication.translate("MainWindow", u"Message with letters", None))
+        self.combobox_signal_type_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"Message with letters", None))
+        self.combobox_signal_type_QAM.setItemText(1, QCoreApplication.translate("MainWindow", u"Only integers", None))
+        self.combobox_signal_type_QAM.setItemText(2, QCoreApplication.translate("MainWindow", u"Binary code", None))
 
         self.mod_label_QAM.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f\u0446\u0438\u0438 (M)", None))
         self.combobox_coef_QAM.setItemText(0, QCoreApplication.translate("MainWindow", u"4", None))

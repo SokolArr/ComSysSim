@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 noise_coef = 1
 modem = QAMModem(16, 
-                 bin_input=False,
+                 bin_input=True,
                  soft_decision=False,
                  bin_output=True)
 
@@ -22,7 +22,7 @@ modem = QAMModem(16,
 # for i in range(n):
 #     rand_list.append(random.randint(0,3))
 
-msg = np.array([1,2,3,3,3,2,1,0])
+msg = np.array([1,1,0,1])
 
 print (msg)
 

@@ -55,11 +55,6 @@ class MainFunc(QMainWindow):
         self.progressBar_PSK.setValue(0)
         self.progressBar_QAM.setValue(0)
         
-        # self.addToolBar(NavigationToolbar(self.plot_constel_psk.canvas, self))
-        self.addToolBar("NavigationToolbar(self.plot_area_wid.canvas, self)")
-        # self.addToolBar(NavigationToolbar(self.plot_area_wid.canvas, self))
-
-        
     def apply_PSK_but_handler(self):
         if self.apply_PSK_but.isChecked() == True:
             self.plot_PSK.setEnabled(True)
@@ -280,57 +275,58 @@ class MainFunc(QMainWindow):
             self.progressBar_PSK.setValue(90)
             draw_14(self, n_mod_reals, n_mod_imags, "PSK")
             
-            self.progressBar_PSK.setValue(100)
+            self.progressBar_PSK.setValue(100)      
             
             
     def signal_QAM_handler(self):
-        if int(self.combobox_coef_QAM.currentText()) < 32:
-            pow = int(self.combobox_coef_QAM.currentText())
-            self.QAM_input.setMaxLength(2**(pow-1)* 2)      
-        else:
-            self.QAM_input.setMaxLength(32000)     
-                
-        if self.combobox_signal_type_QAM.currentText() == 'Binary code':
-                self.combobox_decision_QAM.setEnabled(True)
-        if self.combobox_signal_type_QAM.currentText() == 'Only integers':
-                self.combobox_decision_QAM.setEnabled(False)
-                self.QAM_input.setMaxLength(32000)
+        check_input_QAM_len(self)
                 
     def signal_PSK_handler(self):
-        if int(self.combobox_coef_PSK.currentText()) < 32:
-            pow = int(self.combobox_coef_PSK.currentText())
-            self.PSK_input.setMaxLength(2**(pow-1) * 2)      
-        else:
-            self.PSK_input.setMaxLength(32000)     
-                
-        if self.combobox_signal_type_PSK.currentText() == 'Binary code':
-                self.combobox_decision_PSK.setEnabled(True)
-        if self.combobox_signal_type_PSK.currentText() == 'Only integers':
-                self.combobox_decision_PSK.setEnabled(False)
-                self.PSK_input.setMaxLength(32000)
-               
-                
-    def coef_QAM_handler(self):
-        if self.combobox_signal_type_QAM.currentText() == 'Binary code':
-            if int(self.combobox_coef_QAM.currentText()) < 30:
-                pow = int(self.combobox_coef_QAM.currentText())
-                self.QAM_input.setMaxLength(2**(pow-1)* 2)      
-        else:
-                self.QAM_input.setMaxLength(32000)      
-                
-    def coef_PSK_handler(self):
-        if self.combobox_signal_type_PSK.currentText() == 'Binary code':
-            if int(self.combobox_coef_PSK.currentText()) < 30:
-                pow = int(self.combobox_coef_PSK.currentText())
-                self.PSK_input.setMaxLength(2**(pow-1)* 2)      
-        else:
-                self.PSK_input.setMaxLength(32000)   
-
+        check_input_PSK_len(self) 
+    
+    
     def PSK_input_change_handler(self):
         self.length_PSK_mes.setText(str(self.PSK_input.text().__len__()))
+        check_input_PSK_len(self)    
         
     def QAM_input_change_handler(self):
         self.length_QAM_mes.setText(str(self.QAM_input.text().__len__()))
+        check_input_QAM_len(self)
+        
+        
+    def coef_QAM_handler(self):
+        check_input_QAM_len(self)
+    
+    def coef_PSK_handler(self):
+        check_input_PSK_len(self) 
+
+
+def check_input_QAM_len(self):
+    M = int(self.combobox_coef_QAM.currentText())
+    if M < 65:
+        str_hint = str(2**M)
+    else:
+        str_hint = "Big number!"
+        
+    if self.combobox_signal_type_QAM.currentText() == 'Message with letters':
+        self.hint_QAM.setText('Длина может быть: ' + 'любой')
+        
+    if self.combobox_signal_type_QAM.currentText() == 'Binary code':
+        self.hint_QAM.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ",словарь: только 0 и 1")
+        
+    if self.combobox_signal_type_QAM.currentText() == 'Only integers':
+        self.hint_QAM.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M+1))   
+                
+def check_input_PSK_len(self):
+    M = int(self.combobox_coef_PSK.currentText())
+    if self.combobox_signal_type_PSK.currentText() == 'Message with letters':
+        self.hint_PSK.setText('Длина может быть: ' + 'любой')
+        
+    if self.combobox_signal_type_PSK.currentText() == 'Binary code':
+        self.hint_PSK.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ", словарь: только 0 и 1")
+        
+    if self.combobox_signal_type_PSK.currentText() == 'Only integers':
+        self.hint_PSK.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M-1))       
 
 
 def check_combobox_QAM(self):

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1470</width>
-    <height>1224</height>
+    <width>1429</width>
+    <height>1033</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -33,7 +33,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="instruct_tab">
        <attribute name="title">
@@ -92,7 +92,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>506</height>
+                   <height>537</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
@@ -102,11 +102,17 @@
                      <item>
                       <widget class="QWidget" name="message_PSK_wid" native="true">
                        <layout class="QHBoxLayout" name="horizontalLayout_10">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item>
                          <widget class="QLabel" name="message_PSK_lable">
                           <property name="font">
                            <font>
-                            <pointsize>12</pointsize>
+                            <pointsize>11</pointsize>
                            </font>
                           </property>
                           <property name="text">
@@ -130,7 +136,7 @@
                         <item>
                          <widget class="QLabel" name="label_2">
                           <property name="text">
-                           <string>Количество символов:</string>
+                           <string>Количество символов в строке:</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -155,7 +161,7 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>1 0 1 0 1 0 1 0</string>
+                        <string>Type here</string>
                        </property>
                        <property name="frame">
                         <bool>true</bool>
@@ -166,11 +172,11 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="label_4">
+                      <widget class="QLabel" name="hint_PSK">
                        <property name="maximumSize">
                         <size>
                          <width>16777215</width>
-                         <height>15</height>
+                         <height>100</height>
                         </size>
                        </property>
                        <property name="font">
@@ -179,10 +185,16 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;длина должна быть кратна log2(M)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;Начни вводить сообщение и следи за подсказкой&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="textFormat">
+                        <enum>Qt::RichText</enum>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -215,17 +227,17 @@
                       <widget class="QComboBox" name="combobox_signal_type_PSK">
                        <item>
                         <property name="text">
+                         <string>Message with letters</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
                          <string>Only integers</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
                          <string>Binary code</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Message with letters</string>
                         </property>
                        </item>
                       </widget>
@@ -762,7 +774,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>460</height>
+                   <height>498</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -772,6 +784,12 @@
                      <item>
                       <widget class="QWidget" name="widget_5" native="true">
                        <layout class="QHBoxLayout" name="horizontalLayout_11">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item>
                          <widget class="QLabel" name="message_QAM_lable">
                           <property name="font">
@@ -800,7 +818,7 @@
                         <item>
                          <widget class="QLabel" name="label_3">
                           <property name="text">
-                           <string>Количество символов:</string>
+                           <string>Количество символов в строке:</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -825,7 +843,7 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>1 0 1 0 1 0 1 0</string>
+                        <string>Type here</string>
                        </property>
                        <property name="frame">
                         <bool>true</bool>
@@ -836,11 +854,17 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="label_5">
+                      <widget class="QLabel" name="hint_QAM">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>20</height>
+                        </size>
+                       </property>
                        <property name="maximumSize">
                         <size>
                          <width>16777215</width>
-                         <height>15</height>
+                         <height>100</height>
                         </size>
                        </property>
                        <property name="font">
@@ -849,10 +873,16 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;длина должна быть равна 2 в степени (M-1)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;Начни вводить сообщение и следи за подсказкой&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                       <property name="textFormat">
+                        <enum>Qt::RichText</enum>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -885,17 +915,17 @@
                       <widget class="QComboBox" name="combobox_signal_type_QAM">
                        <item>
                         <property name="text">
+                         <string>Message with letters</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
                          <string>Only integers</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
                          <string>Binary code</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Message with letters</string>
                         </property>
                        </item>
                       </widget>
@@ -1421,7 +1451,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>902</width>
+                <width>861</width>
                 <height>198</height>
                </rect>
               </property>
@@ -1491,7 +1521,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>902</width>
+                <width>861</width>
                 <height>198</height>
                </rect>
               </property>
@@ -1581,7 +1611,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1470</width>
+     <width>1429</width>
      <height>21</height>
     </rect>
    </property>
