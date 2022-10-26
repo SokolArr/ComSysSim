@@ -11,7 +11,7 @@
 
 ---
 ## Установка
-### Python
+### Python 3.10
 >[🔗 Ссылка на официальный сайт ](https://www.python.org/downloads/ "Python")
 
 ### Qt Designer
@@ -21,7 +21,7 @@
 ### PyQt6
 
 ```console
-pip install PyQt6
+pip install PyQt6==6.4.0
 ```
 
 ---
@@ -31,19 +31,19 @@ pip install PyQt6
 ### Matplotlib
 Для графиков **matplotlib 3.6.1**
 ```
-pip install matplotlib
+pip install matplotlib==3.6.1
 ```
 
 ### Numpy
 Для работы с данными **numpy 1.23.4**
 ```
-pip install numpy
+pip install numpy==1.23.4
 ```
 
 ### ModulationPy
 Цифровые модемы M-PSK и M-QAM **ModulationPy 0.1.8**
 ```
-pip install ModulationPy
+pip install ModulationPy==0.1.8
 ```
 ---
 ### **Для сборки проекта:**
@@ -57,7 +57,7 @@ pip install pyqt6-tools
 ### Pyinstaller
 Для сборки
 ```
-pip install pyinstaller
+pip install pyinstaller==5.6.1
 ```
 
 ---
