@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1429, 1033)
+        MainWindow.resize(1920, 1080)
         MainWindow.setMinimumSize(QtCore.QSize(1400, 800))
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -89,7 +89,6 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.PSK_input.setFont(font)
-        self.PSK_input.setText("")
         self.PSK_input.setFrame(True)
         self.PSK_input.setClearButtonEnabled(True)
         self.PSK_input.setObjectName("PSK_input")
@@ -350,7 +349,6 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.QAM_input.setFont(font)
-        self.QAM_input.setText("")
         self.QAM_input.setFrame(True)
         self.QAM_input.setClearButtonEnabled(True)
         self.QAM_input.setObjectName("QAM_input")
@@ -602,7 +600,7 @@ class Ui_MainWindow(object):
         self.scrollArea_message.setWidgetResizable(True)
         self.scrollArea_message.setObjectName("scrollArea_message")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 861, 198))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 1352, 198))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_52 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_52.setObjectName("verticalLayout_52")
@@ -629,7 +627,7 @@ class Ui_MainWindow(object):
         self.scrollArea_dmessage.setWidgetResizable(True)
         self.scrollArea_dmessage.setObjectName("scrollArea_dmessage")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 861, 198))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1352, 198))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_19.setObjectName("verticalLayout_19")
@@ -664,7 +662,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.graphs)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1429, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1920, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -689,16 +687,17 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600; color:#5e9ca0;\">    Универсальная система модели цифровой связи для изучения  способов модуляции сигналов!</span></p>\n"
+"<p align=\"center\" style=\" margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600; color:#000000;\">  Универсальная система модели цифровой связи для изучения  способов модуляции сигналов!</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a name=\"user-content-реализация\"></a><span style=\" font-size:11pt; font-weight:600;\">Р</span><span style=\" font-size:11pt; font-weight:600;\">еализация</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  ✔ ПО основывается на популярной библиотеке PyQt</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  ✔ Реализован режим симуляции и изменяемыми параметрами (настройками)</span></p></body></html>"))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  ✔ ПО основывается на популярной библиотеке PyQt</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  ✔ Реализован режим симуляции и изменяемыми параметрами (настройками)</span></p></body></html>"))
         self.label.setText(_translate("MainWindow", "Version 0.3 -10.2022"))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), _translate("MainWindow", "Инструкция"))
         self.params_wid_PSK.setTitle(_translate("MainWindow", "Параметры"))
         self.message_PSK_lable.setText(_translate("MainWindow", "Сообщение"))
         self.label_2.setText(_translate("MainWindow", "Количество символов в строке:"))
         self.length_PSK_mes.setText(_translate("MainWindow", "--"))
+        self.PSK_input.setText(_translate("MainWindow", "Тестовое сообщение"))
         self.hint_PSK.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#a81818;\">Начни вводить сообщение и следи за подсказкой</span></p></body></html>"))
         self.signal_type_mess_PSK.setText(_translate("MainWindow", "Тип сигнала"))
         self.combobox_signal_type_PSK.setItemText(0, _translate("MainWindow", "Message with letters"))
@@ -750,6 +749,7 @@ class Ui_MainWindow(object):
         self.message_QAM_lable.setText(_translate("MainWindow", "Сообщение"))
         self.label_3.setText(_translate("MainWindow", "Количество символов в строке:"))
         self.length_QAM_mes.setText(_translate("MainWindow", "--"))
+        self.QAM_input.setText(_translate("MainWindow", "Тестовое сообщение"))
         self.hint_QAM.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#a81818;\">Начни вводить сообщение и следи за подсказкой</span></p></body></html>"))
         self.signal_type_mess_QAM.setText(_translate("MainWindow", "Тип сигнала"))
         self.combobox_signal_type_QAM.setItemText(0, _translate("MainWindow", "Message with letters"))

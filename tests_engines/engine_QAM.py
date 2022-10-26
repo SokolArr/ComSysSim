@@ -7,7 +7,7 @@ from ModulationPy import QAMModem
 import matplotlib.pyplot as plt
 
 noise_coef = 1
-modem = QAMModem(16, 
+modem = QAMModem(4, 
                  bin_input=True,
                  soft_decision=False,
                  bin_output=True)
@@ -22,7 +22,7 @@ modem = QAMModem(16,
 # for i in range(n):
 #     rand_list.append(random.randint(0,3))
 
-msg = np.array([1,1,0,1])
+msg = np.array([1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1])
 
 print (msg)
 
@@ -53,7 +53,7 @@ for index in range(new_modulated.size):
     # new_modulated[index].imag = modulated[index].imag + random.randint(0, 10)/100
     new_modulated[index] = new_modulated[index] + (random.randint(0, noise_coef)/100 + random.randint(0, noise_coef)/100j)
 
-print (new_modulated)
+# print (new_modulated)
 
 # print(str(new_modulated))
 
@@ -62,6 +62,7 @@ print (new_modulated)
 
 demodulated = modem.demodulate(new_modulated) # demodulation
 dmsg = demodulated
+print (type(demodulated))
 
 dmsg_x = np.repeat(range(len(dmsg)), 2)
 dmsg_y = np.repeat(dmsg, 2)

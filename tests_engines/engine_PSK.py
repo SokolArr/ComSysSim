@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 
 noise_coef = 1
 modem = PSKModem(2, np.pi/4, 
-                 bin_input=True,
-                 soft_decision=False,
-                 bin_output=True)
+                 bin_input=False,
+                 soft_decision=True,
+                 bin_output=False)
 
 # msg = np.array([0, 0, 0, 1, 1, 0, 1, 1]) # input message
 # msg = np.array([1,2,3,2,1,2,1,1,0,2,3,1,0,0,0,2,3,0,0]) # input message

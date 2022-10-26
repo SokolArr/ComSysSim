@@ -1,3 +1,6 @@
-def msg_to_bin(message):
-   temp_str = ' '.join("".join(f"{ord(i):08b}" for i in message))
-   return temp_str
+def msg_to_bin(text):
+   encoding='utf-8'
+   errors='surrogatepass'
+   bits = bin(int.from_bytes(text.encode(encoding, errors), 'big'))[2:]
+   return " ".join(bits.zfill(8 * ((len(bits) + 7) // 8)))
+ 
