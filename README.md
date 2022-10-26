@@ -1,3 +1,6 @@
+
+![GitHub all releases](https://img.shields.io/github/downloads/SokolArr/ComSysSim/total)
+![GitHub repo size](https://img.shields.io/github/repo-size/SokolArr/ComSysSim)
 # 📡 ComSysSim
 
 ### О программе:
