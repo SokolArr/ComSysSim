@@ -1,6 +1,7 @@
 /__pycache__
 /dist
 /build
+/releases
 *.spec
 *.exe
 *.rar

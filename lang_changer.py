@@ -13,6 +13,8 @@ class MainFunc(QMainWindow):
         self.btn_eng.clicked.connect(self.btn_eng_handler)
         self.btn_rus.clicked.connect(self.btn_rus_handler)
         
+        self.btn_eng.setEnabled(False)
+        
     def btn_eng_handler(self):
         change_to_ENG()
         self.result_label.setText("Done, language changed to English!")
