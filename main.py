@@ -12,6 +12,7 @@ import modulations.engine_PSK as PSK
 import modulations.engine_QAM as QAM
 
 from helpers.msg_to_bin import msg_to_bin
+from helpers.bin_to_msg import bin_to_msg
 from helpers.plots_draw.draw_11 import draw_11
 from helpers.plots_draw.draw_12 import draw_12
 from helpers.plots_draw.draw_13 import draw_13
@@ -126,7 +127,9 @@ class MainFunc(QMainWindow):
                 mes = [int(s) for s in inpText.split() if s.isdigit()]
             
             M = self.combobox_coef_QAM.currentText()
-            noise_coef = self.combobox_noise_QAM.currentText()
+            
+            mu = self.inp_mu_QAM.text()
+            sigma = self.inp_sigma_QAM.text()
             
             msg_x = np.repeat(range(len(mes)), 2)
             msg_y = np.repeat(mes, 2)
@@ -134,8 +137,8 @@ class MainFunc(QMainWindow):
             msg_y = msg_y[:-1]
             msg_x = np.append(msg_x,msg_x[-1] + 1)
             msg_y = np.append(msg_y, msg_y[-1])
-            
-            mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), int(noise_coef), grey_cod, bin_input, soft_decis, bin_output)
+        
+            mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), float(mu), float(sigma), grey_cod, bin_input, soft_decis, bin_output)
         
             self.progressBar_QAM.setValue(50)    
             
@@ -143,17 +146,32 @@ class MainFunc(QMainWindow):
             for index in range(mes.__len__()):
                 if mes[index] != demod[index]:
                     ch = ch + 1
+            
+            if self.combobox_signal_type_QAM.currentText() == 'Message with letters':       
+                demod_str = np.array_str(np.int64(demod)).replace(" ", "").replace("[", "").replace("]", "").replace('\r', '').replace('\n', '')
+                tmp = [demod_str[i:i+8] for i in range(0, len(demod_str), 8)]
+                new_array = []
+                for el in tmp:
+                    new_array.append('0' + el[1:])
+                edit_mod_msg = ''.join(new_array)
+                decoded_msg = bin_to_msg(edit_mod_msg)
+                print ('Decoded msg:' + decoded_msg)
+                self.trmtr_msg.setText('Отправленное сообщение: ' + str(self.PSK_input.text()))
+                self.rcvr_msg.setText('Декодированное сообщение: ' + str(decoded_msg))
+            else:
+                self.trmtr_msg.setText('--')
+                self.rcvr_msg.setText('--')                
                     
             dmessage_length = demod.__len__()
             if dmessage_length < 10000:
                 self.dmessage_template.setText(str(demod))
             else:
-                self.dmessage_template.setText("Big message!")
+                self.dmessage_template.setText("Сообщение больше 10т.симвл.")
             
-            self.label_bit_error.setText("Bit errors: " + str(ch))
+            self.label_bit_error.setText("Bit errors (Ошибок в битах): " + str(ch))
             
             self.message_template.setText(str(mes))
-            self.type_mod.setText("Type modulation: QAM")
+            self.type_mod.setText("Тип модуляции: QAM")
     
             
             self.progressBar_QAM.setValue(60)
@@ -213,7 +231,10 @@ class MainFunc(QMainWindow):
                 mes = [int(s) for s in inpText.split() if s.isdigit()]
 
             M = self.combobox_coef_PSK.currentText()
-            noise_coef = self.combobox_noise_PSK.currentText()
+            
+            mu = self.inp_mu_PSK.text()
+            sigma = self.inp_sigma_PSK.text()
+            
             phase = self.combobox_phase_PSK.currentText()
             
             msg_x = np.repeat(range(len(mes)), 2)
@@ -224,7 +245,7 @@ class MainFunc(QMainWindow):
             msg_y = np.append(msg_y, msg_y[-1])
             
             
-            mod, newMod, demod, modem2= PSK.runEnginePSK(mes, int(M), int(noise_coef), int(phase), grey_cod, bin_input, soft_decis, bin_output)
+            mod, newMod, demod, modem2= PSK.runEnginePSK(mes, int(M), float(mu), float(sigma), int(phase), grey_cod, bin_input, soft_decis, bin_output)
             
             self.progressBar_PSK.setValue(50)    
                     
@@ -232,18 +253,32 @@ class MainFunc(QMainWindow):
             for index in range(mes.__len__()):
                 if mes[index] != demod[index]:
                     ch = ch + 1
-                    
-                    
+               
+            if self.combobox_signal_type_PSK.currentText() == 'Message with letters':     
+                demod_str = np.array_str(np.int64(demod)).replace(" ", "").replace("[", "").replace("]", "").replace('\r', '').replace('\n', '')
+                tmp = [demod_str[i:i+8] for i in range(0, len(demod_str), 8)]
+                new_array = []
+                for el in tmp:
+                    new_array.append('0' + el[1:])
+                edit_mod_msg = ''.join(new_array)
+                decoded_msg = bin_to_msg(edit_mod_msg)
+                print ('Decoded msg:' + decoded_msg)
+                self.trmtr_msg.setText('Отправленное сообщение: ' + str(self.PSK_input.text()))
+                self.rcvr_msg.setText('Декодированное сообщение: ' + str(decoded_msg))
+            else:
+                self.trmtr_msg.setText('--')
+                self.rcvr_msg.setText('--')                  
+                        
             dmessage_length = demod.__len__()
             if dmessage_length < 10000:
                 self.dmessage_template.setText(str(demod))
             else:
-                self.dmessage_template.setText("Big message!")
+                self.dmessage_template.setText("Сообщение больше 10т.симвл.")
             
-            self.label_bit_error.setText("Bit errors: " + str(ch))
+            self.label_bit_error.setText("Bit errors (Ошибок в битах): " + str(ch))
             
             self.message_template.setText(str(mes))
-            self.type_mod.setText("Type modulation: PSK")
+            self.type_mod.setText("Тип модуляции: PSK")
     
             self.progressBar_PSK.setValue(60)
             
@@ -323,6 +358,9 @@ def check_input_PSK_len(self):
     M = int(self.combobox_coef_PSK.currentText())
     if self.combobox_signal_type_PSK.currentText() == 'Message with letters':
         self.hint_PSK.setText('Длина может быть: ' + 'любой')
+        if (self.combobox_coef_PSK.currentText() == "32"):
+            self.hint_PSK.setText('Длина должна быть: ' + 'кратна 5')
+            
         self.combobox_decision_PSK.setEnabled(False)
         
     if self.combobox_signal_type_PSK.currentText() == 'Binary code':
@@ -377,3 +415,4 @@ app = QApplication([])
 window = MainFunc()
 window.show()
 app.exec()
+

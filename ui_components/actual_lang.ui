@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1400</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1400</width>
-    <height>800</height>
+    <height>900</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="instruct_tab">
        <attribute name="title">
@@ -70,7 +70,7 @@ p, li { white-space: pre-wrap; }
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>Version 0.3 -10.2022</string>
+           <string>Version 0.4 -11.2022</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -93,6 +93,111 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_34">
+           <item>
+            <widget class="QWidget" name="message_PSK" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout_36">
+              <item>
+               <widget class="QWidget" name="message_PSK_wid" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="message_PSK_lable">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Сообщение</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>Количество символов в строке:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="length_PSK_mes">
+                   <property name="text">
+                    <string>--</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="PSK_input">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Test</string>
+                </property>
+                <property name="frame">
+                 <bool>true</bool>
+                </property>
+                <property name="clearButtonEnabled">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="hint_PSK">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <italic>true</italic>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;Начни вводить сообщение и следи за подсказкой&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
            <item>
             <widget class="QGroupBox" name="params_wid_PSK">
              <property name="maximumSize">
@@ -120,117 +225,12 @@ p, li { white-space: pre-wrap; }
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>0</y>
+                   <y>-116</y>
                    <width>419</width>
-                   <height>537</height>
+                   <height>484</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
-                  <item>
-                   <widget class="QWidget" name="message_PSK" native="true">
-                    <layout class="QVBoxLayout" name="verticalLayout_36">
-                     <item>
-                      <widget class="QWidget" name="message_PSK_wid" native="true">
-                       <layout class="QHBoxLayout" name="horizontalLayout_10">
-                        <property name="leftMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="bottomMargin">
-                         <number>0</number>
-                        </property>
-                        <item>
-                         <widget class="QLabel" name="message_PSK_lable">
-                          <property name="font">
-                           <font>
-                            <pointsize>11</pointsize>
-                           </font>
-                          </property>
-                          <property name="text">
-                           <string>Сообщение</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <spacer name="horizontalSpacer_5">
-                          <property name="orientation">
-                           <enum>Qt::Horizontal</enum>
-                          </property>
-                          <property name="sizeHint" stdset="0">
-                           <size>
-                            <width>40</width>
-                            <height>20</height>
-                           </size>
-                          </property>
-                         </spacer>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="label_2">
-                          <property name="text">
-                           <string>Количество символов в строке:</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="length_PSK_mes">
-                          <property name="text">
-                           <string>--</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="PSK_input">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Тестовое сообщение</string>
-                       </property>
-                       <property name="frame">
-                        <bool>true</bool>
-                       </property>
-                       <property name="clearButtonEnabled">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="hint_PSK">
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>100</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <italic>true</italic>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;Начни вводить сообщение и следи за подсказкой&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="textFormat">
-                        <enum>Qt::RichText</enum>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                       <property name="wordWrap">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
                   <item>
                    <widget class="QWidget" name="type_signal_wid_PSK" native="true">
                     <property name="minimumSize">
@@ -324,88 +324,67 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
-                   <widget class="QWidget" name="noise_wid_PSK" native="true">
+                   <widget class="QGroupBox" name="groupBox_3">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>60</height>
+                      <height>150</height>
                      </size>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <property name="title">
+                     <string>Настройка АБГШ(AWGN)</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_5">
                      <item>
-                      <widget class="QLabel" name="noise_label_PSK">
-                       <property name="text">
-                        <string>Шум</string>
+                      <widget class="QWidget" name="noise_wid_PSK" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>60</height>
+                        </size>
                        </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_12">
+                        <item>
+                         <widget class="QLabel" name="noise_mu_PSK">
+                          <property name="text">
+                           <string>Среднее значение, μ</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="inp_mu_PSK">
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QComboBox" name="combobox_noise_PSK">
-                       <item>
-                        <property name="text">
-                         <string>1</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>10</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>20</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>30</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>40</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>50</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>60</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>70</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>80</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>90</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>100</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>200</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>500</string>
-                        </property>
-                       </item>
+                      <widget class="QWidget" name="noise_wid_PSK_2" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_21">
+                        <item>
+                         <widget class="QLabel" name="noise_label_PSK_2">
+                          <property name="text">
+                           <string>СКО, σ</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="inp_sigma_PSK">
+                          <property name="text">
+                           <string>0.01</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -555,7 +534,7 @@ p, li { white-space: pre-wrap; }
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>400</height>
+               <height>300</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -633,9 +612,27 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="font">
+                     <font>
+                      <italic>true</italic>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#757575;&quot;&gt;Максимальное значание словаря определяется автоматически&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_PSK">
                     <property name="plainText">
-                     <string>Нажми на кнопку генерации сида</string>
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -691,6 +688,9 @@ p, li { white-space: pre-wrap; }
                <pointsize>12</pointsize>
               </font>
              </property>
+             <property name="whatsThis">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Сначала примени настройки!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>Запуск симуляции и построения графиков PSK модуляции!</string>
              </property>
@@ -703,6 +703,12 @@ p, li { white-space: pre-wrap; }
                <width>0</width>
                <height>50</height>
               </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
@@ -722,11 +728,15 @@ p, li { white-space: pre-wrap; }
                <widget class="QCheckBox" name="apply_PSK_but">
                 <property name="font">
                  <font>
+                  <family>Arial</family>
                   <pointsize>12</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
+                  <weight>75</weight>
+                  <bold>true</bold>
                   <underline>false</underline>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Применить настройки PSK</string>
@@ -776,6 +786,117 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_13">
            <item>
+            <widget class="QWidget" name="message_QAM" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <item>
+               <widget class="QWidget" name="widget_5" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="message_QAM_lable">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Сообщение</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_6">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Количество символов в строке:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="length_QAM_mes">
+                   <property name="text">
+                    <string>--</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="QAM_input">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Test</string>
+                </property>
+                <property name="frame">
+                 <bool>true</bool>
+                </property>
+                <property name="clearButtonEnabled">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="hint_QAM">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <italic>true</italic>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;Начни вводить сообщение и следи за подсказкой&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
             <widget class="QGroupBox" name="params_wid_QAM">
              <property name="maximumSize">
               <size>
@@ -804,121 +925,10 @@ p, li { white-space: pre-wrap; }
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>498</height>
+                   <height>438</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <item>
-                   <widget class="QWidget" name="message_QAM" native="true">
-                    <layout class="QVBoxLayout" name="verticalLayout_15">
-                     <item>
-                      <widget class="QWidget" name="widget_5" native="true">
-                       <layout class="QHBoxLayout" name="horizontalLayout_11">
-                        <property name="leftMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="bottomMargin">
-                         <number>0</number>
-                        </property>
-                        <item>
-                         <widget class="QLabel" name="message_QAM_lable">
-                          <property name="font">
-                           <font>
-                            <pointsize>11</pointsize>
-                           </font>
-                          </property>
-                          <property name="text">
-                           <string>Сообщение</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <spacer name="horizontalSpacer_6">
-                          <property name="orientation">
-                           <enum>Qt::Horizontal</enum>
-                          </property>
-                          <property name="sizeHint" stdset="0">
-                           <size>
-                            <width>40</width>
-                            <height>20</height>
-                           </size>
-                          </property>
-                         </spacer>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="label_3">
-                          <property name="text">
-                           <string>Количество символов в строке:</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="length_QAM_mes">
-                          <property name="text">
-                           <string>--</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="QAM_input">
-                       <property name="font">
-                        <font>
-                         <pointsize>12</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Тестовое сообщение</string>
-                       </property>
-                       <property name="frame">
-                        <bool>true</bool>
-                       </property>
-                       <property name="clearButtonEnabled">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="hint_QAM">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>20</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>100</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <italic>true</italic>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#a81818;&quot;&gt;Начни вводить сообщение и следи за подсказкой&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="textFormat">
-                        <enum>Qt::RichText</enum>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                       <property name="wordWrap">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
                   <item>
                    <widget class="QWidget" name="type_signal_wid_QAM" native="true">
                     <property name="minimumSize">
@@ -1007,88 +1017,67 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
-                   <widget class="QWidget" name="noise_wid_QAM" native="true">
+                   <widget class="QGroupBox" name="groupBox_4">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>60</height>
+                      <height>150</height>
                      </size>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_5">
+                    <property name="title">
+                     <string>Настройка АБГШ(AWGN)</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_22">
                      <item>
-                      <widget class="QLabel" name="noise_label_QAM">
-                       <property name="text">
-                        <string>Шум</string>
+                      <widget class="QWidget" name="noise_wid_PSK_9" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>60</height>
+                        </size>
                        </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_30">
+                        <item>
+                         <widget class="QLabel" name="noise_mu_PSK_6">
+                          <property name="text">
+                           <string>Среднее значение, μ</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="inp_mu_QAM">
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QComboBox" name="combobox_noise_QAM">
-                       <item>
-                        <property name="text">
-                         <string>1</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>10</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>20</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>30</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>40</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>50</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>60</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>70</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>80</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>90</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>100</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>200</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>500</string>
-                        </property>
-                       </item>
+                      <widget class="QWidget" name="noise_wid_PSK_10" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_31">
+                        <item>
+                         <widget class="QLabel" name="noise_label_PSK_7">
+                          <property name="text">
+                           <string>СКО, σ</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="inp_sigma_QAM">
+                          <property name="text">
+                           <string>0.01</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -1185,7 +1174,7 @@ p, li { white-space: pre-wrap; }
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>400</height>
+               <height>300</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -1263,9 +1252,27 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item>
+                   <widget class="QLabel" name="label_5">
+                    <property name="font">
+                     <font>
+                      <italic>true</italic>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#757575;&quot;&gt;Максимальное значание словаря определяется автоматически&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPlainTextEdit" name="plainText_sid_QAM">
                     <property name="plainText">
-                     <string>Нажми на кнопку генерации сида</string>
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -1396,10 +1403,16 @@ p, li { white-space: pre-wrap; }
     <item>
      <widget class="QWidget" name="graphs" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QTabWidget" name="graphs_tab_wid">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="signal_tab">
           <attribute name="title">
@@ -1455,7 +1468,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>Type modulation: start simulation first!</string>
+              <string>Тип модуляции</string>
              </property>
             </widget>
            </item>
@@ -1464,13 +1477,13 @@ p, li { white-space: pre-wrap; }
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>0</height>
+               <height>200</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>200</height>
+               <height>400</height>
               </size>
              </property>
              <property name="widgetResizable">
@@ -1481,17 +1494,33 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1352</width>
-                <height>198</height>
+                <width>832</width>
+                <height>236</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
                <item>
                 <widget class="QGroupBox" name="groupBox">
                  <property name="title">
-                  <string>Сообщние</string>
+                  <string>Отправленное сообщение</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_54">
+                  <item>
+                   <widget class="QLabel" name="trmtr_msg">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
                   <item>
                    <widget class="QLabel" name="message_template">
                     <property name="minimumSize">
@@ -1512,15 +1541,31 @@ p, li { white-space: pre-wrap; }
                      </font>
                     </property>
                     <property name="text">
-                     <string>Message: start simulation first!</string>
+                     <string>Отправленное сообщение в битовом представлении</string>
                     </property>
                     <property name="textFormat">
                      <enum>Qt::RichText</enum>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                     </property>
                     <property name="wordWrap">
                      <bool>true</bool>
                     </property>
                    </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1534,13 +1579,13 @@ p, li { white-space: pre-wrap; }
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>0</height>
+               <height>200</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>200</height>
+               <height>400</height>
               </size>
              </property>
              <property name="widgetResizable">
@@ -1551,8 +1596,8 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1352</width>
-                <height>198</height>
+                <width>832</width>
+                <height>237</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1561,13 +1606,13 @@ p, li { white-space: pre-wrap; }
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>100</height>
+                   <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
-                   <height>200</height>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="title">
@@ -1575,22 +1620,66 @@ p, li { white-space: pre-wrap; }
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_53">
                   <item>
+                   <widget class="QLabel" name="rcvr_msg">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QLabel" name="dmessage_template">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>100</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>200</height>
+                     </size>
+                    </property>
                     <property name="font">
                      <font>
                       <pointsize>12</pointsize>
                      </font>
                     </property>
                     <property name="text">
-                     <string>Demodulated message: start simulation first!</string>
+                     <string>Полученное демодулированное сообщение в битовом представлении</string>
                     </property>
                     <property name="textFormat">
                      <enum>Qt::RichText</enum>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                     </property>
                     <property name="wordWrap">
                      <bool>true</bool>
                     </property>
                    </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1610,7 +1699,7 @@ p, li { white-space: pre-wrap; }
               <cursorShape>IBeamCursor</cursorShape>
              </property>
              <property name="text">
-              <string>Bits erorrs: start simulation first!</string>
+              <string>Bits erorrs (Ошибок в битах)</string>
              </property>
             </widget>
            </item>
@@ -1641,7 +1730,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1920</width>
+     <width>1400</width>
      <height>21</height>
     </rect>
    </property>

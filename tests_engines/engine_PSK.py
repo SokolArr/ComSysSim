@@ -7,10 +7,10 @@ from ModulationPy import PSKModem
 import matplotlib.pyplot as plt
 
 noise_coef = 1
-modem = PSKModem(2, np.pi/4, 
-                 bin_input=False,
-                 soft_decision=True,
-                 bin_output=False)
+modem = PSKModem(16, np.pi/4, 
+                 bin_input=True,
+                 soft_decision=False,
+                 bin_output=True)
 
 # msg = np.array([0, 0, 0, 1, 1, 0, 1, 1]) # input message
 # msg = np.array([1,2,3,2,1,2,1,1,0,2,3,1,0,0,0,2,3,0,0]) # input message
@@ -22,9 +22,9 @@ modem = PSKModem(2, np.pi/4,
 # for i in range(n):
 #     rand_list.append(random.randint(0,3))
 
-msg = np.array([1,0,1,0,0])
+msg = np.array([0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0])
 
-print (msg)
+print (len(msg))
 
 msg_x = np.repeat(range(len(msg)), 2)
 msg_y = np.repeat(msg, 2)
@@ -39,24 +39,29 @@ msg_y = np.append(msg_y, msg_y[-1])
 modulated = modem.modulate(msg) # modulation
 
 print (str(modulated))
-
+print('')
 # print(str(modulated))
 
 new_modulated = np.copy(modulated)
 
 
-    
+noise = np.random.normal(0, 0.1, len(msg))
+# print(noise)
+# print('')
 
+# 0 is the mean of the normal distribution you are choosing from
+# 1 is the standard deviation of the normal distribution
+# 100 is the number of elements you get in array noise
+
+random_array = noise
 
 for index in range(new_modulated.size):
     # new_modulated[index].real = modulated[index].real + random.randint(0, 10)/100
     # new_modulated[index].imag = modulated[index].imag + random.randint(0, 10)/100
-    new_modulated[index] = new_modulated[index] + (random.randint(0, noise_coef)/100 + random.randint(0, noise_coef)/100j)
+    new_modulated[index] = new_modulated[index] + (noise[index] + noise[index]*1j)
     
 
-# print(str(new_modulated))
-
-
+print(str(new_modulated))
 
 
 demodulated = modem.demodulate(new_modulated) # demodulation

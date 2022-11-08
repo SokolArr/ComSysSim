@@ -2,13 +2,14 @@ import random
 import numpy as np
 from ModulationPy import PSKModem
 
-def runEnginePSK (message, M_coef, noise_coef, phase, grey_cod, bin_inp, soft_decis, bin_out):
+def runEnginePSK (message, M_coef, mu, sigma, phase, grey_cod, bin_inp, soft_decis, bin_out):
     
     print (' ')
     print ('Engine PSK Runs!')
     print('message:', message)
     print('M_coef:', M_coef)
-    print('noise_coef:', noise_coef)
+    print('mu:', mu)
+    print('sigma:', sigma)
     print('phase:', phase)
     print('grey_cod:', grey_cod)
     print('bin_inp:', bin_inp)
@@ -23,8 +24,11 @@ def runEnginePSK (message, M_coef, noise_coef, phase, grey_cod, bin_inp, soft_de
     modulated = modem.modulate(msg) # modulation
     new_modulated = np.copy(modulated)
     
+    noise_real = np.random.normal(mu, sigma, len(msg))
+    noise_imag = np.random.normal(mu, sigma, len(msg))
+    
     for index in range(new_modulated.size):
-        new_modulated[index] = new_modulated[index] + (random.randint(0, noise_coef)/100 + random.randint(0, noise_coef)/100j)
+        new_modulated[index] = new_modulated[index] + (noise_real[index] + noise_imag[index]*1j)
 
     demodulated = modem.demodulate(new_modulated) # demodulation
     
