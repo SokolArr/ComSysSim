@@ -410,7 +410,6 @@ def check_combobox_PSK(self):
     return bin_input, bin_output, is_it_letters
 
 
-
 app = QApplication([])
 window = MainFunc()
 window.show()
