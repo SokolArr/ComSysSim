@@ -376,7 +376,6 @@ def check_input_PSK_len(self):
         print("void PSK inp")
            
 
-
 def check_combobox_QAM(self):
     bin_input = False
     bin_output = False
