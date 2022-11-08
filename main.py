@@ -156,7 +156,7 @@ class MainFunc(QMainWindow):
                 edit_mod_msg = ''.join(new_array)
                 decoded_msg = bin_to_msg(edit_mod_msg)
                 print ('Decoded msg:' + decoded_msg)
-                self.trmtr_msg.setText('Отправленное сообщение: ' + str(self.PSK_input.text()))
+                self.trmtr_msg.setText('Отправленное сообщение: ' + str(self.QAM_input.text()))
                 self.rcvr_msg.setText('Декодированное сообщение: ' + str(decoded_msg))
             else:
                 self.trmtr_msg.setText('--')
