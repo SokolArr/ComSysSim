@@ -46,12 +46,6 @@ new_modulated = np.copy(modulated)
 
 
 noise = np.random.normal(0, 0.1, len(msg))
-# print(noise)
-# print('')
-
-# 0 is the mean of the normal distribution you are choosing from
-# 1 is the standard deviation of the normal distribution
-# 100 is the number of elements you get in array noise
 
 random_array = noise
 
@@ -64,7 +58,7 @@ for index in range(new_modulated.size):
 print(str(new_modulated))
 
 
-demodulated = modem.demodulate(new_modulated) # demodulation
+demodulated = modem.demodulate(modulated, 0.0025) # demodulation
 dmsg = demodulated
 
 dmsg_x = np.repeat(range(len(dmsg)), 2)
@@ -75,16 +69,12 @@ dmsg_x = np.append(dmsg_x,dmsg_x[-1] + 1)
 dmsg_y = np.append(dmsg_y, dmsg_y[-1])
 
 
-# print("Modulated message:\n"+str(modulated))
-# print("Demodulated message:\n"+str(demodulated)) 
-
-# draw complex modulated
 # extract real part
 mod_reals = [ele.real for ele in modulated]
-n_mod_reals = [ele.real for ele in new_modulated]
+n_mod_reals = [ele.real for ele in modulated]
 # extract imaginary part
 mod_imags = [ele.imag for ele in modulated]
-n_mod_imags = [ele.imag for ele in new_modulated]
+n_mod_imags = [ele.imag for ele in modulated]
 
 # fig, axs = plt.subplots(3)
 fig, axs = plt.subplots(1, 2, figsize=(10, 4.5), dpi = 90)

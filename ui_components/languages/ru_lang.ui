@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1400</width>
-    <height>900</height>
+    <width>1654</width>
+    <height>950</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -47,10 +47,12 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#000000;&quot;&gt;  Универсальная система модели цифровой связи для изучения  способов модуляции сигналов!&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;user-content-реализация&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Р&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;еализация&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;  ✔ ПО основывается на популярной библиотеке PyQt&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;  ✔ Реализован режим симуляции и изменяемыми параметрами (настройками)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#000000;&quot;&gt;  Универсальная система модели цифровой связи для изучения  способов модуляции сигналов!&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Теория&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#2b2b2b;&quot;&gt;Цифровой модулятор принимает действительную входную битовою последовательность и возвращает комплексный выходной сигнал (или выборку). &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#2b2b2b;&quot;&gt;	При настройке модулятора для входных символов с битовым значением модулятор принимает входные сигналы с двоичным значением, которые представляют целые числа. Модулятор собирает двоичные символы в группы по b = log_2 (M) бит, где b представляет количество битов на символ. Длина входного вектора должна быть целым числом, кратным b. В этой конфигурации модулятор отображает группы битов b в символы на выходе модулятора. Модулятор выводит один модулированный символ для каждой группы битов b.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#2b2b2b;&quot;&gt;	Отображение символов определяет порядок, используемый модулятором для отображения группы символов b входных бит в соответствующий символ вектора диаграммы созвездия. Для достижения нижнего предела частоты ошибок по битам схемы многоуровневой модуляции используется метод кодирования Грея. Кодирование Грея упорядочивает символы модуляции так, чтобы двоичные представления соседних символов отличались только одним битом. Сочетание упорядочения по коду Грея в системах связи с методами прямой коррекции ошибок, способными исправлять однобитовые ошибки, помогает минимизировать частоту битовых ошибок в многоуровневых схемах модуляции.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -70,7 +72,7 @@ p, li { white-space: pre-wrap; }
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>Version 0.4 -11.2022</string>
+           <string>Version 0.5 - 12.2022</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -225,9 +227,9 @@ p, li { white-space: pre-wrap; }
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-116</y>
+                   <y>0</y>
                    <width>419</width>
-                   <height>484</height>
+                   <height>434</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_35">
@@ -258,11 +260,6 @@ p, li { white-space: pre-wrap; }
                        <item>
                         <property name="text">
                          <string>Message with letters</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Only integers</string>
                         </property>
                        </item>
                        <item>
@@ -328,39 +325,13 @@ p, li { white-space: pre-wrap; }
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>150</height>
+                      <height>100</height>
                      </size>
                     </property>
                     <property name="title">
-                     <string>Настройка АБГШ(AWGN)</string>
+                     <string>Настройка АБГШ (AWGN)</string>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_5">
-                     <item>
-                      <widget class="QWidget" name="noise_wid_PSK" native="true">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>60</height>
-                        </size>
-                       </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_12">
-                        <item>
-                         <widget class="QLabel" name="noise_mu_PSK">
-                          <property name="text">
-                           <string>Среднее значение, μ</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLineEdit" name="inp_mu_PSK">
-                          <property name="text">
-                           <string>0</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
                      <item>
                       <widget class="QWidget" name="noise_wid_PSK_2" native="true">
                        <property name="minimumSize">
@@ -373,16 +344,29 @@ p, li { white-space: pre-wrap; }
                         <item>
                          <widget class="QLabel" name="noise_label_PSK_2">
                           <property name="text">
-                           <string>СКО, σ</string>
+                           <string>ОСШ, дБ (SNR, dB)</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="inp_sigma_PSK">
+                         <widget class="QLineEdit" name="inp_SNR_PSK">
                           <property name="text">
-                           <string>0.01</string>
+                           <string>10</string>
                           </property>
                          </widget>
+                        </item>
+                        <item>
+                         <spacer name="verticalSpacer_8">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>40</height>
+                           </size>
+                          </property>
+                         </spacer>
                         </item>
                        </layout>
                       </widget>
@@ -925,7 +909,7 @@ p, li { white-space: pre-wrap; }
                    <x>0</x>
                    <y>0</y>
                    <width>419</width>
-                   <height>438</height>
+                   <height>388</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -956,11 +940,6 @@ p, li { white-space: pre-wrap; }
                        <item>
                         <property name="text">
                          <string>Message with letters</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Only integers</string>
                         </property>
                        </item>
                        <item>
@@ -1021,61 +1000,48 @@ p, li { white-space: pre-wrap; }
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>150</height>
+                      <height>100</height>
                      </size>
                     </property>
                     <property name="title">
-                     <string>Настройка АБГШ(AWGN)</string>
+                     <string>Настройка АБГШ (AWGN)</string>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_22">
-                     <item>
-                      <widget class="QWidget" name="noise_wid_PSK_9" native="true">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>60</height>
-                        </size>
-                       </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_30">
-                        <item>
-                         <widget class="QLabel" name="noise_mu_PSK_6">
-                          <property name="text">
-                           <string>Среднее значение, μ</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLineEdit" name="inp_mu_QAM">
-                          <property name="text">
-                           <string>0</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
                      <item>
                       <widget class="QWidget" name="noise_wid_PSK_10" native="true">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
-                         <height>60</height>
+                         <height>0</height>
                         </size>
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_31">
                         <item>
                          <widget class="QLabel" name="noise_label_PSK_7">
                           <property name="text">
-                           <string>СКО, σ</string>
+                           <string>ОСШ, дБ (SNR, dB)</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="inp_sigma_QAM">
+                         <widget class="QLineEdit" name="inp_SNR_QAM">
                           <property name="text">
-                           <string>0.01</string>
+                           <string>10</string>
                           </property>
                          </widget>
+                        </item>
+                        <item>
+                         <spacer name="verticalSpacer_7">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>40</height>
+                           </size>
+                          </property>
+                         </spacer>
                         </item>
                        </layout>
                       </widget>
@@ -1494,8 +1460,8 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>832</width>
-                <height>236</height>
+                <width>1086</width>
+                <height>253</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
@@ -1596,8 +1562,8 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>832</width>
-                <height>237</height>
+                <width>1086</width>
+                <height>253</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1730,7 +1696,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1400</width>
+     <width>1654</width>
      <height>21</height>
     </rect>
    </property>

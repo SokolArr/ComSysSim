@@ -2,15 +2,15 @@ from PyQt6.QtWidgets import QApplication, QWidget, QDialog, QMainWindow
 from PyQt6.uic import loadUi
 from PyQt6 import QtGui
 
-
 import numpy as np
 import random
 
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
+# from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
 import modulations.engine_PSK as PSK
 import modulations.engine_QAM as QAM
 
+from helpers.get_SIGMA import get_SIGMA
 from helpers.msg_to_bin import msg_to_bin
 from helpers.bin_to_msg import bin_to_msg
 from helpers.plots_draw.draw_11 import draw_11
@@ -128,8 +128,9 @@ class MainFunc(QMainWindow):
             
             M = self.combobox_coef_QAM.currentText()
             
-            mu = self.inp_mu_QAM.text()
-            sigma = self.inp_sigma_QAM.text()
+            # mu = self.inp_mu_QAM.text()
+            mu = 0
+            snr = self.inp_SNR_QAM.text()
             
             msg_x = np.repeat(range(len(mes)), 2)
             msg_y = np.repeat(mes, 2)
@@ -137,8 +138,9 @@ class MainFunc(QMainWindow):
             msg_y = msg_y[:-1]
             msg_x = np.append(msg_x,msg_x[-1] + 1)
             msg_y = np.append(msg_y, msg_y[-1])
-        
-            mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), float(mu), float(sigma), grey_cod, bin_input, soft_decis, bin_output)
+
+            sigma_QAM = get_SIGMA("QAM", int(M), float(snr))
+            mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), float(mu), float(sigma_QAM), grey_cod, bin_input, soft_decis, bin_output)
         
             self.progressBar_QAM.setValue(50)    
             
@@ -232,8 +234,9 @@ class MainFunc(QMainWindow):
 
             M = self.combobox_coef_PSK.currentText()
             
-            mu = self.inp_mu_PSK.text()
-            sigma = self.inp_sigma_PSK.text()
+            # mu = self.inp_mu_PSK.text()
+            mu = 0
+            snr = self.inp_SNR_PSK.text()
             
             phase = self.combobox_phase_PSK.currentText()
             
@@ -244,8 +247,8 @@ class MainFunc(QMainWindow):
             msg_x = np.append(msg_x,msg_x[-1] + 1)
             msg_y = np.append(msg_y, msg_y[-1])
             
-            
-            mod, newMod, demod, modem2= PSK.runEnginePSK(mes, int(M), float(mu), float(sigma), int(phase), grey_cod, bin_input, soft_decis, bin_output)
+            sigma_QAM = get_SIGMA("PSK", int(M), float(snr))
+            mod, newMod, demod, modem2= PSK.runEnginePSK(mes, int(M), float(mu), float(sigma_QAM), int(phase), grey_cod, bin_input, soft_decis, bin_output)
             
             self.progressBar_PSK.setValue(50)    
                     
@@ -340,6 +343,10 @@ def check_input_QAM_len(self):
     M = int(self.combobox_coef_QAM.currentText())
     if self.combobox_signal_type_QAM.currentText() == 'Message with letters':
         self.hint_QAM.setText('Длина может быть: ' + 'любой')
+        if (self.combobox_coef_QAM.currentText() == "64"):
+            self.hint_QAM.setText('Длина должна быть: ' + 'кратна 6')
+        if (self.combobox_coef_QAM.currentText() == "256"):
+            self.hint_QAM.setText('Длина должна быть: ' + 'кратна 8')    
         self.combobox_decision_QAM.setEnabled(False)
         
     if self.combobox_signal_type_QAM.currentText() == 'Binary code':
