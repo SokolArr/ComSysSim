@@ -81,7 +81,7 @@ p, li { white-space: pre-wrap; }
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>Version 0.5 - 12.2022</string>
+           <string>Version 0.51 - 12.2022</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -237,7 +237,7 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>419</width>
+                   <width>183</width>
                    <height>434</height>
                   </rect>
                  </property>
@@ -899,7 +899,7 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>419</width>
+                   <width>183</width>
                    <height>388</height>
                   </rect>
                  </property>
@@ -1433,8 +1433,8 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1086</width>
-                <height>253</height>
+                <width>170</width>
+                <height>216</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_52">
@@ -1535,8 +1535,8 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1086</width>
-                <height>253</height>
+                <width>195</width>
+                <height>216</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
