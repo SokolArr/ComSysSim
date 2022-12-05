@@ -6,8 +6,6 @@ import numpy as np
 import random
 import string
 
-# from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
-
 import modulations.engine_PSK as PSK
 import modulations.engine_QAM as QAM
 
@@ -80,8 +78,7 @@ class MainFunc(QMainWindow):
             
         if self.all_numbers_PSK.isChecked() == False:
             letters = string.ascii_lowercase
-            self.plainText_sid_PSK.setPlainText(''.join(random.choice(letters) for i in range(n)))
-        
+            self.plainText_sid_PSK.setPlainText(''.join(random.choice(letters) for i in range(n)))   
         
     def generate_sid_QAM_handler(self):
         n = int(self.spinBox_QAM.value() )

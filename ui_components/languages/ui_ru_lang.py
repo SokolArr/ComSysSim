@@ -29,8 +29,6 @@ class Ui_MainWindow(object):
         self.textBrowser = QtWidgets.QTextBrowser(self.instruct_tab)
         self.textBrowser.setObjectName("textBrowser")
         self.verticalLayout_8.addWidget(self.textBrowser)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_8.addItem(spacerItem)
         self.label = QtWidgets.QLabel(self.instruct_tab)
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label.setObjectName("label")
@@ -60,8 +58,8 @@ class Ui_MainWindow(object):
         self.message_PSK_lable.setFont(font)
         self.message_PSK_lable.setObjectName("message_PSK_lable")
         self.horizontalLayout_10.addWidget(self.message_PSK_lable)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_10.addItem(spacerItem)
         self.label_2 = QtWidgets.QLabel(self.message_PSK_wid)
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_2.setObjectName("label_2")
@@ -152,8 +150,8 @@ class Ui_MainWindow(object):
         self.inp_SNR_PSK = QtWidgets.QLineEdit(self.noise_wid_PSK_2)
         self.inp_SNR_PSK.setObjectName("inp_SNR_PSK")
         self.verticalLayout_21.addWidget(self.inp_SNR_PSK)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_21.addItem(spacerItem2)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_21.addItem(spacerItem1)
         self.verticalLayout_5.addWidget(self.noise_wid_PSK_2)
         self.verticalLayout_35.addWidget(self.groupBox_3)
         self.decision_wid_PSK = QtWidgets.QWidget(self.scrollAreaWidgetContents_PSK)
@@ -198,8 +196,8 @@ class Ui_MainWindow(object):
         self.combobox_phase_PSK.addItem("")
         self.combobox_phase_PSK.addItem("")
         self.verticalLayout_35.addWidget(self.phase_wid_PSK)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_35.addItem(spacerItem3)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_35.addItem(spacerItem2)
         self.main_params_PSK_wid.setWidget(self.scrollAreaWidgetContents_PSK)
         self.horizontalLayout_8.addWidget(self.main_params_PSK_wid)
         self.verticalLayout_34.addWidget(self.params_wid_PSK)
@@ -239,14 +237,6 @@ class Ui_MainWindow(object):
         self.pushButton_generate_sid_PSK = QtWidgets.QPushButton(self.sid_PSK)
         self.pushButton_generate_sid_PSK.setObjectName("pushButton_generate_sid_PSK")
         self.verticalLayout_42.addWidget(self.pushButton_generate_sid_PSK)
-        self.label_4 = QtWidgets.QLabel(self.sid_PSK)
-        font = QtGui.QFont()
-        font.setItalic(True)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("")
-        self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout_42.addWidget(self.label_4)
         self.plainText_sid_PSK = QtWidgets.QPlainTextEdit(self.sid_PSK)
         self.plainText_sid_PSK.setPlainText("")
         self.plainText_sid_PSK.setObjectName("plainText_sid_PSK")
@@ -283,8 +273,8 @@ class Ui_MainWindow(object):
         self.widget_2.setObjectName("widget_2")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget_2)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem4)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem3)
         self.apply_PSK_but = QtWidgets.QCheckBox(self.widget_2)
         font = QtGui.QFont()
         font.setFamily("Arial")
@@ -296,8 +286,8 @@ class Ui_MainWindow(object):
         self.apply_PSK_but.setStyleSheet("")
         self.apply_PSK_but.setObjectName("apply_PSK_but")
         self.horizontalLayout_3.addWidget(self.apply_PSK_but)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem5)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem4)
         self.verticalLayout_34.addWidget(self.widget_2)
         self.progressBar_PSK = QtWidgets.QProgressBar(self.main_PSK_wid)
         self.progressBar_PSK.setProperty("value", 0)
@@ -329,8 +319,8 @@ class Ui_MainWindow(object):
         self.message_QAM_lable.setFont(font)
         self.message_QAM_lable.setObjectName("message_QAM_lable")
         self.horizontalLayout_11.addWidget(self.message_QAM_lable)
-        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem6)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_11.addItem(spacerItem5)
         self.label_3 = QtWidgets.QLabel(self.widget_5)
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_3.setObjectName("label_3")
@@ -421,8 +411,8 @@ class Ui_MainWindow(object):
         self.inp_SNR_QAM = QtWidgets.QLineEdit(self.noise_wid_PSK_10)
         self.inp_SNR_QAM.setObjectName("inp_SNR_QAM")
         self.verticalLayout_31.addWidget(self.inp_SNR_QAM)
-        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_31.addItem(spacerItem7)
+        spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_31.addItem(spacerItem6)
         self.verticalLayout_22.addWidget(self.noise_wid_PSK_10)
         self.verticalLayout_14.addWidget(self.groupBox_4)
         self.decision_wid_QAM = QtWidgets.QWidget(self.scrollAreaWidgetContents_QAM)
@@ -453,8 +443,8 @@ class Ui_MainWindow(object):
         self.combobox_grey_QAM.addItem("")
         self.verticalLayout_7.addWidget(self.combobox_grey_QAM)
         self.verticalLayout_14.addWidget(self.grey_wid_QAM)
-        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_14.addItem(spacerItem8)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_14.addItem(spacerItem7)
         self.main_params_QAM_wid.setWidget(self.scrollAreaWidgetContents_QAM)
         self.horizontalLayout_6.addWidget(self.main_params_QAM_wid)
         self.verticalLayout_13.addWidget(self.params_wid_QAM)
@@ -494,14 +484,6 @@ class Ui_MainWindow(object):
         self.pushButton_generate_sid_QAM = QtWidgets.QPushButton(self.sid_QAM)
         self.pushButton_generate_sid_QAM.setObjectName("pushButton_generate_sid_QAM")
         self.verticalLayout_51.addWidget(self.pushButton_generate_sid_QAM)
-        self.label_5 = QtWidgets.QLabel(self.sid_QAM)
-        font = QtGui.QFont()
-        font.setItalic(True)
-        self.label_5.setFont(font)
-        self.label_5.setStyleSheet("")
-        self.label_5.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
-        self.label_5.setObjectName("label_5")
-        self.verticalLayout_51.addWidget(self.label_5)
         self.plainText_sid_QAM = QtWidgets.QPlainTextEdit(self.sid_QAM)
         self.plainText_sid_QAM.setPlainText("")
         self.plainText_sid_QAM.setObjectName("plainText_sid_QAM")
@@ -534,8 +516,8 @@ class Ui_MainWindow(object):
         self.widget.setObjectName("widget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout.addItem(spacerItem9)
+        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem8)
         self.apply_QAM_but = QtWidgets.QCheckBox(self.widget)
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -545,8 +527,8 @@ class Ui_MainWindow(object):
         self.apply_QAM_but.setFont(font)
         self.apply_QAM_but.setObjectName("apply_QAM_but")
         self.horizontalLayout.addWidget(self.apply_QAM_but)
-        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout.addItem(spacerItem10)
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem9)
         self.verticalLayout_13.addWidget(self.widget)
         self.progressBar_QAM = QtWidgets.QProgressBar(self.main_QAM_wid)
         self.progressBar_QAM.setProperty("value", 0)
@@ -638,8 +620,8 @@ class Ui_MainWindow(object):
         self.message_template.setWordWrap(True)
         self.message_template.setObjectName("message_template")
         self.verticalLayout_54.addWidget(self.message_template)
-        spacerItem11 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_54.addItem(spacerItem11)
+        spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_54.addItem(spacerItem10)
         self.verticalLayout_52.addWidget(self.groupBox)
         self.scrollArea_message.setWidget(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.addWidget(self.scrollArea_message)
@@ -676,8 +658,8 @@ class Ui_MainWindow(object):
         self.dmessage_template.setWordWrap(True)
         self.dmessage_template.setObjectName("dmessage_template")
         self.verticalLayout_53.addWidget(self.dmessage_template)
-        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_53.addItem(spacerItem12)
+        spacerItem11 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_53.addItem(spacerItem11)
         self.verticalLayout_19.addWidget(self.groupBox_2)
         self.scrollArea_dmessage.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout_18.addWidget(self.scrollArea_dmessage)
@@ -688,8 +670,8 @@ class Ui_MainWindow(object):
         self.label_bit_error.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.IBeamCursor))
         self.label_bit_error.setObjectName("label_bit_error")
         self.verticalLayout_18.addWidget(self.label_bit_error)
-        spacerItem13 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_18.addItem(spacerItem13)
+        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_18.addItem(spacerItem12)
         self.graphs_tab_wid.addTab(self.report_tab, "")
         self.verticalLayout_3.addWidget(self.graphs_tab_wid)
         self.horizontalLayout_2.addWidget(self.graphs)
@@ -720,11 +702,33 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600; color:#000000;\">  Универсальная система модели цифровой связи для изучения  способов модуляции сигналов!</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600;\">Теория</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt;\">    </span><span style=\" font-size:9pt; color:#2b2b2b;\">Цифровой модулятор принимает действительную входную битовою последовательность и возвращает комплексный выходной сигнал (или выборку). </span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#2b2b2b;\">    При настройке модулятора для входных символов с битовым значением модулятор принимает входные сигналы с двоичным значением, которые представляют целые числа. Модулятор собирает двоичные символы в группы по b = log_2 (M) бит, где b представляет количество битов на символ. Длина входного вектора должна быть целым числом, кратным b. В этой конфигурации модулятор отображает группы битов b в символы на выходе модулятора. Модулятор выводит один модулированный символ для каждой группы битов b.</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#2b2b2b;\">    Отображение символов определяет порядок, используемый модулятором для отображения группы символов b входных бит в соответствующий символ вектора диаграммы созвездия. Для достижения нижнего предела частоты ошибок по битам схемы многоуровневой модуляции используется метод кодирования Грея. Кодирование Грея упорядочивает символы модуляции так, чтобы двоичные представления соседних символов отличались только одним битом. Сочетание упорядочения по коду Грея в системах связи с методами прямой коррекции ошибок, способными исправлять однобитовые ошибки, помогает минимизировать частоту битовых ошибок в многоуровневых схемах модуляции.</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600; color:#000000;\">  Универсальная система модели цифровой связи для изучения  способов модуляции сигналов</span></p>\n"
+"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">   Интерфейс программы состоит из элементов взаимодействия – кнопок, выпадающих списков, вкладок, а также элементов отображения – графиков. </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">1 – вкладки с выбором режимов модуляции и краткой инструкцией; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">2 – раздел с внесением и редактированием сообщения; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">3 – раздел настройки параметров модуляции; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">4 – раздел генерации случайной последовательности; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">5 – кнопка запуска симуляции и линия прогресса построения графиков; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">6 – вкладка с графиками сообщений; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">7 – кнопки управления графиком. </span></p>\n"
+"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">   На вкладке «вычтенный сигнал» представлен график, отображающий разницу между отправленным и полученным сигналами</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">На вкладке «Отчет» представлен отчет, включающий в себя информацию: </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">1) тип модуляции; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">2) отправленное сообщение в тестовом представлении и закодированное с помощью кодировки UTF-8; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">3) демодулированное сообщение в тестовом представлении и закодированное с помощью кодировки UTF-8; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">4) количество ошибок в битах, вычисляемое побитовым сравнением оправленного и полученного сообщений. </span></p>\n"
+"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">   В разделе «Сообщение» задается отправляемое сообщение либо в виде текста, либо в режиме побитной отправки. Также в этом разделе представлена информация о количестве символов в строке и рекомендация по длине и кратности длины сообщения. Ниже раздела «Сообщение» представлен раздел «Параметры». В данном разделе расположены настройки модуляции, такие как: </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">1)  тип сигнала – выбираются режимы: “передача текстового сообщения” или “по битно”; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">2)  коэффициент модуляции; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">3)  настройка аддитивного белого гауссовского шума (АБГШ): отношение сигнал-шум (ОСШ), рассчитываемое в децибелах; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">4)  решение, на основе которого будет демодулироваться сообщение; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">5)  настройка использования кода Грея; </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">6)  фаза – поворот по фазе сигнального созвездия для PSK модуляции. </span></p>\n"
+"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">   В разделе «другие параметры» представлен интерфейс генерации случайного сообщения, а также чек-бокс «показать сигнальное созвездие», позволяющий отобразить график сигнального созвездия, используемый при модуляции сигнала. </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;\"><br /></p></body></html>"))
         self.label.setText(_translate("MainWindow", "Version 0.5 - 12.2022"))
         self.left_tab_wid.setTabText(self.left_tab_wid.indexOf(self.instruct_tab), _translate("MainWindow", "Инструкция"))
@@ -762,7 +766,6 @@ class Ui_MainWindow(object):
         self.label_length_PSK.setText(_translate("MainWindow", "Коллиство символов/чисел"))
         self.all_numbers_PSK.setText(_translate("MainWindow", "Для бинарного входного сообщения"))
         self.pushButton_generate_sid_PSK.setText(_translate("MainWindow", "Генерация случайного сообщения"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#757575;\">Максимальное значание словаря определяется автоматически</span></p></body></html>"))
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.other_prefs_wid_PSK), _translate("MainWindow", "Другие параметры"))
         self.other_prefs_PSK.setTabText(self.other_prefs_PSK.indexOf(self.scheme_PSK), _translate("MainWindow", "Схема"))
         self.plot_PSK.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Сначала примени настройки!</p></body></html>"))
@@ -797,7 +800,6 @@ class Ui_MainWindow(object):
         self.label_length_QAM.setText(_translate("MainWindow", "Коллиство символов/чисел"))
         self.all_numbers_QAM.setText(_translate("MainWindow", "Для бинарного входного сообщения"))
         self.pushButton_generate_sid_QAM.setText(_translate("MainWindow", "Генерация случайного сообщения"))
-        self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#757575;\">Максимальное значание словаря определяется автоматически</span></p></body></html>"))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.other_prefs_wid_QAM), _translate("MainWindow", "Другие параметры"))
         self.other_prefs_QAM.setTabText(self.other_prefs_QAM.indexOf(self.scheme_QAM), _translate("MainWindow", "Схема"))
         self.plot_QAM.setText(_translate("MainWindow", "Запуск симуляции и построения графиков QAM модуляции!"))
