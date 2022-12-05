@@ -556,13 +556,13 @@ p, li { white-space: pre-wrap; }
                   </size>
                  </property>
                  <property name="title">
-                  <string>Сид</string>
+                  <string>-</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_42">
                   <item>
                    <widget class="QLabel" name="label_length_PSK">
                     <property name="text">
-                     <string>Коллиство чисел</string>
+                     <string>Коллиство символов/чисел</string>
                     </property>
                    </widget>
                   </item>
@@ -1178,13 +1178,13 @@ p, li { white-space: pre-wrap; }
                   </size>
                  </property>
                  <property name="title">
-                  <string>Сид</string>
+                  <string>-</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_51">
                   <item>
                    <widget class="QLabel" name="label_length_QAM">
                     <property name="text">
-                     <string>Коллиство чисел</string>
+                     <string>Коллиство символов/чисел</string>
                     </property>
                    </widget>
                   </item>

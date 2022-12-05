@@ -4,6 +4,7 @@ from PyQt6 import QtGui
 
 import numpy as np
 import random
+import string
 
 # from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
@@ -70,37 +71,29 @@ class MainFunc(QMainWindow):
             
             
     def generate_sid_PSK_handler(self):
-        self.progressBar_PSK.setValue(0)
-        n_max = 1
-        if self.all_numbers_PSK.isChecked() == False:
-            n_max = int(self.combobox_coef_PSK.currentText()) - 1 
-        rand_list=[]
-        
         n = int(self.spinBox_PSK.value() )
+        rand_list=[]
+        if self.all_numbers_PSK.isChecked() == True:
+            for i in range(n):
+                rand_list.append(random.randint(0, 1))
+            self.plainText_sid_PSK.setPlainText(' '.join(str(x) for x in rand_list))
+            
+        if self.all_numbers_PSK.isChecked() == False:
+            letters = string.ascii_lowercase
+            self.plainText_sid_PSK.setPlainText(''.join(random.choice(letters) for i in range(n)))
         
-        self.progressBar_PSK.setValue(50)
-        
-        for i in range(n):
-            rand_list.append(random.randint(0,n_max))
-        self.progressBar_PSK.setValue(70)
-        
-        self.plainText_sid_PSK.setPlainText(' '.join(str(x) for x in rand_list))
-        
-        self.progressBar_PSK.setValue(100)
         
     def generate_sid_QAM_handler(self):
-        self.progressBar_QAM.setValue(0)
-        n_max = 1
-        if self.all_numbers_QAM.isChecked() == False:
-            n_max = int(self.combobox_coef_QAM.currentText()) - 1 
-        rand_list=[]
         n = int(self.spinBox_QAM.value() )
-        self.progressBar_QAM.setValue(50)
-        for i in range(n):
-            rand_list.append(random.randint(0,n_max))
-        self.progressBar_QAM.setValue(70)
-        self.plainText_sid_QAM.setPlainText(' '.join(str(x) for x in rand_list))
-        self.progressBar_QAM.setValue(100)
+        rand_list=[]
+        if self.all_numbers_QAM.isChecked() == True:
+            for i in range(n):
+                rand_list.append(random.randint(0, 1))
+            self.plainText_sid_QAM.setPlainText(' '.join(str(x) for x in rand_list))
+            
+        if self.all_numbers_QAM.isChecked() == False:
+            letters = string.ascii_lowercase
+            self.plainText_sid_QAM.setPlainText(''.join(random.choice(letters) for i in range(n)))
 
 
     def check_but_QAM(self):
