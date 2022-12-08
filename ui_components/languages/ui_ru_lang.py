@@ -360,7 +360,7 @@ class Ui_MainWindow(object):
         self.main_params_QAM_wid.setWidgetResizable(True)
         self.main_params_QAM_wid.setObjectName("main_params_QAM_wid")
         self.scrollAreaWidgetContents_QAM = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_QAM.setGeometry(QtCore.QRect(0, 0, 419, 388))
+        self.scrollAreaWidgetContents_QAM.setGeometry(QtCore.QRect(0, -89, 419, 388))
         self.scrollAreaWidgetContents_QAM.setObjectName("scrollAreaWidgetContents_QAM")
         self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_QAM)
         self.verticalLayout_14.setObjectName("verticalLayout_14")

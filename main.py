@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QDialog, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.uic import loadUi
 from PyQt6 import QtGui
 
@@ -48,6 +48,9 @@ class MainFunc(QMainWindow):
         
         self.combobox_decision_QAM.setEnabled(False)
         self.combobox_decision_PSK.setEnabled(False)
+        
+        self.combobox_grey_QAM.setEnabled(False)
+        self.combobox_grey_PSK.setEnabled(False)
         
         self.plot_QAM.setEnabled(False)
         self.plot_PSK.setEnabled(False)
@@ -355,15 +358,15 @@ def check_input_QAM_len(self):
             self.hint_QAM.setText('Длина должна быть: ' + 'кратна 6')
         if (self.combobox_coef_QAM.currentText() == "256"):
             self.hint_QAM.setText('Длина должна быть: ' + 'кратна 8')    
-        self.combobox_decision_QAM.setEnabled(False)
+        # self.combobox_decision_QAM.setEnabled(False)
         
     if self.combobox_signal_type_QAM.currentText() == 'Binary code':
         self.hint_QAM.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ", словарь: только 0 и 1")
-        self.combobox_decision_QAM.setEnabled(True)
+        # self.combobox_decision_QAM.setEnabled(True)
         
     if self.combobox_signal_type_QAM.currentText() == 'Only integers':
         self.hint_QAM.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M+1))
-        self.combobox_decision_QAM.setEnabled(False)
+        # self.combobox_decision_QAM.setEnabled(False)
         
     if self.QAM_input.text() == "":
         self.hint_QAM.setText('СООБЩЕНИЕ НЕ МОЖЕТ БЫТЬ ПУСТЫМ!')
@@ -375,16 +378,15 @@ def check_input_PSK_len(self):
         self.hint_PSK.setText('Длина может быть: ' + 'любой')
         if (self.combobox_coef_PSK.currentText() == "32"):
             self.hint_PSK.setText('Длина должна быть: ' + 'кратна 5')
-            
-        self.combobox_decision_PSK.setEnabled(False)
+        # self.combobox_decision_PSK.setEnabled(False)
         
     if self.combobox_signal_type_PSK.currentText() == 'Binary code':
         self.hint_PSK.setText('Длина должна быть кратна: ' + str(int(np.log2(M))) + ", словарь: только 0 и 1")
-        self.combobox_decision_PSK.setEnabled(True)
+        # self.combobox_decision_PSK.setEnabled(True)
         
     if self.combobox_signal_type_PSK.currentText() == 'Only integers':
         self.hint_PSK.setText('Длина может быть: ' + 'любой, максимальное число словаря не должно превышать: ' + str(M-1))
-        self.combobox_decision_QAM.setEnabled(False)
+        # self.combobox_decision_QAM.setEnabled(False)
         
     if self.PSK_input.text() == "":
         self.hint_PSK.setText('СООБЩЕНИЕ НЕ МОЖЕТ БЫТЬ ПУСТЫМ!')
