@@ -131,7 +131,7 @@ class MainFunc(QMainWindow):
 
             sigma_QAM = get_SIGMA("QAM", int(M), float(snr))
             mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), float(mu), float(sigma_QAM), grey_cod, bin_input, soft_decis, bin_output)
-        
+            
             self.progressBar_QAM.setValue(50)    
             
             ch = 0
@@ -139,32 +139,41 @@ class MainFunc(QMainWindow):
                 if mes[index] != demod[index]:
                     ch = ch + 1
             
-            if self.combobox_signal_type_QAM.currentText() == 'Message with letters':       
-                demod_str = np.array_str(np.int64(demod)).replace(" ", "").replace("[", "").replace("]", "").replace('\r', '').replace('\n', '')
+            arr_tmp_2 = []
+            for el in demod:
+                arr_tmp_2.append(int(el))   
+            
+            if self.combobox_signal_type_QAM.currentText() == 'Message with letters':
+                arr_tmp = []
+                for el in demod:
+                    arr_tmp.append(str(int(el)))  
+                demod_str = ''.join(arr_tmp)
+
                 tmp = [demod_str[i:i+8] for i in range(0, len(demod_str), 8)]
                 new_array = []
                 for el in tmp:
                     new_array.append('0' + el[1:])
+                    
                 edit_mod_msg = ''.join(new_array)
                 decoded_msg = bin_to_msg(edit_mod_msg)
+                
                 print ('Decoded msg:' + decoded_msg)
-                self.trmtr_msg.setText('Отправленное сообщение: ' + str(self.QAM_input.text()))
-                self.rcvr_msg.setText('Декодированное сообщение: ' + str(decoded_msg))
+                
+                self.tmtr_msg_bow.setText('Тип модуляции: ' + M + '-QAM' + '\n' + 'Отправленное сообщение: ' + 
+                                          str(self.QAM_input.text()) +
+                                          '\n' + '\n' + 'Битовое представление: ' + '\n' + str(mes))
+                self.reisiv_msg_bow.setText('Декодированное сообщение: '+ 
+                                          str(decoded_msg) + 
+                                          '\n' + '\n' + 'Битовое представление: ' + '\n' + str(arr_tmp_2))
             else:
-                self.trmtr_msg.setText('--')
-                self.rcvr_msg.setText('--')                
-                    
-            dmessage_length = demod.__len__()
-            if dmessage_length < 10000:
-                self.dmessage_template.setText(str(demod))
-            else:
-                self.dmessage_template.setText("Сообщение больше 10т.симвл.")
-            
-            self.label_bit_error.setText("Bit errors (Ошибок в битах): " + str(ch))
-            
-            self.message_template.setText(str(mes))
-            self.type_mod.setText("Тип модуляции: QAM")
-    
+                self.tmtr_msg_bow.setText('Тип модуляции: ' + M + '-QAM' + '\n' +
+                                          'Битовое представление: ' + '\n' + str(mes))
+                self.reisiv_msg_bow.setText('Битовое представление: ' + '\n' + str(arr_tmp_2))
+                                 
+            self.textBrowse_BER.setText("Ошибочных битов: " + str(ch) +
+                                         "\nВсего битов: " + str(demod.__len__()) +
+                                         "\nBER: " + str(float(ch)/float(demod.__len__()))
+                                         )                 
             
             self.progressBar_QAM.setValue(60)
             
@@ -246,33 +255,42 @@ class MainFunc(QMainWindow):
             for index in range(mes.__len__()):
                 if mes[index] != demod[index]:
                     ch = ch + 1
+            
+            arr_tmp_2 = []
+            for el in demod:
+                arr_tmp_2.append(int(el))
                
             if self.combobox_signal_type_PSK.currentText() == 'Message with letters':     
-                demod_str = np.array_str(np.int64(demod)).replace(" ", "").replace("[", "").replace("]", "").replace('\r', '').replace('\n', '')
+                arr_tmp = []
+                for el in demod:
+                    arr_tmp.append(str(int(el)))  
+                demod_str = ''.join(arr_tmp)
+                
                 tmp = [demod_str[i:i+8] for i in range(0, len(demod_str), 8)]
                 new_array = []
                 for el in tmp:
                     new_array.append('0' + el[1:])
                 edit_mod_msg = ''.join(new_array)
                 decoded_msg = bin_to_msg(edit_mod_msg)
+                
                 print ('Decoded msg:' + decoded_msg)
-                self.trmtr_msg.setText('Отправленное сообщение: ' + str(self.PSK_input.text()))
-                self.rcvr_msg.setText('Декодированное сообщение: ' + str(decoded_msg))
+                
+                self.tmtr_msg_bow.setText('Тип модуляции: ' + M + '-PSK' + '\n' + 'Отправленное сообщение: ' + 
+                                          str(self.PSK_input.text()) +
+                                          '\n' + '\n' + 'Битовое представление: ' + '\n' + str(mes))
+                self.reisiv_msg_bow.setText('Декодированное сообщение: '+ 
+                                          str(decoded_msg) + 
+                                          '\n' + '\n' + 'Битовое представление: ' + '\n' + str(arr_tmp_2))
             else:
-                self.trmtr_msg.setText('--')
-                self.rcvr_msg.setText('--')                  
-                        
-            dmessage_length = demod.__len__()
-            if dmessage_length < 10000:
-                self.dmessage_template.setText(str(demod))
-            else:
-                self.dmessage_template.setText("Сообщение больше 10т.симвл.")
-            
-            self.label_bit_error.setText("Bit errors (Ошибок в битах): " + str(ch))
-            
-            self.message_template.setText(str(mes))
-            self.type_mod.setText("Тип модуляции: PSK")
-    
+                self.tmtr_msg_bow.setText('Тип модуляции: ' + M + '-PSK' + '\n' +
+                                          'Битовое представление: ' + '\n' + str(mes))
+                self.reisiv_msg_bow.setText('Битовое представление: ' + '\n' + str(arr_tmp_2))
+                                 
+            self.textBrowse_BER.setText("Ошибочных битов: " + str(ch) +
+                                         "\nВсего битов: " + str(demod.__len__()) +
+                                         "\nBER: " + str(float(ch)/float(demod.__len__()))
+                                         )          
+        
             self.progressBar_PSK.setValue(60)
             
             dmsg = demod
