@@ -1,3 +1,4 @@
+#Кодирование сообщения в битовый поток UTF-8
 def msg_to_bin(text):
    encoding='utf-8'
    errors='surrogatepass'

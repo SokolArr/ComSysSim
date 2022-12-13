@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1729</width>
+    <width>1590</width>
     <height>1135</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      <widget class="QTabWidget" name="left_tab_wid">
       <property name="maximumSize">
        <size>
-        <width>500</width>
+        <width>520</width>
         <height>16777215</height>
        </size>
       </property>
@@ -237,7 +237,7 @@ p, li { white-space: pre-wrap; }
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>419</width>
+                   <width>439</width>
                    <height>434</height>
                   </rect>
                  </property>
@@ -341,6 +341,21 @@ p, li { white-space: pre-wrap; }
                      <string>Настройка АБГШ (AWGN)</string>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_5">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item>
                       <widget class="QWidget" name="noise_wid_PSK_2" native="true">
                        <property name="minimumSize">
@@ -381,6 +396,59 @@ p, li { white-space: pre-wrap; }
                       </widget>
                      </item>
                     </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="phase_wid_PSK" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <widget class="QLabel" name="phase_label_PSK">
+                     <property name="geometry">
+                      <rect>
+                       <x>10</x>
+                       <y>10</y>
+                       <width>51</width>
+                       <height>21</height>
+                      </rect>
+                     </property>
+                     <property name="text">
+                      <string>Фаза: PI/</string>
+                     </property>
+                    </widget>
+                    <widget class="QComboBox" name="combobox_phase_PSK">
+                     <property name="geometry">
+                      <rect>
+                       <x>70</x>
+                       <y>10</y>
+                       <width>51</width>
+                       <height>22</height>
+                      </rect>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>4</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>8</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>16</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>32</string>
+                      </property>
+                     </item>
+                    </widget>
                    </widget>
                   </item>
                   <item>
@@ -447,59 +515,6 @@ p, li { white-space: pre-wrap; }
                       </widget>
                      </item>
                     </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QWidget" name="phase_wid_PSK" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                    <widget class="QLabel" name="phase_label_PSK">
-                     <property name="geometry">
-                      <rect>
-                       <x>10</x>
-                       <y>10</y>
-                       <width>51</width>
-                       <height>21</height>
-                      </rect>
-                     </property>
-                     <property name="text">
-                      <string>Фаза: PI/</string>
-                     </property>
-                    </widget>
-                    <widget class="QComboBox" name="combobox_phase_PSK">
-                     <property name="geometry">
-                      <rect>
-                       <x>70</x>
-                       <y>10</y>
-                       <width>321</width>
-                       <height>22</height>
-                      </rect>
-                     </property>
-                     <item>
-                      <property name="text">
-                       <string>4</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>8</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>16</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>32</string>
-                      </property>
-                     </item>
-                    </widget>
                    </widget>
                   </item>
                   <item>
@@ -898,8 +913,8 @@ p, li { white-space: pre-wrap; }
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-89</y>
-                   <width>419</width>
+                   <y>0</y>
+                   <width>439</width>
                    <height>388</height>
                   </rect>
                  </property>
@@ -998,6 +1013,21 @@ p, li { white-space: pre-wrap; }
                      <string>Настройка АБГШ (AWGN)</string>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_22">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item>
                       <widget class="QWidget" name="noise_wid_PSK_10" native="true">
                        <property name="minimumSize">
@@ -1409,7 +1439,7 @@ p, li { white-space: pre-wrap; }
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>1161</width>
+                <width>1002</width>
                 <height>1010</height>
                </rect>
               </property>
@@ -1568,7 +1598,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1729</width>
+     <width>1590</width>
      <height>21</height>
     </rect>
    </property>

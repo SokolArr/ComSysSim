@@ -1,4 +1,5 @@
 import math
+#Функция получения значения сигмы из введеного ОСШ
 def get_SIGMA(modulation, m_coef, SNR):
     sigma = 1
     dots_on_cvadr = m_coef/4

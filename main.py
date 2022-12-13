@@ -1,14 +1,18 @@
+#Импорт компонентов графической библиотеки
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.uic import loadUi
 from PyQt6 import QtGui
 
+#Импорт библиотеки работы с данными
 import numpy as np
 import random
 import string
 
+#Импорт файлов с модуляциями
 import modulations.engine_PSK as PSK
 import modulations.engine_QAM as QAM
 
+#Импорт файлов с модуляциями
 from helpers.get_SIGMA import get_SIGMA
 from helpers.msg_to_bin import msg_to_bin
 from helpers.bin_to_msg import bin_to_msg
@@ -25,6 +29,7 @@ class MainFunc(QMainWindow):
         loadUi("./ui_components/actual_lang.ui",self)
         self.setWindowIcon(QtGui.QIcon('./pictures/icon.png'))
         
+        #Инициализация элементов взаимодействия с интерфейсом
         self.apply_PSK_but.stateChanged.connect(self.apply_PSK_but_handler)
         self.apply_QAM_but.stateChanged.connect(self.apply_QAM_but_handler)
         
@@ -34,11 +39,11 @@ class MainFunc(QMainWindow):
         self.QAM_input.textChanged.connect(self.QAM_input_change_handler)
         self.length_QAM_mes.setText(str(self.QAM_input.text().__len__()))
         
-        self.plot_QAM.clicked.connect(self.check_but_QAM) #Buttons
-        self.plot_PSK.clicked.connect(self.check_but_PSK) #Buttons
+        self.plot_QAM.clicked.connect(self.check_but_QAM) 
+        self.plot_PSK.clicked.connect(self.check_but_PSK) 
         
-        self.pushButton_generate_sid_PSK.clicked.connect(self.generate_sid_PSK_handler) #Buttons
-        self.pushButton_generate_sid_QAM.clicked.connect(self.generate_sid_QAM_handler) #Buttons
+        self.pushButton_generate_sid_PSK.clicked.connect(self.generate_sid_PSK_handler) 
+        self.pushButton_generate_sid_QAM.clicked.connect(self.generate_sid_QAM_handler)
         
         self.combobox_signal_type_QAM.currentTextChanged.connect(self.signal_QAM_handler)
         self.combobox_signal_type_PSK.currentTextChanged.connect(self.signal_PSK_handler)
@@ -57,20 +62,22 @@ class MainFunc(QMainWindow):
         
         self.progressBar_PSK.setValue(0)
         self.progressBar_QAM.setValue(0)
-        
+    
+    #Обработчик чекбокса применения настроек    
     def apply_PSK_but_handler(self):
         if self.apply_PSK_but.isChecked() == True:
             self.plot_PSK.setEnabled(True)
         else:
             self.plot_PSK.setEnabled(False)
             
+    #Обработчик чекбокса применения настроек         
     def apply_QAM_but_handler(self):
         if self.apply_QAM_but.isChecked() == True:
             self.plot_QAM.setEnabled(True)
         else:
             self.plot_QAM.setEnabled(False)
             
-            
+    #Обработчик кнопки генерации случайного сообщения       
     def generate_sid_PSK_handler(self):
         n = int(self.spinBox_PSK.value() )
         rand_list=[]
@@ -82,7 +89,8 @@ class MainFunc(QMainWindow):
         if self.all_numbers_PSK.isChecked() == False:
             letters = string.ascii_lowercase
             self.plainText_sid_PSK.setPlainText(''.join(random.choice(letters) for i in range(n)))   
-        
+     
+    #Обработчик кнопки генерации случайного сообщения   
     def generate_sid_QAM_handler(self):
         n = int(self.spinBox_QAM.value() )
         rand_list=[]
@@ -95,10 +103,10 @@ class MainFunc(QMainWindow):
             letters = string.ascii_lowercase
             self.plainText_sid_QAM.setPlainText(''.join(random.choice(letters) for i in range(n)))
 
-
+    #Обработчик кнопки генерации QAM модуляции
     def check_but_QAM(self):
         if self.apply_QAM_but.isChecked() == True:
-            self.progressBar_QAM.setValue(0)
+            self.progressBar_QAM.setValue(0) #Установка прогресс бара в 0 процентов
             is_it_latters = False
             bin_input, bin_output, is_it_latters = check_combobox_QAM(self)
  
@@ -116,15 +124,15 @@ class MainFunc(QMainWindow):
                 mes = [int(s) for s in inpText.split() if s.isdigit()]
                 
             if is_it_latters == True:  
-                inpText = msg_to_bin(self.QAM_input.text())
+                inpText = msg_to_bin(self.QAM_input.text()) #Обработчик настроек типа сообщения
                 mes = [int(s) for s in inpText.split() if s.isdigit()]
             
             M = self.combobox_coef_QAM.currentText()
             
-            # mu = self.inp_mu_QAM.text()
             mu = 0
             snr = self.inp_SNR_QAM.text()
             
+            #Настройки для отрисовки графиков сигналов
             msg_x = np.repeat(range(len(mes)), 2)
             msg_y = np.repeat(mes, 2)
             msg_x = msg_x[1:]
@@ -133,10 +141,13 @@ class MainFunc(QMainWindow):
             msg_y = np.append(msg_y, msg_y[-1])
 
             sigma_QAM = get_SIGMA("QAM", int(M), float(snr))
+            
+            #Запуск процесса модуляции и демодуляции
             mod, newMod, demod, modem1 = QAM.runEngineQAM(mes, int(M), float(mu), float(sigma_QAM), grey_cod, bin_input, soft_decis, bin_output)
             
-            self.progressBar_QAM.setValue(50)    
-            
+            self.progressBar_QAM.setValue(50)
+               
+            #Формирование отчета модуляции
             ch = 0
             for index in range(mes.__len__()):
                 if mes[index] != demod[index]:
@@ -180,6 +191,7 @@ class MainFunc(QMainWindow):
             
             self.progressBar_QAM.setValue(60)
             
+            #Настройки для отрисовки графиков сигналов
             dmsg = demod
             dmsg_x = np.repeat(range(len(dmsg)), 2)
             dmsg_y = np.repeat(dmsg, 2)
@@ -190,7 +202,6 @@ class MainFunc(QMainWindow):
             
             mod_reals = [ele.real for ele in mod]
             n_mod_reals = [ele.real for ele in newMod]
-            # extract imaginary part
             mod_imags = [ele.imag for ele in mod]
             n_mod_imags = [ele.imag for ele in newMod]
             
@@ -199,6 +210,7 @@ class MainFunc(QMainWindow):
             
             self.progressBar_QAM.setValue(50)
 
+            #Функции вызова отрисовки графиков
             draw_2(self, mes, demod)
             draw_11(self, msg_x, msg_y, "QAM")
             self.progressBar_QAM.setValue(75)
@@ -210,10 +222,10 @@ class MainFunc(QMainWindow):
             
             self.progressBar_QAM.setValue(100)
 
+    #Обработчик кнопки генерации PSK модуляции
     def check_but_PSK(self):
         if self.apply_PSK_but.isChecked() == True:
-            self.progressBar_PSK.setValue(0)
-
+            self.progressBar_PSK.setValue(0) #Установка прогресс бара в 0 процентов
             is_it_latters = False
             bin_input, bin_output, is_it_latters = check_combobox_PSK(self)
         
@@ -231,17 +243,17 @@ class MainFunc(QMainWindow):
                 mes = [int(s) for s in inpText.split() if s.isdigit()]
                 
             if is_it_latters == True:  
-                inpText = msg_to_bin(self.PSK_input.text())
+                inpText = msg_to_bin(self.PSK_input.text()) #Обработчик настроек типа сообщения
                 mes = [int(s) for s in inpText.split() if s.isdigit()]
 
             M = self.combobox_coef_PSK.currentText()
             
-            # mu = self.inp_mu_PSK.text()
             mu = 0
             snr = self.inp_SNR_PSK.text()
             
             phase = self.combobox_phase_PSK.currentText()
             
+            #Настройки для отрисовки графиков сигналов
             msg_x = np.repeat(range(len(mes)), 2)
             msg_y = np.repeat(mes, 2)
             msg_x = msg_x[1:]
@@ -250,10 +262,13 @@ class MainFunc(QMainWindow):
             msg_y = np.append(msg_y, msg_y[-1])
             
             sigma_QAM = get_SIGMA("PSK", int(M), float(snr))
+            
+            #Запуск процесса модуляции и демодуляции
             mod, newMod, demod, modem2= PSK.runEnginePSK(mes, int(M), float(mu), float(sigma_QAM), int(phase), grey_cod, bin_input, soft_decis, bin_output)
             
             self.progressBar_PSK.setValue(50)    
-                    
+            
+            #Формирование отчета модуляции        
             ch = 0
             for index in range(mes.__len__()):
                 if mes[index] != demod[index]:
@@ -296,6 +311,7 @@ class MainFunc(QMainWindow):
         
             self.progressBar_PSK.setValue(60)
             
+            #Настройки для отрисовки графиков сигналов
             dmsg = demod
             dmsg_x = np.repeat(range(len(dmsg)), 2)
             dmsg_y = np.repeat(dmsg, 2)
@@ -306,7 +322,6 @@ class MainFunc(QMainWindow):
             
             mod_reals = [ele.real for ele in mod]
             n_mod_reals = [ele.real for ele in newMod]
-            # extract imaginary part
             mod_imags = [ele.imag for ele in mod]
             n_mod_imags = [ele.imag for ele in newMod]
             
@@ -315,6 +330,7 @@ class MainFunc(QMainWindow):
             
             self.progressBar_PSK.setValue(50)
             
+            #Функции вызова отрисовки графиков
             draw_2(self, mes, demod)
             draw_11(self, msg_x, msg_y, "PSK")
             self.progressBar_PSK.setValue(75)
@@ -326,30 +342,33 @@ class MainFunc(QMainWindow):
             
             self.progressBar_PSK.setValue(100)      
             
-            
+    #Обработчик проверки длины введенного сообщения     
     def signal_QAM_handler(self):
         check_input_QAM_len(self)
-                
+        
+    #Обработчик проверки длины введенного сообщения            
     def signal_PSK_handler(self):
         check_input_PSK_len(self) 
-    
-    
+        
+    #Обработчик проверки на изменения введенного сообщения
     def PSK_input_change_handler(self):
         self.length_PSK_mes.setText(str(self.PSK_input.text().__len__()))
         check_input_PSK_len(self)    
-        
+    
+    #Обработчик проверки на изменения введенного сообщения   
     def QAM_input_change_handler(self):
         self.length_QAM_mes.setText(str(self.QAM_input.text().__len__()))
         check_input_QAM_len(self)
-        
-        
+    
+    #Обработчик проверки коэф. мод. на изменение    
     def coef_QAM_handler(self):
         check_input_QAM_len(self)
     
+    #Обработчик проверки коэф. мод. на изменение 
     def coef_PSK_handler(self):
         check_input_PSK_len(self) 
 
-
+#Функция изменения подсказки при вводе сообщения
 def check_input_QAM_len(self):
     M = int(self.combobox_coef_QAM.currentText())
     if self.combobox_signal_type_QAM.currentText() == 'Message with letters':
@@ -371,7 +390,8 @@ def check_input_QAM_len(self):
     if self.QAM_input.text() == "":
         self.hint_QAM.setText('СООБЩЕНИЕ НЕ МОЖЕТ БЫТЬ ПУСТЫМ!')
         print("void QAM inp")   
-                
+
+#Функция изменения подсказки при вводе сообщения               
 def check_input_PSK_len(self):  
     M = int(self.combobox_coef_PSK.currentText())
     if self.combobox_signal_type_PSK.currentText() == 'Message with letters':
@@ -392,7 +412,7 @@ def check_input_PSK_len(self):
         self.hint_PSK.setText('СООБЩЕНИЕ НЕ МОЖЕТ БЫТЬ ПУСТЫМ!')
         print("void PSK inp")
            
-
+#Обработчик настроек типа сообщения
 def check_combobox_QAM(self):
     bin_input = False
     bin_output = False
@@ -409,6 +429,7 @@ def check_combobox_QAM(self):
         is_it_letters = True        
     return bin_input, bin_output, is_it_letters
 
+#Обработчик настроек типа сообщения
 def check_combobox_PSK(self):
     bin_input = False
     bin_output = False
@@ -425,8 +446,8 @@ def check_combobox_PSK(self):
         is_it_letters = True  
     return bin_input, bin_output, is_it_letters
 
+#Функции необходимые для отрисовки интерфейса
 app = QApplication([])
 window = MainFunc()
 window.show()
 app.exec()
-
